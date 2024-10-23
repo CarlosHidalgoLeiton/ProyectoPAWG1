@@ -28,3 +28,4 @@ D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\Pro
 D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\ProyectoPAWG1\obj\Debug\net8.0\ProyectoPAWG1.pdb
 D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\ProyectoPAWG1\obj\Debug\net8.0\ProyectoPAWG1.genruntimeconfig.cache
 D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\ProyectoPAWG1\obj\Debug\net8.0\ref\ProyectoPAWG1.dll
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\ProyectoPAWG1\obj\Debug\net8.0\ProyectoPAWG1.sourcelink.json
