@@ -1,0 +1,16 @@
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Data\bin\Debug\net8.0\PAWG1.Data.deps.json
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Data\bin\Debug\net8.0\PAWG1.Data.dll
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Data\bin\Debug\net8.0\PAWG1.Data.pdb
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Data\bin\Debug\net8.0\PAWG1.Models.dll
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Data\bin\Debug\net8.0\PAWG1.Models.pdb
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Data\obj\Debug\net8.0\PAWG1.Data.csproj.AssemblyReference.cache
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Data\obj\Debug\net8.0\PAWG1.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Data\obj\Debug\net8.0\PAWG1.Data.AssemblyInfoInputs.cache
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Data\obj\Debug\net8.0\PAWG1.Data.AssemblyInfo.cs
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Data\obj\Debug\net8.0\PAWG1.Data.csproj.CoreCompileInputs.cache
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Data\obj\Debug\net8.0\PAWG1.Data.sourcelink.json
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Data\obj\Debug\net8.0\PAWG1.Data.csproj.Up2Date
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Data\obj\Debug\net8.0\PAWG1.Data.dll
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Data\obj\Debug\net8.0\refint\PAWG1.Data.dll
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Data\obj\Debug\net8.0\PAWG1.Data.pdb
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Data\obj\Debug\net8.0\ref\PAWG1.Data.dll

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProyectoPAWG1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4e9b608d83d612884d51a4ecbfe24a0d66e2ff44")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6ef399fd010e7ca8dba0d5d5bce5336a41101f21")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProyectoPAWG1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProyectoPAWG1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

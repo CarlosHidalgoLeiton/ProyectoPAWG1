@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\PAWG1.Api.props" />
+</Project>

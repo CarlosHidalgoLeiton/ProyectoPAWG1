@@ -1,8 +1,8 @@
 {
   "Files": [
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ProyectoPAWG1.bundle.scp.css",
-      "PackagePath": "staticwebassets\\ProyectoPAWG1.bundle.scp.css"
+      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\PAWG1.Mvc.bundle.scp.css",
+      "PackagePath": "staticwebassets\\PAWG1.Mvc.bundle.scp.css"
     },
     {
       "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\css\\nucleo-icons.css",
@@ -485,20 +485,20 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ProyectoPAWG1.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.PAWG1.Mvc.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.ProyectoPAWG1.props",
-      "PackagePath": "build\\ProyectoPAWG1.props"
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.PAWG1.Mvc.props",
+      "PackagePath": "build\\PAWG1.Mvc.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.ProyectoPAWG1.props",
-      "PackagePath": "buildMultiTargeting\\ProyectoPAWG1.props"
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.PAWG1.Mvc.props",
+      "PackagePath": "buildMultiTargeting\\PAWG1.Mvc.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.ProyectoPAWG1.props",
-      "PackagePath": "buildTransitive\\ProyectoPAWG1.props"
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.PAWG1.Mvc.props",
+      "PackagePath": "buildTransitive\\PAWG1.Mvc.props"
     }
   ],
   "ElementsToRemove": []
