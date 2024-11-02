@@ -14,3 +14,5 @@ D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\Pro
 D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Data\obj\Debug\net8.0\refint\PAWG1.Data.dll
 D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Data\obj\Debug\net8.0\PAWG1.Data.pdb
 D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Data\obj\Debug\net8.0\ref\PAWG1.Data.dll
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Data\bin\Debug\net8.0\PAWG1.Architecture.dll
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Data\bin\Debug\net8.0\PAWG1.Architecture.pdb

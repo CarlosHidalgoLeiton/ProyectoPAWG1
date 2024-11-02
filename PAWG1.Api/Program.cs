@@ -1,7 +1,5 @@
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using PAWG1.Models.EFModels;
-using System;
+using PAWG1.Data.Repository;
+using PAWG1.Service.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,10 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var connectionString = builder.Configuration.GetConnectionString("Server=localhost;Database=PAWProject;Trusted_Connection=True;TrustServerCertificate=True;");
-
-builder.Services.AddDbContext<PawprojectContext>(options => options.UseSqlServer(connectionString));
-
+builder.Services.AddScoped<IComponentRepository, ComponentRepository>();
+builder.Services.AddScoped<IComponentService, ComponentService>();
 
 
 var app = builder.Build();

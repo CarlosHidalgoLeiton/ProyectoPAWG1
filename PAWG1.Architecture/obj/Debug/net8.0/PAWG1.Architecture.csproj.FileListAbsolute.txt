@@ -1,0 +1,12 @@
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Architecture\bin\Debug\net8.0\PAWG1.Architecture.deps.json
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Architecture\bin\Debug\net8.0\PAWG1.Architecture.dll
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Architecture\bin\Debug\net8.0\PAWG1.Architecture.pdb
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Architecture\obj\Debug\net8.0\PAWG1.Architecture.GeneratedMSBuildEditorConfig.editorconfig
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Architecture\obj\Debug\net8.0\PAWG1.Architecture.AssemblyInfoInputs.cache
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Architecture\obj\Debug\net8.0\PAWG1.Architecture.AssemblyInfo.cs
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Architecture\obj\Debug\net8.0\PAWG1.Architecture.csproj.CoreCompileInputs.cache
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Architecture\obj\Debug\net8.0\PAWG1.Architecture.sourcelink.json
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Architecture\obj\Debug\net8.0\PAWG1.Architecture.dll
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Architecture\obj\Debug\net8.0\refint\PAWG1.Architecture.dll
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Architecture\obj\Debug\net8.0\PAWG1.Architecture.pdb
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Architecture\obj\Debug\net8.0\ref\PAWG1.Architecture.dll

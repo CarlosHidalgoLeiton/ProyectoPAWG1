@@ -6,11 +6,22 @@ namespace PAWG1.Data.Repository;
 public interface IRepositoryBase<T>
 {
     Task<bool> CreateAsync(T entity);
+    Task<bool> DeleteAsync(T entity);
+    Task<bool> ExistsAsync(T entity);
+    Task<IEnumerable<T>> ReadAsync();
+    Task<bool> UpdateAsync(T entity);
 }
 
-public class RepositoryBase<T>(PawprojectContext dataDbContext) : IRepositoryBase<T> where T : class
+public class RepositoryBase<T> : IRepositoryBase<T> where T : class
 {
-    private readonly PawprojectContext _dataDbContext = dataDbContext;
+    private readonly PawprojectContext _dataDbContext;
+
+    protected PawprojectContext DbContext => _dataDbContext;
+
+    public RepositoryBase()
+    {
+        _dataDbContext = new PawprojectContext();
+    }
 
     public async Task<bool> CreateAsync(T entity)
     {
@@ -27,12 +38,12 @@ public class RepositoryBase<T>(PawprojectContext dataDbContext) : IRepositoryBas
 
     public async Task<bool> UpdateAsync(T entity)
     {
-        try 
-        { 
+        try
+        {
             _dataDbContext.Update(entity);
             return await SaveAsync();
-        } 
-        catch (Exception ex) 
+        }
+        catch (Exception ex)
         {
             throw new Exception("There is a error in UpdateAsync");
         }
@@ -45,13 +56,13 @@ public class RepositoryBase<T>(PawprojectContext dataDbContext) : IRepositoryBas
             _dataDbContext.UpdateRange(entities);
             return await SaveAsync();
         }
-        catch (Exception ex) 
+        catch (Exception ex)
         {
             throw new Exception("There is a error in UpdateManyAsync");
         }
     }
 
-    public async Task<bool> DeleteAsync(T entity) 
+    public async Task<bool> DeleteAsync(T entity)
     {
         try
         {

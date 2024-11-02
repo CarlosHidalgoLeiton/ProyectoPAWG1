@@ -6,21 +6,62 @@ using System.Threading.Tasks;
 using PAWG1.Models.EFModels;
 namespace PAWG1.Data.Repository;
 
-    public class ComponentRepository : RepositoryBase<Component>
+public interface IComponentRepository
 {
- 
+    Task<bool> DeleteComponentAsync(Component component);
+    Task<Component> GetComponentAsync(int id);
+    Task<IEnumerable<Component>> GetAllComponentsAsync();
+    Task<Component> SaveComponentAsync(Component component);
+}
 
-    public async Task<Component> SaveProductAsync(Component component)
+public class ComponentRepository : RepositoryBase<Component>, IComponentRepository
+{
+    public async Task<Component> SaveComponentAsync(Component component)
     {
-        var exists = component.IdComponent != null && component.IdComponent > 0;
-        if (exists)
+        var exist = await ExistComponent(component.IdComponent);
+
+        if (exist)
             await UpdateAsync(component);
         else
             await CreateAsync(component);
-        var updated = await ReadAsync();
-        return updated.SingleOrDefault(x => x.IdComponent == component.IdComponent)!;
+
+        var components = await ReadAsync();
+        return components.SingleOrDefault(c => c.IdComponent == component.IdComponent)!;
     }
 
+    public async Task<IEnumerable<Component>> GetAllComponentsAsync()
+    {
+        var components = await ReadAsync();
+
+        return components;
+    }
+
+    public async Task<Component> GetComponentAsync(int id)
+    {
+        var components = await ReadAsync();
+
+        return components.SingleOrDefault(c => c.IdComponent == id)!;
+    }
+
+    public async Task<bool> DeleteComponentAsync(Component component)
+    {
+        return await DeleteAsync(component);
+    }
+
+    private async Task<bool> ExistComponent(int? id)
+    {
+        if (id == null)
+            return false;
+
+        var components = await ReadAsync();
+
+        var component = components.FirstOrDefault(c => c.IdComponent == id);
+
+        if (component == default)
+            return true;
+
+        return false;
+    }
 }
     
     
