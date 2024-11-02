@@ -13,6 +13,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IComponentRepository, ComponentRepository>();
 builder.Services.AddScoped<IComponentService, ComponentService>();
 
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserService, UserService>();
+
 
 var app = builder.Build();
 

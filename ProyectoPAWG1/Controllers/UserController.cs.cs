@@ -10,7 +10,7 @@ using PAWG1.Architecture.Exceptions;
 
 namespace ProyectoPAWG1.Controllers
 {
-    public class ComponentController(IRestProvider restProvider, IOptions<AppSettings> appSettings) : Controller
+    public class UserController(IRestProvider restProvider, IOptions<AppSettings> appSettings) : Controller
     {
 
         private readonly IRestProvider _restProvider = restProvider;
@@ -36,19 +36,28 @@ namespace ProyectoPAWG1.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Username,Email,Size,Password,State")] CMP.User user)
+        public async Task<IActionResult> Create([Bind("TimeRefresh,TypeComponent,Size,ApiUrl,ApiKey,Descrip,Title,Color")] CMP.Component component, IFormFile Simbol)
         {
+            ModelState.Remove("Simbol");
 
             if (ModelState.IsValid)
             {
-             
-                var found = await _restProvider.PostAsync($"{_appSettings.Value.RestApi}/UserApi/save", JsonProvider.Serialize(user));
+                if (Simbol != null && Simbol.Length > 0)
+                {
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        await Simbol.CopyToAsync(memoryStream);
+                        component.Simbol = memoryStream.ToArray();
+                    }
+                }
+
+                var found = await _restProvider.PostAsync($"{_appSettings.Value.RestApi}/ComponentApi/save", JsonProvider.Serialize(component));
                 return (found != null)
                     ? RedirectToAction(nameof(Index))
-                    : View(Index);
+                    : View(component);
             }
 
-            return View(Index);
+            return View(component);
         }
     }
 }
