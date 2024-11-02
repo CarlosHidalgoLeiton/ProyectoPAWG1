@@ -36,7 +36,9 @@ namespace ProyectoPAWG1.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TimeRefresh,TypeComponent,Size,ApiUrl,ApiKey,Descrip,Title,Color")] CMP.Component component, IFormFile Simbol)
+        public async Task<IActionResult> Create([Bind("Username,Email,Size,Password,State")] CMP.Component component, IFormFile Simbol)
+
+          
         {
             ModelState.Remove("Simbol");
 
@@ -51,7 +53,7 @@ namespace ProyectoPAWG1.Controllers
                     }
                 }
 
-                var found = await _restProvider.PostAsync($"{_appSettings.Value.RestApi}/ComponentApi/save", JsonProvider.Serialize(component));
+                var found = await _restProvider.PostAsync($"{_appSettings.Value.RestApi}/UserApi/save", JsonProvider.Serialize(component));
                 return (found != null)
                     ? RedirectToAction(nameof(Index))
                     : View(component);

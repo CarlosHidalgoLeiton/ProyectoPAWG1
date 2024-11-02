@@ -7,6 +7,7 @@ using APWG1.Architecture;
 using Microsoft.Extensions.Options;
 using PAWG1.Mvc.Models;
 using PAWG1.Architecture.Exceptions;
+using System.Drawing;
 
 namespace ProyectoPAWG1.Controllers
 {
@@ -36,7 +37,7 @@ namespace ProyectoPAWG1.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Username,Email,Size,Password,State")] CMP.User user)
+        public async Task<IActionResult> Create([Bind("TimeRefresh, TypeComponent, Size, ApiUrl, ApiKey, Descrip, Title, Color")] CMP.User user)
         {
 
             if (ModelState.IsValid)
