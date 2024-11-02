@@ -20,11 +20,11 @@ namespace ProyectoPAWG1.Controllers
         [HttpGet]
         public async Task<IActionResult> Index() {
 
-            var data = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/ComponentApi/all", null);
+            var data = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/UserApi/all", null);
 
-            var components = JsonProvider.DeserializeSimple<IEnumerable<CMP.Component>>(data);
+            var users = JsonProvider.DeserializeSimple<IEnumerable<CMP.User>>(data);
 
-            return View(components);
+            return View(users);
         }
 
 
@@ -36,30 +36,22 @@ namespace ProyectoPAWG1.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Username,Email,Size,Password,State")] CMP.Component component, IFormFile Simbol)
+        public async Task<IActionResult> Create([Bind("Username,Email,Size,Password,State")] CMP.User user, IFormFile Simbol)
 
           
         {
-            ModelState.Remove("Simbol");
 
             if (ModelState.IsValid)
             {
-                if (Simbol != null && Simbol.Length > 0)
-                {
-                    using (var memoryStream = new MemoryStream())
-                    {
-                        await Simbol.CopyToAsync(memoryStream);
-                        component.Simbol = memoryStream.ToArray();
-                    }
-                }
+         
 
-                var found = await _restProvider.PostAsync($"{_appSettings.Value.RestApi}/UserApi/save", JsonProvider.Serialize(component));
+                var found = await _restProvider.PostAsync($"{_appSettings.Value.RestApi}/UserApi/save", JsonProvider.Serialize(user));
                 return (found != null)
                     ? RedirectToAction(nameof(Index))
-                    : View(component);
+                    : View(user);
             }
 
-            return View(component);
+            return View(user);
         }
     }
 }

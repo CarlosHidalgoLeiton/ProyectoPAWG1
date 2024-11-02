@@ -6,8 +6,8 @@ using CMP = PAWG1.Models.EFModels;
 using APWG1.Architecture;
 using Microsoft.Extensions.Options;
 using PAWG1.Mvc.Models;
+using Microsoft.EntityFrameworkCore;
 using PAWG1.Architecture.Exceptions;
-using System.Drawing;
 
 namespace ProyectoPAWG1.Controllers
 {
@@ -37,19 +37,28 @@ namespace ProyectoPAWG1.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TimeRefresh, TypeComponent, Size, ApiUrl, ApiKey, Descrip, Title, Color")] CMP.User user)
+        public async Task<IActionResult> Create([Bind("TimeRefresh,TypeComponent,Size,ApiUrl,ApiKey,Descrip,Title,Color")] CMP.Component component, IFormFile Simbol)
         {
+            ModelState.Remove("Simbol");
 
             if (ModelState.IsValid)
             {
-             
-                var found = await _restProvider.PostAsync($"{_appSettings.Value.RestApi}/UserApi/save", JsonProvider.Serialize(user));
+                if (Simbol != null && Simbol.Length > 0)
+                {
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        await Simbol.CopyToAsync(memoryStream);
+                        component.Simbol = memoryStream.ToArray();
+                    }
+                }
+
+                var found = await _restProvider.PostAsync($"{_appSettings.Value.RestApi}/ComponentApi/save", JsonProvider.Serialize(component));
                 return (found != null)
                     ? RedirectToAction(nameof(Index))
-                    : View(Index);
+                    : View(component);
             }
 
-            return View(Index);
+            return View(component);
         }
     }
 }
