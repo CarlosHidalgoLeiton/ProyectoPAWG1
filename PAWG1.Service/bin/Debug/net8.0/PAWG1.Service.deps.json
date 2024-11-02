@@ -1765,7 +1765,14 @@
           }
         }
       },
-      "System.Formats.Asn1/8.0.1": {},
+      "System.Formats.Asn1/8.0.1": {
+        "runtime": {
+          "lib/net8.0/System.Formats.Asn1.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.724.31311"
+          }
+        }
+      },
       "System.IdentityModel.Tokens.Jwt/6.35.0": {
         "dependencies": {
           "Microsoft.IdentityModel.JsonWebTokens": "6.35.0",
@@ -1928,10 +1935,7 @@
       },
       "PAWG1.Architecture/1.0.0": {
         "runtime": {
-          "PAWG1.Architecture.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "PAWG1.Architecture.dll": {}
         }
       },
       "PAWG1.Data/1.0.0": {
@@ -1941,10 +1945,7 @@
           "PAWG1.Models": "1.0.0"
         },
         "runtime": {
-          "PAWG1.Data.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "PAWG1.Data.dll": {}
         }
       },
       "PAWG1.Models/1.0.0": {
@@ -1957,10 +1958,7 @@
           "Swashbuckle.AspNetCore": "6.9.0"
         },
         "runtime": {
-          "PAWG1.Models.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "PAWG1.Models.dll": {}
         }
       }
     }
