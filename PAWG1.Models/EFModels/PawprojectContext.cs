@@ -29,7 +29,7 @@ public partial class PawprojectContext : DbContext
     {
         modelBuilder.Entity<Component>(entity =>
         {
-            entity.HasKey(e => e.IdComponent).HasName("PK__Componen__F186FE863E068CE4");
+            entity.HasKey(e => e.IdComponent).HasName("PK__Componen__F186FE86F407AD3B");
 
             entity.ToTable("Component");
 
@@ -50,7 +50,7 @@ public partial class PawprojectContext : DbContext
 
         modelBuilder.Entity<Role>(entity =>
         {
-            entity.HasKey(e => e.IdRole).HasName("PK__Role__43DCD32DCCC9A779");
+            entity.HasKey(e => e.IdRole).HasName("PK__Role__43DCD32D56B386F0");
 
             entity.ToTable("Role");
 
@@ -62,7 +62,7 @@ public partial class PawprojectContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.IdUser).HasName("PK__User__ED4DE4427BC2CF1E");
+            entity.HasKey(e => e.IdUser).HasName("PK__User__ED4DE442A1292B8C");
 
             entity.ToTable("User");
 
@@ -79,14 +79,14 @@ public partial class PawprojectContext : DbContext
                     r => r.HasOne<Role>().WithMany()
                         .HasForeignKey("IdRole")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__UserRole__ID_Rol__619B8048"),
+                        .HasConstraintName("FK__UserRole__ID_Rol__6EF57B66"),
                     l => l.HasOne<User>().WithMany()
                         .HasForeignKey("IdUser")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__UserRole__ID_Use__60A75C0F"),
+                        .HasConstraintName("FK__UserRole__ID_Use__6E01572D"),
                     j =>
                     {
-                        j.HasKey("IdUser", "IdRole").HasName("PK__UserRole__2970297035FBDDBE");
+                        j.HasKey("IdUser", "IdRole").HasName("PK__UserRole__29702970AE9A536B");
                         j.ToTable("UserRole");
                         j.IndexerProperty<int>("IdUser").HasColumnName("ID_User");
                         j.IndexerProperty<int>("IdRole").HasColumnName("ID_Role");
@@ -98,14 +98,14 @@ public partial class PawprojectContext : DbContext
                     r => r.HasOne<Component>().WithMany()
                         .HasForeignKey("WidgetId")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__Favorite__Widget__656C112C"),
+                        .HasConstraintName("FK__Favorite__Widget__72C60C4A"),
                     l => l.HasOne<User>().WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__Favorite__UserId__6477ECF3"),
+                        .HasConstraintName("FK__Favorite__UserId__71D1E811"),
                     j =>
                     {
-                        j.HasKey("UserId", "WidgetId").HasName("PK__Favorite__2D571F4D6B8E3A4B");
+                        j.HasKey("UserId", "WidgetId").HasName("PK__Favorite__2D571F4DED1D8A40");
                         j.ToTable("Favorite");
                     });
         });
