@@ -1,20 +1,81 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\PAWG1.Data\\PAWG1.Data.csproj": {}
+    "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\PAWG1.Data\\PAWG1.Data.csproj": {}
   },
   "projects": {
-    "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\PAWG1.Data\\PAWG1.Data.csproj": {
+    "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\PAWG1.Architecture\\PAWG1.Architecture.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\PAWG1.Data\\PAWG1.Data.csproj",
-        "projectName": "PAWG1.Data",
-        "projectPath": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\PAWG1.Data\\PAWG1.Data.csproj",
-        "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
-        "outputPath": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\PAWG1.Data\\obj\\",
+        "projectUniqueName": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\PAWG1.Architecture\\PAWG1.Architecture.csproj",
+        "projectName": "PAWG1.Architecture",
+        "projectPath": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\PAWG1.Architecture\\PAWG1.Architecture.csproj",
+        "packagesPath": "C:\\Users\\Kenne\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\PAWG1.Architecture\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Kenne\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\PAWG1.Data\\PAWG1.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\PAWG1.Data\\PAWG1.Data.csproj",
+        "projectName": "PAWG1.Data",
+        "projectPath": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\PAWG1.Data\\PAWG1.Data.csproj",
+        "packagesPath": "C:\\Users\\Kenne\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\PAWG1.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Kenne\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,8 +90,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\PAWG1.Models\\PAWG1.Models.csproj": {
-                "projectPath": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\PAWG1.Models\\PAWG1.Models.csproj"
+              "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\PAWG1.Architecture\\PAWG1.Architecture.csproj": {
+                "projectPath": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\PAWG1.Architecture\\PAWG1.Architecture.csproj"
+              },
+              "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\PAWG1.Models\\PAWG1.Models.csproj": {
+                "projectPath": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\PAWG1.Models\\PAWG1.Models.csproj"
               }
             }
           }
@@ -75,21 +139,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\PAWG1.Models\\PAWG1.Models.csproj": {
+    "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\PAWG1.Models\\PAWG1.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\PAWG1.Models\\PAWG1.Models.csproj",
+        "projectUniqueName": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\PAWG1.Models\\PAWG1.Models.csproj",
         "projectName": "PAWG1.Models",
-        "projectPath": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\PAWG1.Models\\PAWG1.Models.csproj",
-        "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
-        "outputPath": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\PAWG1.Models\\obj\\",
+        "projectPath": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\PAWG1.Models\\PAWG1.Models.csproj",
+        "packagesPath": "C:\\Users\\Kenne\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\PAWG1.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Kenne\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -178,7 +242,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

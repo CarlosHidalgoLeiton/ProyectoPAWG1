@@ -1,487 +1,487 @@
 {
   "Files": [
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\PAWG1.Mvc.bundle.scp.css",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\PAWG1.Mvc.bundle.scp.css",
       "PackagePath": "staticwebassets\\PAWG1.Mvc.bundle.scp.css"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\css\\nucleo-icons.css",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\css\\nucleo-icons.css",
       "PackagePath": "staticwebassets\\css\\nucleo-icons.css"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\css\\nucleo-svg.css",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\css\\nucleo-svg.css",
       "PackagePath": "staticwebassets\\css\\nucleo-svg.css"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\css\\soft-ui-dashboard.css",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\css\\soft-ui-dashboard.css",
       "PackagePath": "staticwebassets\\css\\soft-ui-dashboard.css"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\css\\soft-ui-dashboard.css.map",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\css\\soft-ui-dashboard.css.map",
       "PackagePath": "staticwebassets\\css\\soft-ui-dashboard.css.map"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\css\\soft-ui-dashboard.min.css",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\css\\soft-ui-dashboard.min.css",
       "PackagePath": "staticwebassets\\css\\soft-ui-dashboard.min.css"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\fonts\\nucleo-icons.eot",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\fonts\\nucleo-icons.eot",
       "PackagePath": "staticwebassets\\fonts\\nucleo-icons.eot"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\fonts\\nucleo-icons.svg",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\fonts\\nucleo-icons.svg",
       "PackagePath": "staticwebassets\\fonts\\nucleo-icons.svg"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\fonts\\nucleo-icons.ttf",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\fonts\\nucleo-icons.ttf",
       "PackagePath": "staticwebassets\\fonts\\nucleo-icons.ttf"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\fonts\\nucleo-icons.woff",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\fonts\\nucleo-icons.woff",
       "PackagePath": "staticwebassets\\fonts\\nucleo-icons.woff"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\fonts\\nucleo-icons.woff2",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\fonts\\nucleo-icons.woff2",
       "PackagePath": "staticwebassets\\fonts\\nucleo-icons.woff2"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\fonts\\nucleo.eot",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\fonts\\nucleo.eot",
       "PackagePath": "staticwebassets\\fonts\\nucleo.eot"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\fonts\\nucleo.ttf",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\fonts\\nucleo.ttf",
       "PackagePath": "staticwebassets\\fonts\\nucleo.ttf"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\fonts\\nucleo.woff",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\fonts\\nucleo.woff",
       "PackagePath": "staticwebassets\\fonts\\nucleo.woff"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\fonts\\nucleo.woff2",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\fonts\\nucleo.woff2",
       "PackagePath": "staticwebassets\\fonts\\nucleo.woff2"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\apple-icon.png",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\apple-icon.png",
       "PackagePath": "staticwebassets\\img\\apple-icon.png"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\bruce-mars.jpg",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\bruce-mars.jpg",
       "PackagePath": "staticwebassets\\img\\bruce-mars.jpg"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\curved-images\\curved0.jpg",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\curved-images\\curved0.jpg",
       "PackagePath": "staticwebassets\\img\\curved-images\\curved0.jpg"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\curved-images\\curved1.jpg",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\curved-images\\curved1.jpg",
       "PackagePath": "staticwebassets\\img\\curved-images\\curved1.jpg"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\curved-images\\curved14.jpg",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\curved-images\\curved14.jpg",
       "PackagePath": "staticwebassets\\img\\curved-images\\curved14.jpg"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\curved-images\\curved6.jpg",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\curved-images\\curved6.jpg",
       "PackagePath": "staticwebassets\\img\\curved-images\\curved6.jpg"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\curved-images\\curved8.jpg",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\curved-images\\curved8.jpg",
       "PackagePath": "staticwebassets\\img\\curved-images\\curved8.jpg"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\curved-images\\white-curved.jpeg",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\curved-images\\white-curved.jpeg",
       "PackagePath": "staticwebassets\\img\\curved-images\\white-curved.jpeg"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\down-arrow-dark.svg",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\down-arrow-dark.svg",
       "PackagePath": "staticwebassets\\img\\down-arrow-dark.svg"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\down-arrow.svg",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\down-arrow.svg",
       "PackagePath": "staticwebassets\\img\\down-arrow.svg"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\favicon.png",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\favicon.png",
       "PackagePath": "staticwebassets\\img\\favicon.png"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\home-decor-1.jpg",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\home-decor-1.jpg",
       "PackagePath": "staticwebassets\\img\\home-decor-1.jpg"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\home-decor-2.jpg",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\home-decor-2.jpg",
       "PackagePath": "staticwebassets\\img\\home-decor-2.jpg"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\home-decor-3.jpg",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\home-decor-3.jpg",
       "PackagePath": "staticwebassets\\img\\home-decor-3.jpg"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\illustrations\\rocket-white.png",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\illustrations\\rocket-white.png",
       "PackagePath": "staticwebassets\\img\\illustrations\\rocket-white.png"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\ivana-square.jpg",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\ivana-square.jpg",
       "PackagePath": "staticwebassets\\img\\ivana-square.jpg"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\ivancik.jpg",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\ivancik.jpg",
       "PackagePath": "staticwebassets\\img\\ivancik.jpg"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\kal-visuals-square.jpg",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\kal-visuals-square.jpg",
       "PackagePath": "staticwebassets\\img\\kal-visuals-square.jpg"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\logo-ct.png",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\logo-ct.png",
       "PackagePath": "staticwebassets\\img\\logo-ct.png"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\logos\\mastercard.png",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\logos\\mastercard.png",
       "PackagePath": "staticwebassets\\img\\logos\\mastercard.png"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\logos\\visa.png",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\logos\\visa.png",
       "PackagePath": "staticwebassets\\img\\logos\\visa.png"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\marie.jpg",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\marie.jpg",
       "PackagePath": "staticwebassets\\img\\marie.jpg"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\shapes\\waves-white.svg",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\shapes\\waves-white.svg",
       "PackagePath": "staticwebassets\\img\\shapes\\waves-white.svg"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\small-logos\\icon-sun-cloud.png",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\small-logos\\icon-sun-cloud.png",
       "PackagePath": "staticwebassets\\img\\small-logos\\icon-sun-cloud.png"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\small-logos\\logo-atlassian.svg",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\small-logos\\logo-atlassian.svg",
       "PackagePath": "staticwebassets\\img\\small-logos\\logo-atlassian.svg"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\small-logos\\logo-invision.svg",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\small-logos\\logo-invision.svg",
       "PackagePath": "staticwebassets\\img\\small-logos\\logo-invision.svg"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\small-logos\\logo-jira.svg",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\small-logos\\logo-jira.svg",
       "PackagePath": "staticwebassets\\img\\small-logos\\logo-jira.svg"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\small-logos\\logo-slack.svg",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\small-logos\\logo-slack.svg",
       "PackagePath": "staticwebassets\\img\\small-logos\\logo-slack.svg"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\small-logos\\logo-spotify.svg",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\small-logos\\logo-spotify.svg",
       "PackagePath": "staticwebassets\\img\\small-logos\\logo-spotify.svg"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\small-logos\\logo-webdev.svg",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\small-logos\\logo-webdev.svg",
       "PackagePath": "staticwebassets\\img\\small-logos\\logo-webdev.svg"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\small-logos\\logo-xd.svg",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\small-logos\\logo-xd.svg",
       "PackagePath": "staticwebassets\\img\\small-logos\\logo-xd.svg"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\team-1.jpg",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\team-1.jpg",
       "PackagePath": "staticwebassets\\img\\team-1.jpg"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\team-2.jpg",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\team-2.jpg",
       "PackagePath": "staticwebassets\\img\\team-2.jpg"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\team-3.jpg",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\team-3.jpg",
       "PackagePath": "staticwebassets\\img\\team-3.jpg"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\team-4.jpg",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\team-4.jpg",
       "PackagePath": "staticwebassets\\img\\team-4.jpg"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\img\\vr-bg.jpg",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\img\\vr-bg.jpg",
       "PackagePath": "staticwebassets\\img\\vr-bg.jpg"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\js\\core\\bootstrap.min.js",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\js\\core\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\js\\core\\bootstrap.min.js"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\js\\core\\popper.min.js",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\js\\core\\popper.min.js",
       "PackagePath": "staticwebassets\\js\\core\\popper.min.js"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\js\\plugins\\Chart.extension.js",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\js\\plugins\\Chart.extension.js",
       "PackagePath": "staticwebassets\\js\\plugins\\Chart.extension.js"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\js\\plugins\\bootstrap-notify.js",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\js\\plugins\\bootstrap-notify.js",
       "PackagePath": "staticwebassets\\js\\plugins\\bootstrap-notify.js"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\js\\plugins\\chartjs.min.js",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\js\\plugins\\chartjs.min.js",
       "PackagePath": "staticwebassets\\js\\plugins\\chartjs.min.js"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\js\\plugins\\choices.min.js",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\js\\plugins\\choices.min.js",
       "PackagePath": "staticwebassets\\js\\plugins\\choices.min.js"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\js\\plugins\\fullcalendar.min.js",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\js\\plugins\\fullcalendar.min.js",
       "PackagePath": "staticwebassets\\js\\plugins\\fullcalendar.min.js"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\js\\plugins\\perfect-scrollbar.min.js",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\js\\plugins\\perfect-scrollbar.min.js",
       "PackagePath": "staticwebassets\\js\\plugins\\perfect-scrollbar.min.js"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\js\\plugins\\smooth-scrollbar.min.js",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\js\\plugins\\smooth-scrollbar.min.js",
       "PackagePath": "staticwebassets\\js\\plugins\\smooth-scrollbar.min.js"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\js\\soft-ui-dashboard.js",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\js\\soft-ui-dashboard.js",
       "PackagePath": "staticwebassets\\js\\soft-ui-dashboard.js"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\js\\soft-ui-dashboard.js.map",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\js\\soft-ui-dashboard.js.map",
       "PackagePath": "staticwebassets\\js\\soft-ui-dashboard.js.map"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\js\\soft-ui-dashboard.min.js",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\js\\soft-ui-dashboard.min.js",
       "PackagePath": "staticwebassets\\js\\soft-ui-dashboard.min.js"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\ProyectoPAWG1\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\ProyectoPAWG1\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

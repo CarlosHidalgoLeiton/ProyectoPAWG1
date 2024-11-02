@@ -10,7 +10,7 @@ public partial class Component
     public int TimeRefresh { get; set; }
 
     public string TypeComponent { get; set; } = null!;
-
+    0
     public int Size { get; set; }
 
     public string ApiUrl { get; set; } = null!;

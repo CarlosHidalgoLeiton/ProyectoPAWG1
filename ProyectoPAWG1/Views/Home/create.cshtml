@@ -1,0 +1,86 @@
+﻿@model PAWG1.Models.EFModels.Component
+
+<h1>Create Component</h1>
+
+<h4>Component</h4>
+<hr />
+<form asp-action="Create" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descrip" class="control-label"></label>
+                <input asp-for="Descrip" class="form-control" />
+                <span asp-validation-for="Descrip" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeRefresh" class="control-label"></label>
+                <input asp-for="TimeRefresh" class="form-control" />
+                <span asp-validation-for="TimeRefresh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TypeComponent" class="control-label"></label>
+                <input asp-for="TypeComponent" class="form-control" />
+                <span asp-validation-for="TypeComponent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Size" class="control-label"></label>
+                <input asp-for="Size" class="form-control" />
+                <span asp-validation-for="Size" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApiUrl" class="control-label"></label>
+                <input asp-for="ApiUrl" class="form-control" />
+                <span asp-validation-for="ApiUrl" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="ApiKey" class="control-label"></label>
+                <input asp-for="ApiKey" class="form-control" />
+                <span asp-validation-for="ApiKey" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>
+                <input asp-for="UserId" class="form-control" />
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreateDate" class="control-label"></label>
+                <input asp-for="CreateDate" class="form-control" type="date" />
+                <span asp-validation-for="CreateDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UpdateDate" class="control-label"></label>
+                <input asp-for="UpdateDate" class="form-control" type="date" />
+                <span asp-validation-for="UpdateDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Color" class="control-label"></label>
+                <input asp-for="Color" class="form-control" />
+                <span asp-validation-for="Color" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Simbol" class="control-label"></label>
+                <input asp-for="Simbol" class="form-control" type="file" />
+                <span asp-validation-for="Simbol" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-12 text-center">
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a href="../Views/Home/Index.cshtml">Back to List</a>
+</div>

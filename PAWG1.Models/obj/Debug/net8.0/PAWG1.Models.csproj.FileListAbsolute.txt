@@ -13,3 +13,18 @@ D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\Pro
 D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Models\obj\Debug\net8.0\PAWG1.Models.pdb
 D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Models\obj\Debug\net8.0\PAWG1.Models.genruntimeconfig.cache
 D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Models\obj\Debug\net8.0\ref\PAWG1.Models.dll
+C:\Users\Kenne\Documents\Documentos kenneth\kenneth\7.5 Cuatrimestre\Proyecto avanzada web\Proyecto\PAWG1.Models\bin\Debug\net8.0\PAWG1.Models.deps.json
+C:\Users\Kenne\Documents\Documentos kenneth\kenneth\7.5 Cuatrimestre\Proyecto avanzada web\Proyecto\PAWG1.Models\bin\Debug\net8.0\PAWG1.Models.runtimeconfig.json
+C:\Users\Kenne\Documents\Documentos kenneth\kenneth\7.5 Cuatrimestre\Proyecto avanzada web\Proyecto\PAWG1.Models\bin\Debug\net8.0\PAWG1.Models.dll
+C:\Users\Kenne\Documents\Documentos kenneth\kenneth\7.5 Cuatrimestre\Proyecto avanzada web\Proyecto\PAWG1.Models\bin\Debug\net8.0\PAWG1.Models.pdb
+C:\Users\Kenne\Documents\Documentos kenneth\kenneth\7.5 Cuatrimestre\Proyecto avanzada web\Proyecto\PAWG1.Models\obj\Debug\net8.0\PAWG1.Models.csproj.AssemblyReference.cache
+C:\Users\Kenne\Documents\Documentos kenneth\kenneth\7.5 Cuatrimestre\Proyecto avanzada web\Proyecto\PAWG1.Models\obj\Debug\net8.0\PAWG1.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kenne\Documents\Documentos kenneth\kenneth\7.5 Cuatrimestre\Proyecto avanzada web\Proyecto\PAWG1.Models\obj\Debug\net8.0\PAWG1.Models.AssemblyInfoInputs.cache
+C:\Users\Kenne\Documents\Documentos kenneth\kenneth\7.5 Cuatrimestre\Proyecto avanzada web\Proyecto\PAWG1.Models\obj\Debug\net8.0\PAWG1.Models.AssemblyInfo.cs
+C:\Users\Kenne\Documents\Documentos kenneth\kenneth\7.5 Cuatrimestre\Proyecto avanzada web\Proyecto\PAWG1.Models\obj\Debug\net8.0\PAWG1.Models.csproj.CoreCompileInputs.cache
+C:\Users\Kenne\Documents\Documentos kenneth\kenneth\7.5 Cuatrimestre\Proyecto avanzada web\Proyecto\PAWG1.Models\obj\Debug\net8.0\PAWG1.Models.sourcelink.json
+C:\Users\Kenne\Documents\Documentos kenneth\kenneth\7.5 Cuatrimestre\Proyecto avanzada web\Proyecto\PAWG1.Models\obj\Debug\net8.0\PAWG1.Models.dll
+C:\Users\Kenne\Documents\Documentos kenneth\kenneth\7.5 Cuatrimestre\Proyecto avanzada web\Proyecto\PAWG1.Models\obj\Debug\net8.0\refint\PAWG1.Models.dll
+C:\Users\Kenne\Documents\Documentos kenneth\kenneth\7.5 Cuatrimestre\Proyecto avanzada web\Proyecto\PAWG1.Models\obj\Debug\net8.0\PAWG1.Models.pdb
+C:\Users\Kenne\Documents\Documentos kenneth\kenneth\7.5 Cuatrimestre\Proyecto avanzada web\Proyecto\PAWG1.Models\obj\Debug\net8.0\PAWG1.Models.genruntimeconfig.cache
+C:\Users\Kenne\Documents\Documentos kenneth\kenneth\7.5 Cuatrimestre\Proyecto avanzada web\Proyecto\PAWG1.Models\obj\Debug\net8.0\ref\PAWG1.Models.dll

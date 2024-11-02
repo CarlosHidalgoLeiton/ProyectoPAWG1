@@ -3263,6 +3263,32 @@
           }
         }
       },
+      "PAWG1.Architecture/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/PAWG1.Architecture.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PAWG1.Architecture.dll": {}
+        }
+      },
+      "PAWG1.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity": "2.2.0",
+          "Microsoft.EntityFrameworkCore": "8.0.10",
+          "PAWG1.Architecture": "1.0.0",
+          "PAWG1.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PAWG1.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PAWG1.Data.dll": {}
+        }
+      },
       "PAWG1.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -3280,6 +3306,20 @@
         },
         "runtime": {
           "bin/placeholder/PAWG1.Models.dll": {}
+        }
+      },
+      "PAWG1.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "PAWG1.Data": "1.0.0",
+          "PAWG1.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PAWG1.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PAWG1.Service.dll": {}
         }
       }
     }
@@ -9035,33 +9075,49 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "PAWG1.Architecture/1.0.0": {
+      "type": "project",
+      "path": "../PAWG1.Architecture/PAWG1.Architecture.csproj",
+      "msbuildProject": "../PAWG1.Architecture/PAWG1.Architecture.csproj"
+    },
+    "PAWG1.Data/1.0.0": {
+      "type": "project",
+      "path": "../PAWG1.Data/PAWG1.Data.csproj",
+      "msbuildProject": "../PAWG1.Data/PAWG1.Data.csproj"
+    },
     "PAWG1.Models/1.0.0": {
       "type": "project",
       "path": "../PAWG1.Models/PAWG1.Models.csproj",
       "msbuildProject": "../PAWG1.Models/PAWG1.Models.csproj"
+    },
+    "PAWG1.Service/1.0.0": {
+      "type": "project",
+      "path": "../PAWG1.Service/PAWG1.Service.csproj",
+      "msbuildProject": "../PAWG1.Service/PAWG1.Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "Microsoft.EntityFrameworkCore.Design >= 8.0.10",
-      "PAWG1.Models >= 1.0.0",
+      "PAWG1.Data >= 1.0.0",
+      "PAWG1.Service >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.9.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\carlo\\.nuget\\packages\\": {}
+    "C:\\Users\\Kenne\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\PAWG1.Api\\PAWG1.Api.csproj",
+      "projectUniqueName": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\PAWG1.Api\\PAWG1.Api.csproj",
       "projectName": "PAWG1.Api",
-      "projectPath": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\PAWG1.Api\\PAWG1.Api.csproj",
-      "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
-      "outputPath": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\PAWG1.Api\\obj\\",
+      "projectPath": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\PAWG1.Api\\PAWG1.Api.csproj",
+      "packagesPath": "C:\\Users\\Kenne\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\PAWG1.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Kenne\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9076,8 +9132,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\PAWG1.Models\\PAWG1.Models.csproj": {
-              "projectPath": "D:\\Universidad\\Universidad_8_Cuatrimestre\\Programacion_Avanzada_Web\\Proyecto\\ProyectoPAWG1\\PAWG1.Models\\PAWG1.Models.csproj"
+            "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\PAWG1.Data\\PAWG1.Data.csproj": {
+              "projectPath": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\PAWG1.Data\\PAWG1.Data.csproj"
+            },
+            "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\PAWG1.Service\\PAWG1.Service.csproj": {
+              "projectPath": "C:\\Users\\Kenne\\Documents\\Documentos kenneth\\kenneth\\7.5 Cuatrimestre\\Proyecto avanzada web\\Proyecto\\PAWG1.Service\\PAWG1.Service.csproj"
             }
           }
         }
@@ -9127,7 +9186,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

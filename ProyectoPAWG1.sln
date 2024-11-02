@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PAWG1.Models", "PAWG1.Model
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PAWG1.Data", "PAWG1.Data\PAWG1.Data.csproj", "{7A87A7DD-E4B0-4CC2-A737-3B629DE60059}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAWG1.Api", "PAWG1.Api\PAWG1.Api.csproj", "{099A7DEC-0E8F-455F-83AB-BBE818022C83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PAWG1.Api", "PAWG1.Api\PAWG1.Api.csproj", "{099A7DEC-0E8F-455F-83AB-BBE818022C83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAWG1.Architecture", "PAWG1.Architecture\PAWG1.Architecture.csproj", "{F6AA361B-129A-419E-9C81-55E0213B8933}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAWG1.Service", "PAWG1.Service\PAWG1.Service.csproj", "{71112794-B76B-488C-B36D-7B0F493C64D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{099A7DEC-0E8F-455F-83AB-BBE818022C83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{099A7DEC-0E8F-455F-83AB-BBE818022C83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{099A7DEC-0E8F-455F-83AB-BBE818022C83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6AA361B-129A-419E-9C81-55E0213B8933}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6AA361B-129A-419E-9C81-55E0213B8933}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6AA361B-129A-419E-9C81-55E0213B8933}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6AA361B-129A-419E-9C81-55E0213B8933}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71112794-B76B-488C-B36D-7B0F493C64D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71112794-B76B-488C-B36D-7B0F493C64D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71112794-B76B-488C-B36D-7B0F493C64D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71112794-B76B-488C-B36D-7B0F493C64D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
