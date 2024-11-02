@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace PAWG1.Models.EFModels;
 
@@ -7,10 +8,12 @@ public partial class Component
 {
     public int IdComponent { get; set; }
 
+    [Range(1, int.MaxValue, ErrorMessage = "TimeRefresh might be a positive number.")]
     public int TimeRefresh { get; set; }
 
     public string TypeComponent { get; set; } = null!;
 
+    [Range(1, int.MaxValue, ErrorMessage = "TimeRefresh might be a positive number.")]
     public int Size { get; set; }
 
     public string ApiUrl { get; set; } = null!;
