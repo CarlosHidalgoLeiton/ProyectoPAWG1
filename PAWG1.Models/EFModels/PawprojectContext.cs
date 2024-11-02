@@ -20,9 +20,6 @@ public partial class PawprojectContext : DbContext
     public virtual DbSet<Role> Roles { get; set; }
 
     public virtual DbSet<User> Users { get; set; }
-    public virtual DbSet<Favorite> Favorites { get; set; }
-
-    public virtual DbSet<UserRole> UserRoles { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
@@ -112,24 +109,6 @@ public partial class PawprojectContext : DbContext
                         j.ToTable("Favorite");
                     });
         });
-
-        modelBuilder.Entity<Favorite>(entity =>
-        {
-            entity.HasKey(e => new { e.UserId, e.WidgetId }).HasName("PK__Favorite__2D571F4D6B8E3A4B");
-
-            entity.ToTable("Favorite");
-        });
-
-        modelBuilder.Entity<UserRole>(entity =>
-        {
-            entity.HasKey(e => new { e.IdUser, e.IdRole }).HasName("PK__UserRole__2970297035FBDDBE");
-
-            entity.ToTable("UserRole");
-
-            entity.Property(e => e.IdUser).HasColumnName("ID_User");
-            entity.Property(e => e.IdRole).HasColumnName("ID_Role");
-        });
-
 
         OnModelCreatingPartial(modelBuilder);
     }
