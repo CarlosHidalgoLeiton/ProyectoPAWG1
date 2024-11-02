@@ -26,6 +26,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\ProyectoPAWG1
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/Universidad/Universidad_8_Cuatrimestre/Programacion_Avanzada_Web/Proyecto/ProyectoPAWG1/ProyectoPAWG1/Views/Component/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcG9uZW50XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Universidad/Universidad_8_Cuatrimestre/Programacion_Avanzada_Web/Proyecto/ProyectoPAWG1/ProyectoPAWG1/Views/Home/create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxjcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

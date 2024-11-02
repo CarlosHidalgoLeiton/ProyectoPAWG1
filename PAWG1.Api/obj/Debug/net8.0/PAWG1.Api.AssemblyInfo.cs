@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PAWG1.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7ca0b05becf8d6d69cd72bdc33cbd96d670b4908")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d9a4d0c3faf5d1e6c485f57c3ad52284a22e6bd1")]
 [assembly: System.Reflection.AssemblyProductAttribute("PAWG1.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PAWG1.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
