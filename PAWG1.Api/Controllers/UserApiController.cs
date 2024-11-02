@@ -16,37 +16,37 @@ public class UserApiController : Controller
     /// <summary>
     /// 
     /// </summary>
-    /// <param name="componentService"></param>
+    /// <param name="userService"></param>
     public UserApiController(IUserService userService)
     {
-        _componentService = productService;
+        _userService = userService;
     }
 
-    [HttpPost("save", Name = "SaveComponent")]
-    public async Task<CMP.Component> Save([FromBody] CMP.Component Component)
+    [HttpPost("save", Name = "SaveUser")]
+    public async Task<CMP.User> Save([FromBody] CMP.User User)
     {
-        return await _componentService.SaveComponentAsync(Component);
+        return await _userService.SaveUserAsync(User);
     }
 
-    [HttpPost("{id}", Name = "UpdateComponent")]
-    public async Task<CMP.Component> Update([FromBody] CMP.Component Component)
+    [HttpPost("{id}", Name = "UpdateUser")]
+    public async Task<CMP.User> Update([FromBody] CMP.User User)
     {
-        return await _componentService.SaveComponentAsync(Component);
+        return await _userService.SaveUserAsync(User);
     }
 
-    [HttpGet("{id}", Name = "GetComponent")]
-    public async Task<CMP.Component> Get(int id) {
-        return await _componentService.GetComponentAsync(id);
+    [HttpGet("{id}", Name = "GetUser")]
+    public async Task<CMP.User> Get(int id) {
+        return await _userService.GetUserAsync(id);
     }
 
-    [HttpGet("all", Name = "GetAllComponents")]
-    public async Task<IEnumerable<CMP.Component>> GetAll() {
-        return await _componentService.GetAllComponentsAsync();
+    [HttpGet("all", Name = "GetAllUsers")]
+    public async Task<IEnumerable<CMP.User>> GetAll() {
+        return await _userService.GetAllUsersAsync();
     }
 
-    [HttpDelete("{id}", Name = "DeleteComponent")]
+    [HttpDelete("{id}", Name = "DeleteUser")]
     public async Task<bool> Delete(int id) {
-        return await _componentService.DeleteComponentAsync(id);
+        return await _userService.DeleteUserAsync(id);
     }
 
 
