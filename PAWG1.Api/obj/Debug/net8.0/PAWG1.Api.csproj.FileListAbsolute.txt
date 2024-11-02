@@ -526,3 +526,4 @@ D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\Pro
 D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Api\bin\Debug\net8.0\PAWG1.Data.pdb
 D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Api\bin\Debug\net8.0\PAWG1.Service.pdb
 D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Api\bin\Debug\net8.0\PAWG1.Architecture.pdb
+D:\Universidad\Universidad_8_Cuatrimestre\Programacion_Avanzada_Web\Proyecto\ProyectoPAWG1\PAWG1.Api\obj\Debug\net8.0\PAWG1.Api.MvcApplicationPartsAssemblyInfo.cs

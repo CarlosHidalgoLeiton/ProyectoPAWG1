@@ -17,7 +17,12 @@ public partial class PawprojectContext : DbContext
 
     public virtual DbSet<Component> Components { get; set; }
 
+    public virtual DbSet<Role> Roles { get; set; }
+
     public virtual DbSet<User> Users { get; set; }
+    public virtual DbSet<Favorite> Favorites { get; set; }
+
+    public virtual DbSet<UserRole> UserRoles { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
@@ -46,21 +51,49 @@ public partial class PawprojectContext : DbContext
                 .IsUnicode(false);
         });
 
+        modelBuilder.Entity<Role>(entity =>
+        {
+            entity.HasKey(e => e.IdRole).HasName("PK__Role__43DCD32DCCC9A779");
+
+            entity.ToTable("Role");
+
+            entity.Property(e => e.IdRole).HasColumnName("ID_Role");
+            entity.Property(e => e.Name)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+        });
+
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.UserId).HasName("PK__User__1788CC4C780A7E13");
+            entity.HasKey(e => e.IdUser).HasName("PK__User__ED4DE4427BC2CF1E");
 
             entity.ToTable("User");
 
-            entity.HasIndex(e => e.Email, "UQ__User__A9D1053433F670A7").IsUnique();
-
+            entity.Property(e => e.IdUser).HasColumnName("ID_User");
             entity.Property(e => e.Email)
-                .HasMaxLength(150)
+                .HasMaxLength(100)
                 .IsUnicode(false);
-            entity.Property(e => e.LastName).IsUnicode(false);
-            entity.Property(e => e.PasswordHash).IsUnicode(false);
-            entity.Property(e => e.Role).IsUnicode(false);
-            entity.Property(e => e.UserName).IsUnicode(false);
+            entity.Property(e => e.Password).IsUnicode(false);
+            entity.Property(e => e.Username).IsUnicode(false);
+
+            entity.HasMany(d => d.IdRoles).WithMany(p => p.IdUsers)
+                .UsingEntity<Dictionary<string, object>>(
+                    "UserRole",
+                    r => r.HasOne<Role>().WithMany()
+                        .HasForeignKey("IdRole")
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("FK__UserRole__ID_Rol__619B8048"),
+                    l => l.HasOne<User>().WithMany()
+                        .HasForeignKey("IdUser")
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("FK__UserRole__ID_Use__60A75C0F"),
+                    j =>
+                    {
+                        j.HasKey("IdUser", "IdRole").HasName("PK__UserRole__2970297035FBDDBE");
+                        j.ToTable("UserRole");
+                        j.IndexerProperty<int>("IdUser").HasColumnName("ID_User");
+                        j.IndexerProperty<int>("IdRole").HasColumnName("ID_Role");
+                    });
 
             entity.HasMany(d => d.Widgets).WithMany(p => p.Users)
                 .UsingEntity<Dictionary<string, object>>(
@@ -68,17 +101,35 @@ public partial class PawprojectContext : DbContext
                     r => r.HasOne<Component>().WithMany()
                         .HasForeignKey("WidgetId")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__Favorite__Widget__534D60F1"),
+                        .HasConstraintName("FK__Favorite__Widget__656C112C"),
                     l => l.HasOne<User>().WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__Favorite__UserId__52593CB8"),
+                        .HasConstraintName("FK__Favorite__UserId__6477ECF3"),
                     j =>
                     {
-                        j.HasKey("UserId", "WidgetId").HasName("PK__Favorite__2D571F4D5CFE8791");
+                        j.HasKey("UserId", "WidgetId").HasName("PK__Favorite__2D571F4D6B8E3A4B");
                         j.ToTable("Favorite");
                     });
         });
+
+        modelBuilder.Entity<Favorite>(entity =>
+        {
+            entity.HasKey(e => new { e.UserId, e.WidgetId }).HasName("PK__Favorite__2D571F4D6B8E3A4B");
+
+            entity.ToTable("Favorite");
+        });
+
+        modelBuilder.Entity<UserRole>(entity =>
+        {
+            entity.HasKey(e => new { e.IdUser, e.IdRole }).HasName("PK__UserRole__2970297035FBDDBE");
+
+            entity.ToTable("UserRole");
+
+            entity.Property(e => e.IdUser).HasColumnName("ID_User");
+            entity.Property(e => e.IdRole).HasColumnName("ID_Role");
+        });
+
 
         OnModelCreatingPartial(modelBuilder);
     }
