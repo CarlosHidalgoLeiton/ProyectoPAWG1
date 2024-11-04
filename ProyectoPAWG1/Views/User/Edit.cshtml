@@ -1,10 +1,12 @@
 ﻿@model PAWG1.Models.EFModels.User
 
-<h1>Update User</h1>
+<h1>Edit User</h1>
 
 <h4>User</h4>
 <hr />
-<form asp-controller="User" asp-action="Update">
+<form asp-controller="User" asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="IdUser" />
     <div class="form-group">
         <label asp-for="Username" class="control-label"></label>
         <input asp-for="Username" class="form-control" />
@@ -28,7 +30,7 @@
 
     <br />
     <div class="form-group text-center">
-        <input type="submit" value="Create" class="btn btn-primary" />
+        <input type="submit" value="Save" class="btn btn-primary" />
     </div>
 </form>
 
