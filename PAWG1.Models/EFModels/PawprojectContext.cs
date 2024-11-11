@@ -29,7 +29,7 @@ public partial class PawprojectContext : DbContext
     {
         modelBuilder.Entity<Component>(entity =>
         {
-            entity.HasKey(e => e.IdComponent).HasName("PK__Componen__F186FE86F407AD3B");
+            entity.HasKey(e => e.IdComponent).HasName("PK__Componen__F186FE86B623B361");
 
             entity.ToTable("Component");
 
@@ -98,14 +98,14 @@ public partial class PawprojectContext : DbContext
                     r => r.HasOne<Component>().WithMany()
                         .HasForeignKey("WidgetId")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__Favorite__Widget__72C60C4A"),
+                        .HasConstraintName("FK__Favorite__Widget__14270015"),
                     l => l.HasOne<User>().WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__Favorite__UserId__71D1E811"),
+                        .HasConstraintName("FK__Favorite__UserId__1332DBDC"),
                     j =>
                     {
-                        j.HasKey("UserId", "WidgetId").HasName("PK__Favorite__2D571F4DED1D8A40");
+                        j.HasKey("UserId", "WidgetId").HasName("PK__Favorite__2D571F4D9BE35C86");
                         j.ToTable("Favorite");
                     });
         });

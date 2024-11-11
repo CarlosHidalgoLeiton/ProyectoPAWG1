@@ -18,7 +18,7 @@ public class ComponentRepository : RepositoryBase<Component>, IComponentReposito
 {
     public async Task<Component> SaveComponentAsync(Component component)
     {
-        var exist = await ExistComponent(component.IdComponent);
+        var exist = component.IdComponent != null && component.IdComponent > 0;
 
         if (exist)
             await UpdateAsync(component);
@@ -46,21 +46,6 @@ public class ComponentRepository : RepositoryBase<Component>, IComponentReposito
     public async Task<bool> DeleteComponentAsync(Component component)
     {
         return await DeleteAsync(component);
-    }
-
-    private async Task<bool> ExistComponent(int? id)
-    {
-        if (id == null)
-            return false;
-
-        var components = await ReadAsync();
-
-        var component = components.FirstOrDefault(c => c.IdComponent == id);
-
-        if (component == default)
-            return true;
-
-        return false;
     }
 }
     

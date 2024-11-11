@@ -31,6 +31,8 @@ public partial class Component
 
     public byte[] Simbol { get; set; } = null!;
 
+    public string? Data { get; set; }
+
     public bool State { get; set; }
 
     public virtual ICollection<User> Users { get; set; } = new List<User>();

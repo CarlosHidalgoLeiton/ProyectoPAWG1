@@ -23,15 +23,15 @@ public class ComponentApiController : Controller
     }
 
     [HttpPost("save", Name = "SaveComponent")]
-    public async Task<CMP.Component> Save([FromBody] CMP.Component Component)
+    public async Task<CMP.Component> Save([FromBody] CMP.Component component)
     {
-        return await _componentService.SaveComponentAsync(Component);
+        return await _componentService.SaveComponentAsync(component);
     }
 
-    [HttpPost("{id}", Name = "UpdateComponent")]
-    public async Task<CMP.Component> Update([FromBody] CMP.Component Component)
+    [HttpPut("{id}", Name = "UpdateComponent")]
+    public async Task<CMP.Component> Update([FromBody] CMP.Component component)
     {
-        return await _componentService.SaveComponentAsync(Component);
+        return await _componentService.SaveComponentAsync(component);
     }
 
     [HttpGet("{id}", Name = "GetComponent")]

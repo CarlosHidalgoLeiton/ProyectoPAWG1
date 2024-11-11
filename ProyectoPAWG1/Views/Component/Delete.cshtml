@@ -1,0 +1,25 @@
+﻿@model PAWG1.Models.EFModels.Component;
+
+<h1>Delete Component</h1>
+
+<h4>Component</h4>
+<hr />
+
+<div class="d-flex justify-content-center">
+    <div class="row">
+        <div class="col-md-12">
+            <h4>Are you sure about delete this component?</h4>
+            <h5>Component</h5>
+            <hr />
+
+            <p>Title: @Model.Title</p>
+            <p>Description: @Model.Descrip</p>
+        </div>
+        <div class="col-md-12">
+            <form asp-action="DeleteConfirmed" asp-route-id="@Model.IdComponent">
+                <a asp-action="Index" class="btn btn-secondary">Go Back</a>
+                <button type="submit" class="btn btn-primary">Confirm</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -17,7 +17,6 @@ namespace ProyectoPAWG1.Controllers
         private readonly IRestProvider _restProvider = restProvider;
         private readonly IOptions<AppSettings> _appSettings = appSettings;
 
-
         [HttpGet]
         public async Task<IActionResult> Index() {
 
@@ -37,7 +36,7 @@ namespace ProyectoPAWG1.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TimeRefresh,TypeComponent,Size,ApiUrl,ApiKey,Descrip,Title,Color")] CMP.Component component, IFormFile Simbol)
+        public async Task<IActionResult> Create([Bind("TimeRefresh,TypeComponent,Size,ApiUrl,ApiKey,Descrip,Title,Color,State")] CMP.Component component, IFormFile Simbol)
         {
             ModelState.Remove("Simbol");
 
@@ -52,6 +51,8 @@ namespace ProyectoPAWG1.Controllers
                     }
                 }
 
+                component.UserId = 1;
+
                 var found = await _restProvider.PostAsync($"{_appSettings.Value.RestApi}/ComponentApi/save", JsonProvider.Serialize(component));
                 return (found != null)
                     ? RedirectToAction(nameof(Index))
@@ -59,6 +60,108 @@ namespace ProyectoPAWG1.Controllers
             }
 
             return View(component);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Details(int id) 
+        {
+            if (id == null)
+                return NotFound();
+
+            var component = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/ComponentApi/{id}", $"{id}");
+
+            if (component == null)
+                return NotFound();
+            
+            return View(JsonProvider.DeserializeSimple<CMP.Component>(component));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id) {
+            if (id == null)
+                return NotFound();
+
+            var component = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/ComponentApi/{id}", $"{id}");
+
+            if (component == null)
+                return NotFound();
+
+            return View(JsonProvider.DeserializeSimple<CMP.Component>(component));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, [Bind("IdComponent,TimeRefresh,TypeComponent,Size,ApiUrl,ApiKey,Descrip,Title,Color,State")] CMP.Component component, IFormFile Simbol)
+        {
+            if (id == null)
+                return NotFound();
+
+            ModelState.Remove("Simbol");
+
+            CMP.Component updated = default;
+            if (ModelState.IsValid)
+            {
+                try
+                {
+
+                    if (Simbol != null && Simbol.Length > 0)
+                    {
+                        using (var memoryStream = new MemoryStream())
+                        {
+                            await Simbol.CopyToAsync(memoryStream);
+                            component.Simbol = memoryStream.ToArray();
+                        }
+                    }
+                    else 
+                    {
+                        var get = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/ComponentApi/{id}", $"{id}");
+                        var getComponent = JsonProvider.DeserializeSimple<CMP.Component>(get);
+
+                        if (getComponent == null)
+                            return NotFound();
+                        component.Simbol = getComponent.Simbol;
+                    }
+
+                    component.UserId = 1;
+
+                    var found = await _restProvider.PutAsync($"{_appSettings.Value.RestApi}/ComponentApi/{id}", $"{id}", JsonProvider.Serialize(component));
+
+                    if (found == null)
+                        return NotFound();
+
+                    updated = JsonProvider.DeserializeSimple<CMP.Component>(found);
+                }
+                catch (DbUpdateConcurrencyException ducex) {
+                    return NotFound();
+                }
+
+                return RedirectToAction(nameof(Index));
+            }
+            return View(updated);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id) 
+        { 
+            if (id == null)
+                return NotFound();
+
+            var component = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/ComponentApi/{id}", $"{id}");
+
+            if (component == null)
+                return NotFound();
+
+            return View(JsonProvider.DeserializeSimple<CMP.Component>(component));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            if (id == null)
+                return NotFound();
+
+            var component = await _restProvider.DeleteAsync($"{_appSettings.Value.RestApi}/ComponentApi/{id}", $"{id}");
+
+            return (component == null) ? NotFound() : RedirectToAction(nameof(Index));        
         }
     }
 }

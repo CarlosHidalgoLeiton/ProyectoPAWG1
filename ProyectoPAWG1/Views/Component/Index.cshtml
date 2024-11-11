@@ -1,0 +1,33 @@
+﻿@model IEnumerable<PAWG1.Models.EFModels.Component>
+
+
+<table id="myTable" class="display">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Create Date</th>
+            <th>State</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model){
+            <tr>
+                <td>@c.Title</td>
+                <td>@c.CreateDate</td>
+                <td>@c.State</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@c.IdComponent" class="btn btn-success">
+                        <i class="fa-solid fa-pen"></i>
+                    </a>
+                    <a asp-action="Details" asp-route-id="@c.IdComponent" class="btn btn-info">
+                        <i class="fa-solid fa-eye"></i>
+                    </a>
+                    <a asp-action="Delete" asp-route-id="@c.IdComponent" class="btn btn-danger">
+                        <i class="fa-solid fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
