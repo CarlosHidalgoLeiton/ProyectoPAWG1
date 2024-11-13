@@ -37,9 +37,7 @@ namespace ProyectoPAWG1.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Username,Email,Password,State")] CMP.User user)
-
-          
+        public async Task<IActionResult> Create([Bind("Username,Email,Password,State,IdRole")] CMP.User user)
         {
 
             if (ModelState.IsValid)
@@ -73,7 +71,7 @@ namespace ProyectoPAWG1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdUser,Username,Email,Password,State")] CMP.User user)
+        public async Task<IActionResult> Edit(int id, [Bind("IdUser,Username,Email,Password,State,IdRole")] CMP.User user)
         {
             if (user == null || id != user.IdUser)
                 return NotFound();

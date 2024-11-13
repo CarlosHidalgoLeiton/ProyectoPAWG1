@@ -15,7 +15,9 @@ public partial class User
 
     public bool State { get; set; }
 
-    public virtual ICollection<Role> IdRoles { get; set; } = new List<Role>();
+    public int IdRole { get; set; }
+
+    public virtual Role IdRoleNavigation { get; set; } = null!;
 
     public virtual ICollection<Component> Widgets { get; set; } = new List<Component>();
 }

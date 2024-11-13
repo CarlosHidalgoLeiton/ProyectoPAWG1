@@ -29,7 +29,7 @@ public partial class PawprojectContext : DbContext
     {
         modelBuilder.Entity<Component>(entity =>
         {
-            entity.HasKey(e => e.IdComponent).HasName("PK__Componen__F186FE86B623B361");
+            entity.HasKey(e => e.IdComponent).HasName("PK__Componen__F186FE86EDBDC6C7");
 
             entity.ToTable("Component");
 
@@ -50,7 +50,7 @@ public partial class PawprojectContext : DbContext
 
         modelBuilder.Entity<Role>(entity =>
         {
-            entity.HasKey(e => e.IdRole).HasName("PK__Role__43DCD32D56B386F0");
+            entity.HasKey(e => e.IdRole).HasName("PK__Role__43DCD32D32E8577E");
 
             entity.ToTable("Role");
 
@@ -62,7 +62,7 @@ public partial class PawprojectContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.IdUser).HasName("PK__User__ED4DE442A1292B8C");
+            entity.HasKey(e => e.IdUser).HasName("PK__User__ED4DE4426A2C7C97");
 
             entity.ToTable("User");
 
@@ -70,27 +70,14 @@ public partial class PawprojectContext : DbContext
             entity.Property(e => e.Email)
                 .HasMaxLength(100)
                 .IsUnicode(false);
+            entity.Property(e => e.IdRole).HasColumnName("ID_Role");
             entity.Property(e => e.Password).IsUnicode(false);
             entity.Property(e => e.Username).IsUnicode(false);
 
-            entity.HasMany(d => d.IdRoles).WithMany(p => p.IdUsers)
-                .UsingEntity<Dictionary<string, object>>(
-                    "UserRole",
-                    r => r.HasOne<Role>().WithMany()
-                        .HasForeignKey("IdRole")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__UserRole__ID_Rol__6EF57B66"),
-                    l => l.HasOne<User>().WithMany()
-                        .HasForeignKey("IdUser")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__UserRole__ID_Use__6E01572D"),
-                    j =>
-                    {
-                        j.HasKey("IdUser", "IdRole").HasName("PK__UserRole__29702970AE9A536B");
-                        j.ToTable("UserRole");
-                        j.IndexerProperty<int>("IdUser").HasColumnName("ID_User");
-                        j.IndexerProperty<int>("IdRole").HasColumnName("ID_Role");
-                    });
+            entity.HasOne(d => d.IdRoleNavigation).WithMany(p => p.Users)
+                .HasForeignKey(d => d.IdRole)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__User__ID_Role__3C69FB99");
 
             entity.HasMany(d => d.Widgets).WithMany(p => p.Users)
                 .UsingEntity<Dictionary<string, object>>(
@@ -98,14 +85,14 @@ public partial class PawprojectContext : DbContext
                     r => r.HasOne<Component>().WithMany()
                         .HasForeignKey("WidgetId")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__Favorite__Widget__14270015"),
+                        .HasConstraintName("FK__Favorite__Widget__4CA06362"),
                     l => l.HasOne<User>().WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__Favorite__UserId__1332DBDC"),
+                        .HasConstraintName("FK__Favorite__UserId__4BAC3F29"),
                     j =>
                     {
-                        j.HasKey("UserId", "WidgetId").HasName("PK__Favorite__2D571F4D9BE35C86");
+                        j.HasKey("UserId", "WidgetId").HasName("PK__Favorite__2D571F4DAD9C5820");
                         j.ToTable("Favorite");
                     });
         });

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,7 @@ public class UserRepository : RepositoryBase<User>, IUserRepository
 {
     public async Task<User> SaveUserAsync(User user)
     {
-        var exist = await ExistUser(user.IdUser);
+        var exist =  user.IdUser != null && user.IdUser > 0;
 
         if (exist)
             await UpdateAsync(user);
@@ -48,20 +49,6 @@ public class UserRepository : RepositoryBase<User>, IUserRepository
         return await DeleteAsync(user);
     }
 
-    private async Task<bool> ExistUser(int? id)
-    {
-        if (id == null)
-            return false;
-
-        var users = await ReadAsync();
-
-        var user = users.FirstOrDefault(c => c.IdUser == id);
-
-        if (user == default)
-            return true;
-
-        return false;
-    }
 }
     
     

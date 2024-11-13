@@ -4,7 +4,7 @@ dotnet add package Microsoft.EntityFrameworkCore.Design
 dotnet add package Microsoft.EntityFrameworkCore.Tools
 dotnet ef dbcontext scaffold "Server=localhost;Database=ProductDB;Trusted_Connection=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o EFModels -t Users -t Roles -t UserRoles -f
 
-dotnet ef dbcontext scaffold "Server=localhost;Database=PAWProject;Trusted_Connection=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o EFModels -t User -t Component -t Role -t Favorite -t UserRole -f
+dotnet ef dbcontext scaffold "Server=localhost;Database=PAWProject;Trusted_Connection=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o EFModels -t User -t Component -t Role -t Favorite -f
 
 dotnet tool install --global dotnet-ef
 dotnet tool update --global dotnet-ef

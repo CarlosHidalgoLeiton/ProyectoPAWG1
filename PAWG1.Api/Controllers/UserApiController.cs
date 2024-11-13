@@ -28,7 +28,7 @@ public class UserApiController : Controller
         return await _userService.SaveUserAsync(User);
     }
 
-    [HttpPost("{id}", Name = "UpdateUser")]
+    [HttpPut("{id}", Name = "UpdateUser")]
     public async Task<CMP.User> Update([FromBody] CMP.User User)
     {
         return await _userService.SaveUserAsync(User);
