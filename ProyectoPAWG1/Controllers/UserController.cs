@@ -43,7 +43,6 @@ namespace ProyectoPAWG1.Controllers
             if (ModelState.IsValid)
             {
          
-
                 var found = await _restProvider.PostAsync($"{_appSettings.Value.RestApi}/UserApi/save", JsonProvider.Serialize(user));
                 return (found != null)
                     ? RedirectToAction(nameof(Index))
