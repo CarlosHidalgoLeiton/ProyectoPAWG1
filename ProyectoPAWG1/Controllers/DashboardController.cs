@@ -26,7 +26,15 @@ namespace ProyectoPAWG1.Controllers
 
             foreach (var c in components)
             {
-                var getInfo = await _restProvider.GetAsync(c.ApiUrl, null);
+                var getInfo = "";
+                if (c.TypeComponent == "Weather")
+                {
+                    string url = c.ApiUrl + "&appid=" + c.ApiKey;
+                    getInfo = await _restProvider.GetAsync(url, null);
+                }
+                else if (c.TypeComponent == "Exchange Rate") {
+                    getInfo = await _restProvider.GetAsync(c.ApiUrl, null);
+                }
                 c.Data = getInfo;
             }
 

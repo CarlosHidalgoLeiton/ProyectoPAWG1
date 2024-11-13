@@ -29,7 +29,7 @@ public partial class PawprojectContext : DbContext
     {
         modelBuilder.Entity<Component>(entity =>
         {
-            entity.HasKey(e => e.IdComponent).HasName("PK__Componen__F186FE86EDBDC6C7");
+            entity.HasKey(e => e.IdComponent).HasName("PK__Componen__F186FE86EF1025AA");
 
             entity.ToTable("Component");
 
@@ -50,7 +50,7 @@ public partial class PawprojectContext : DbContext
 
         modelBuilder.Entity<Role>(entity =>
         {
-            entity.HasKey(e => e.IdRole).HasName("PK__Role__43DCD32D32E8577E");
+            entity.HasKey(e => e.IdRole).HasName("PK__Role__43DCD32DC9147024");
 
             entity.ToTable("Role");
 
@@ -62,7 +62,7 @@ public partial class PawprojectContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.IdUser).HasName("PK__User__ED4DE4426A2C7C97");
+            entity.HasKey(e => e.IdUser).HasName("PK__User__ED4DE442C5A118F6");
 
             entity.ToTable("User");
 
@@ -85,14 +85,14 @@ public partial class PawprojectContext : DbContext
                     r => r.HasOne<Component>().WithMany()
                         .HasForeignKey("WidgetId")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__Favorite__Widget__4CA06362"),
+                        .HasConstraintName("FK__Favorite__Widget__4222D4EF"),
                     l => l.HasOne<User>().WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__Favorite__UserId__4BAC3F29"),
+                        .HasConstraintName("FK__Favorite__UserId__412EB0B6"),
                     j =>
                     {
-                        j.HasKey("UserId", "WidgetId").HasName("PK__Favorite__2D571F4DAD9C5820");
+                        j.HasKey("UserId", "WidgetId").HasName("PK__Favorite__2D571F4D5D895174");
                         j.ToTable("Favorite");
                     });
         });
