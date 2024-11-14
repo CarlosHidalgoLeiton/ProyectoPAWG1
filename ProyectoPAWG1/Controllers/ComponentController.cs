@@ -36,7 +36,7 @@ namespace ProyectoPAWG1.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TimeRefresh,TypeComponent,Size,ApiUrl,ApiKey,Descrip,Title,Color,State")] CMP.Component component, IFormFile Simbol)
+        public async Task<IActionResult> Create([Bind("TimeRefresh,TypeComponent,Size,ApiUrl,ApiKey,ApiKeyId,Descrip,Title,Color,State")] CMP.Component component, IFormFile Simbol)
         {
             ModelState.Remove("Simbol");
 
@@ -90,7 +90,7 @@ namespace ProyectoPAWG1.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, [Bind("IdComponent,TimeRefresh,TypeComponent,Size,ApiUrl,ApiKey,Descrip,Title,Color,State")] CMP.Component component, IFormFile Simbol)
+        public async Task<IActionResult> Edit(int id, [Bind("IdComponent,TimeRefresh,TypeComponent,Size,ApiUrl,ApiKey,ApiKeyId,Descrip,Title,Color,State")] CMP.Component component, IFormFile Simbol)
         {
             if (id == null)
                 return NotFound();

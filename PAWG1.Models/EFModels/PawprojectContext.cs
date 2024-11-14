@@ -29,12 +29,15 @@ public partial class PawprojectContext : DbContext
     {
         modelBuilder.Entity<Component>(entity =>
         {
-            entity.HasKey(e => e.IdComponent).HasName("PK__Componen__F186FE86EF1025AA");
+            entity.HasKey(e => e.IdComponent).HasName("PK__Componen__F186FE86195697CD");
 
             entity.ToTable("Component");
 
             entity.Property(e => e.IdComponent).HasColumnName("ID_Component");
             entity.Property(e => e.ApiKey).IsUnicode(false);
+            entity.Property(e => e.ApiKeyId)
+                .HasMaxLength(50)
+                .IsUnicode(false);
             entity.Property(e => e.ApiUrl).IsUnicode(false);
             entity.Property(e => e.Color)
                 .HasMaxLength(50)
@@ -85,14 +88,14 @@ public partial class PawprojectContext : DbContext
                     r => r.HasOne<Component>().WithMany()
                         .HasForeignKey("WidgetId")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__Favorite__Widget__4222D4EF"),
+                        .HasConstraintName("FK__Favorite__Widget__4CA06362"),
                     l => l.HasOne<User>().WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__Favorite__UserId__412EB0B6"),
+                        .HasConstraintName("FK__Favorite__UserId__4BAC3F29"),
                     j =>
                     {
-                        j.HasKey("UserId", "WidgetId").HasName("PK__Favorite__2D571F4D5D895174");
+                        j.HasKey("UserId", "WidgetId").HasName("PK__Favorite__2D571F4D2110EAA8");
                         j.ToTable("Favorite");
                     });
         });

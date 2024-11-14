@@ -24,18 +24,22 @@ namespace ProyectoPAWG1.Controllers
 
             var components = JsonProvider.DeserializeSimple<IEnumerable<CMP.Component>>(data);
 
-            foreach (var c in components)
-            {
-                var getInfo = "";
-                if (c.TypeComponent == "Weather")
+            foreach (var component in components ?? Enumerable.Empty<CMP.Component>())
+            {   
+                var url = $"{component.ApiUrl}{component.ApiKeyId}{component.ApiKey}";
+
+                
+                try
                 {
-                    string url = c.ApiUrl + "&appid=" + c.ApiKey;
-                    getInfo = await _restProvider.GetAsync(url, null);
+                    var getInfo = await _restProvider.GetAsync(url, null);
+                    component.Data = getInfo;
                 }
-                else if (c.TypeComponent == "Exchange Rate") {
-                    getInfo = await _restProvider.GetAsync(c.ApiUrl, null);
+                catch (Exception e)
+                {
+                    
                 }
-                c.Data = getInfo;
+               
+                
             }
 
             return View(components);
