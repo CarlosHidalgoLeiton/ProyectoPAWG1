@@ -29,8 +29,10 @@
     <div class="form-group">
         <label asp-for="IdRole" class="control-label">Rol</label>
         <select asp-for="IdRole" class="form-control">
-            <option value="1">Admin</option>
-            <option value="2">User</option>
+            @foreach (var role in ViewBag.Roles)
+            {
+                <option value="@role.IdRole">@role.Name</option>
+            }
         </select>
         <span asp-validation-for="IdRole" class="text-danger"></span>
     </div>

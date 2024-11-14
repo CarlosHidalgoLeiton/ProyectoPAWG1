@@ -14,7 +14,7 @@ namespace ProyectoPAWG1.Controllers
     public class UserController(IRestProvider restProvider, IOptions<AppSettings> appSettings) : Controller
     {
 
-        private readonly IRestProvider _restProvider = restProvider;
+       private readonly IRestProvider _restProvider = restProvider;
         private readonly IOptions<AppSettings> _appSettings = appSettings;
 
 
@@ -23,6 +23,8 @@ namespace ProyectoPAWG1.Controllers
 
             var data = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/UserApi/all", null);
 
+
+
             var users = JsonProvider.DeserializeSimple<IEnumerable<CMP.User>>(data);
 
             return View(users);
@@ -30,8 +32,14 @@ namespace ProyectoPAWG1.Controllers
 
 
         [HttpGet]
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            var data = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/RoleApi/all", null);
+
+            var roles = JsonProvider.DeserializeSimple<IEnumerable<CMP.Role>>(data);
+
+            ViewBag.Roles = roles;
+
             return View();
         }
 
@@ -39,17 +47,19 @@ namespace ProyectoPAWG1.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Username,Email,Password,State,IdRole")] CMP.User user)
         {
+            ModelState.Remove("IdRoleNavigation");
 
+            //ModelState.IdRolenNavigation = ModelState.IdRole;
             if (ModelState.IsValid)
             {
          
                 var found = await _restProvider.PostAsync($"{_appSettings.Value.RestApi}/UserApi/save", JsonProvider.Serialize(user));
                 return (found != null)
                     ? RedirectToAction(nameof(Index))
-                    : View(user);
+                    : View(user); 
             }
 
-            return View(user);
+            return View(Index);
         }
 
         // GET: User/Edit/5
