@@ -29,12 +29,15 @@ public partial class PawprojectContext : DbContext
     {
         modelBuilder.Entity<Component>(entity =>
         {
-            entity.HasKey(e => e.IdComponent).HasName("PK__Componen__F186FE86EDBDC6C7");
+            entity.HasKey(e => e.IdComponent).HasName("PK__Componen__F186FE86195697CD");
 
             entity.ToTable("Component");
 
             entity.Property(e => e.IdComponent).HasColumnName("ID_Component");
             entity.Property(e => e.ApiKey).IsUnicode(false);
+            entity.Property(e => e.ApiKeyId)
+                .HasMaxLength(50)
+                .IsUnicode(false);
             entity.Property(e => e.ApiUrl).IsUnicode(false);
             entity.Property(e => e.Color)
                 .HasMaxLength(50)
@@ -50,7 +53,7 @@ public partial class PawprojectContext : DbContext
 
         modelBuilder.Entity<Role>(entity =>
         {
-            entity.HasKey(e => e.IdRole).HasName("PK__Role__43DCD32D32E8577E");
+            entity.HasKey(e => e.IdRole).HasName("PK__Role__43DCD32DC9147024");
 
             entity.ToTable("Role");
 
@@ -62,7 +65,7 @@ public partial class PawprojectContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.IdUser).HasName("PK__User__ED4DE4426A2C7C97");
+            entity.HasKey(e => e.IdUser).HasName("PK__User__ED4DE442C5A118F6");
 
             entity.ToTable("User");
 
@@ -92,7 +95,7 @@ public partial class PawprojectContext : DbContext
                         .HasConstraintName("FK__Favorite__UserId__4BAC3F29"),
                     j =>
                     {
-                        j.HasKey("UserId", "WidgetId").HasName("PK__Favorite__2D571F4DAD9C5820");
+                        j.HasKey("UserId", "WidgetId").HasName("PK__Favorite__2D571F4D2110EAA8");
                         j.ToTable("Favorite");
                     });
         });

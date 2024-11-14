@@ -26,10 +26,10 @@
                 <label asp-for="TypeComponent" class="control-label"></label>
                 <select asp-for="TypeComponent" class="form-select">
                     <option disabled selected>Select the Type</option>
-                    <option value="Widget">Widget</option>
-                    <option value="Chart">Chart</option>
-                    <option value="Tables">Tables</option>
-                    <option value="Component">Component</option>
+                    <option value="Weather">Weather</option>
+                    <option value="Exchange Rate">Exchange Rate</option>
+                    <option value="News">News</option>
+                    <option value="Image">Image</option>
                 </select>
                 <span asp-validation-for="TypeComponent" class="text-danger"></span>
             </div>
@@ -64,6 +64,15 @@
                 <label asp-for="ApiKey" class="control-label"></label>
                 <input asp-for="ApiKey" class="form-control" />
                 <span asp-validation-for="ApiKey" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApiKeyId" class="control-label"></label>
+                <select asp-for="ApiKeyId" class="form-select">
+                    <option disabled selected>Select the Id</option>
+                    <option value="&appid=">appid</option>
+                    <option value="&apiKey=">apiKey</option>
+                </select>
+                <span asp-validation-for="ApiKeyId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Color" class="control-label"></label>
