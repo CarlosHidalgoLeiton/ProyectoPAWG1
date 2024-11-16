@@ -1,10 +1,15 @@
 ﻿@model IEnumerable<PAWG1.Models.EFModels.User>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Users";
 }
 
-<h1>Index</h1>
+<div class="d-flex align-items-center mb-4">
+    <h1 class="me-auto display-6  fw-bold">Users</h1>
+    <a asp-action="Create" class="btn">
+        <i class="bi bi-plus-lg"></i> Create New User
+    </a>
+</div>
 
 <table class="table">
     <thead>
@@ -21,7 +26,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.State)
             </th>
-           
+
             <th></th>
         </tr>
     </thead>
