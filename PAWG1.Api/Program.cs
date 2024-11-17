@@ -16,12 +16,21 @@ builder.Services.AddScoped<IComponentService, ComponentService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> b415b1659d7ec037f04a8fdb7445404fde81a91e
 builder.Services.AddControllers()
        .AddJsonOptions(options =>
        {
            options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
        });
+<<<<<<< HEAD
+=======
+
+builder.Services.AddScoped<IRoleRepository, RoleRepository>();
+builder.Services.AddScoped<IRoleService, RoleService>();
+>>>>>>> b415b1659d7ec037f04a8fdb7445404fde81a91e
 
 //builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 //builder.Services.AddScoped<IRoleService, RoleService>();
