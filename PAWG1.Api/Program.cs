@@ -16,18 +16,16 @@ builder.Services.AddScoped<IComponentService, ComponentService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 
-<<<<<<< HEAD
 builder.Services.AddControllers()
        .AddJsonOptions(options =>
        {
            options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
        });
-=======
+
 builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 builder.Services.AddScoped<IRoleService, RoleService>();
 
 
->>>>>>> 3b7136ac04318ced9adb88af58d9d021e46bdf99
 
 var app = builder.Build();
 

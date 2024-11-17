@@ -87,6 +87,27 @@ namespace ProyectoPAWG1.Controllers
             return View(Index);
         }
 
+
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+                return NotFound();
+
+            var user = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/UserApi/{id}", $"{id}");
+
+            var data = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/RoleApi/all", null);
+
+            var roles = JsonProvider.DeserializeSimple<IEnumerable<CMP.Role>>(data);
+
+            ViewBag.Roles = roles;
+            if (user == null)
+                return NotFound();
+
+            return View(JsonProvider.DeserializeSimple<User>(user));
+        }
+
+
+
         // GET: User/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
