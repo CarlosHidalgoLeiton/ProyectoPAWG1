@@ -14,9 +14,14 @@ namespace ProyectoPAWG1.Controllers
         private readonly IOptions<AppSettings> _appSettings = appSettings;
 
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
+            return View();
+        }
 
+        [HttpGet]
+        public async Task<IActionResult> LoadData() 
+        {
             var data = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/ComponentApi/all", null);
 
             var components = JsonProvider.DeserializeSimple<IEnumerable<CMP.Component>>(data);
@@ -24,7 +29,6 @@ namespace ProyectoPAWG1.Controllers
             foreach (var component in components ?? Enumerable.Empty<CMP.Component>())
             {
                 var url = $"{component.ApiUrl}{component.ApiKeyId}{component.ApiKey}";
-
 
                 try
                 {
@@ -38,12 +42,12 @@ namespace ProyectoPAWG1.Controllers
 
             }
 
-            return View(components);
+            return Json(components);
         }
 
         [HttpPost]
         public async Task<IActionResult> SaveFavorite(int id)
-        {
+        {   
 
             var component = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/ComponentApi/{id}", $"{id}");
 

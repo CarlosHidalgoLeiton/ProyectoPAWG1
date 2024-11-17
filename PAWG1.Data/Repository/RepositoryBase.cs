@@ -71,7 +71,7 @@ public class RepositoryBase<T> : IRepositoryBase<T> where T : class
         }
         catch (Exception ex)
         {
-            throw new Exception("There is a error in DeleteAsync");
+            throw new Exception("There is an error in DeleteAsync");
         }
     }
 
