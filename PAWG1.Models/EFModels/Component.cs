@@ -19,8 +19,6 @@ public partial class Component
 
     public string? ApiKeyId { get; set; }
 
-    public int UserId { get; set; }
-
     public DateOnly CreateDate { get; set; }
 
     public DateOnly UpdateDate { get; set; }

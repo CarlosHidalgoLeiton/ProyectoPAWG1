@@ -11,6 +11,7 @@ public interface IComponentService
     Task<IEnumerable<Component>> GetAllComponentsAsync();
     Task<Component> GetComponentAsync(int id);
     Task<Component> SaveComponentAsync(Component component);
+    Task<Component> SaveFavoriteAsync(User user, int id);
 }
 
 public class ComponentService : IComponentService
@@ -65,6 +66,19 @@ public class ComponentService : IComponentService
         var components = await _componentRepository.GetAllComponentsAsync();
         var deletion = components.SingleOrDefault(x => x.IdComponent == id);
         return await _componentRepository.DeleteComponentAsync(deletion);
+    }
+
+    public async Task<CMP.Component> SaveFavoriteAsync(User user, int id)
+    {
+        var components = await _componentRepository.GetAllComponentsAsync();
+
+        var component = components.SingleOrDefault(c => c.IdComponent == id);
+
+        component.Users.Add(user);
+
+        var result = await _componentRepository.SaveComponentAsync(component);
+
+        return result;
     }
 }
 

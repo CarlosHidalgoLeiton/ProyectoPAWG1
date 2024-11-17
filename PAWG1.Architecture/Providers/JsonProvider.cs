@@ -65,6 +65,7 @@ public class JsonProvider
 		{
 			AllowTrailingCommas = true,
 			PropertyNameCaseInsensitive = true,
-		};
+            ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles
+        };
 	}
 }

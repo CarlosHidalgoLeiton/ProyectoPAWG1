@@ -79,11 +79,20 @@ public class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
         try
         {
-            return await _dataDbContext.Set<T>().ToListAsync();
+            var query = _dataDbContext.Set<T>().AsQueryable();
+
+            // Verifica si el tipo T es 'Component'
+            if (typeof(T) == typeof(Component))
+            {
+                // Agrega el 'Include' solo si el tipo es 'Component'
+                query = query.Include("Users"); // Asumiendo que 'Users' es la relación que quieres cargar
+            }
+
+            return await query.ToListAsync();
         }
         catch (Exception ex)
         {
-            throw new Exception("There is a error in ReadAsync");
+            throw new Exception("There is an error in ReadAsync", ex);
         }
     }
 

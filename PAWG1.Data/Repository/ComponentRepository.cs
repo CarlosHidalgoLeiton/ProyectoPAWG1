@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 using PAWG1.Models.EFModels;
 namespace PAWG1.Data.Repository;
 
+
 public interface IComponentRepository
 {
     Task<bool> DeleteComponentAsync(Component component);
-    Task<Component> GetComponentAsync(int id);
     Task<IEnumerable<Component>> GetAllComponentsAsync();
+    Task<Component> GetComponentAsync(int id);
     Task<Component> SaveComponentAsync(Component component);
 }
 
@@ -47,6 +48,8 @@ public class ComponentRepository : RepositoryBase<Component>, IComponentReposito
     {
         return await DeleteAsync(component);
     }
+
+
 }
     
     

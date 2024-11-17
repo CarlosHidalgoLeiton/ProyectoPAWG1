@@ -29,7 +29,7 @@ public partial class PawprojectContext : DbContext
     {
         modelBuilder.Entity<Component>(entity =>
         {
-            entity.HasKey(e => e.IdComponent).HasName("PK__Componen__F186FE86195697CD");
+            entity.HasKey(e => e.IdComponent).HasName("PK__Componen__F186FE8679F57C58");
 
             entity.ToTable("Component");
 
@@ -82,20 +82,20 @@ public partial class PawprojectContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__User__ID_Role__3C69FB99");
 
-            entity.HasMany(d => d.Widgets).WithMany(p => p.Users)
+            entity.HasMany(d => d.Components).WithMany(p => p.Users)
                 .UsingEntity<Dictionary<string, object>>(
                     "Favorite",
                     r => r.HasOne<Component>().WithMany()
-                        .HasForeignKey("WidgetId")
+                        .HasForeignKey("ComponentId")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__Favorite__Widget__4CA06362"),
+                        .HasConstraintName("FK__Favorite__Compon__5629CD9C"),
                     l => l.HasOne<User>().WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__Favorite__UserId__4BAC3F29"),
+                        .HasConstraintName("FK__Favorite__UserId__5535A963"),
                     j =>
                     {
-                        j.HasKey("UserId", "WidgetId").HasName("PK__Favorite__2D571F4D2110EAA8");
+                        j.HasKey("UserId", "ComponentId").HasName("PK__Favorite__EAF103486FD93902");
                         j.ToTable("Favorite");
                     });
         });

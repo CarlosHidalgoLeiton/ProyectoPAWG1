@@ -28,6 +28,26 @@ public class ComponentApiController : Controller
         return await _componentService.SaveComponentAsync(component);
     }
 
+    [HttpPost("favorite", Name = "FavoriteComponent")]
+    public async Task<CMP.Component> Favorite([FromBody] CMP.Component component)
+    {
+        CMP.User user = new CMP.User()
+        {
+            IdUser = 1,
+            Email = "carloshl349@gmail.com",
+            State = true,
+            Username = "Carlos",
+            Password = "hola1234",
+            IdRole = 1
+        };
+
+        component.Users.Add(user);
+
+        var result = await _componentService.SaveComponentAsync(component);
+
+        return result;
+    }
+
     [HttpPut("{id}", Name = "UpdateComponent")]
     public async Task<CMP.Component> Update([FromBody] CMP.Component component)
     {
@@ -41,7 +61,8 @@ public class ComponentApiController : Controller
 
     [HttpGet("all", Name = "GetAllComponents")]
     public async Task<IEnumerable<CMP.Component>> GetAll() {
-        return await _componentService.GetAllComponentsAsync();
+        var components = await _componentService.GetAllComponentsAsync();
+        return components;
     }
 
     [HttpDelete("{id}", Name = "DeleteComponent")]

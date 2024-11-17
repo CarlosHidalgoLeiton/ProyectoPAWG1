@@ -1,13 +1,9 @@
+﻿using APWG1.Architecture;
 using Microsoft.AspNetCore.Mvc;
-using PAWG1.Architecture.Providers;
-using PAWG1.Models;
-using System.Diagnostics;
-using CMP = PAWG1.Models.EFModels;
-using APWG1.Architecture;
 using Microsoft.Extensions.Options;
+using PAWG1.Architecture.Providers;
 using PAWG1.Mvc.Models;
-using Microsoft.EntityFrameworkCore;
-using PAWG1.Architecture.Exceptions;
+using CMP = PAWG1.Models.EFModels;
 
 namespace ProyectoPAWG1.Controllers
 {
@@ -18,17 +14,18 @@ namespace ProyectoPAWG1.Controllers
         private readonly IOptions<AppSettings> _appSettings = appSettings;
 
         [HttpGet]
-        public async Task<IActionResult> Index() {
+        public async Task<IActionResult> Index()
+        {
 
             var data = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/ComponentApi/all", null);
 
             var components = JsonProvider.DeserializeSimple<IEnumerable<CMP.Component>>(data);
 
             foreach (var component in components ?? Enumerable.Empty<CMP.Component>())
-            {   
+            {
                 var url = $"{component.ApiUrl}{component.ApiKeyId}{component.ApiKey}";
 
-                
+
                 try
                 {
                     var getInfo = await _restProvider.GetAsync(url, null);
@@ -36,13 +33,27 @@ namespace ProyectoPAWG1.Controllers
                 }
                 catch (Exception e)
                 {
-                    
+                    Console.WriteLine($"It had happened an error trying to get the api information. {e}");
                 }
-               
-                
+
             }
 
             return View(components);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> SaveFavorite(int id)
+        {
+
+            var component = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/ComponentApi/{id}", $"{id}");
+
+            var componenT = JsonProvider.DeserializeSimple<CMP.Component>(component);
+
+            var favorite = await _restProvider.PostAsync($"{_appSettings.Value.RestApi}/ComponentApi/favorite", JsonProvider.Serialize(componenT));
+
+            var result = JsonProvider.DeserializeSimple<CMP.Component>(favorite);
+
+            return RedirectToAction(nameof(Index));
         }
 
     }

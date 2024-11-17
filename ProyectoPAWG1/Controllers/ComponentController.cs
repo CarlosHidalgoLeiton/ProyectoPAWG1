@@ -51,8 +51,6 @@ namespace ProyectoPAWG1.Controllers
                     }
                 }
 
-                component.UserId = 1;
-
                 var found = await _restProvider.PostAsync($"{_appSettings.Value.RestApi}/ComponentApi/save", JsonProvider.Serialize(component));
                 return (found != null)
                     ? RedirectToAction(nameof(Index))
@@ -120,8 +118,6 @@ namespace ProyectoPAWG1.Controllers
                             return NotFound();
                         component.Simbol = getComponent.Simbol;
                     }
-
-                    component.UserId = 1;
 
                     var found = await _restProvider.PutAsync($"{_appSettings.Value.RestApi}/ComponentApi/{id}", $"{id}", JsonProvider.Serialize(component));
 
