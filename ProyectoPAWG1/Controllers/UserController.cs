@@ -197,7 +197,39 @@ namespace ProyectoPAWG1.Controllers
             }
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+                return NotFound();
 
+            var userS = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/UserApi/{id}", $"{id}");
+            if (userS == null)
+                return NotFound();
+
+            var user = JsonProvider.DeserializeSimple<User>(userS);
+
+            var data = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/RoleApi/{user.IdRole}", $"{user.IdRole}");
+            if (data == null)
+                return NotFound();
+          
+            var roles = JsonProvider.DeserializeSimple<CMP.Role>(data);
+
+            ViewBag.Roles = roles;
+
+
+            return View(user);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var user = await _restProvider.DeleteAsync($"{_appSettings.Value.RestApi}/UserApi/{id}", $"{id}");
+            return (user == null)
+                ? NotFound()
+                : RedirectToAction(nameof(Index));
+        }
 
 
 

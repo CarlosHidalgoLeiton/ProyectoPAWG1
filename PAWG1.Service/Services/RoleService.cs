@@ -8,6 +8,7 @@ namespace PAWG1.Service.Services;
 public interface IRoleService
 {
     Task<IEnumerable<Role>> GetAllRolesAsync();
+    Task<CMP.Role> GetRoleAsync(int id);
 }
 
 public class RoleService : IRoleService
@@ -30,6 +31,12 @@ public class RoleService : IRoleService
     public async Task<IEnumerable<CMP.Role>> GetAllRolesAsync()
     {
         return await _roleRepository.GetAllRolesAsync();
+    }
+
+
+    public async Task<CMP.Role> GetRoleAsync(int id)
+    {
+        return await _roleRepository.GetRoleAsync(id);
     }
 }
 

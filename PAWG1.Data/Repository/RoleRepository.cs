@@ -10,7 +10,7 @@ namespace PAWG1.Data.Repository;
 public interface IRoleRepository
 {
     Task<IEnumerable<Role>> GetAllRolesAsync();
-    Task<Role> GetUserAsync(int id);
+    Task<Role> GetRoleAsync(int id);
 }
 
 public class RoleRepository : RepositoryBase<Role>, IRoleRepository
@@ -24,13 +24,12 @@ public class RoleRepository : RepositoryBase<Role>, IRoleRepository
         return roles;
     }
 
-    public async Task<Role> GetUserAsync(int id)
+    public async Task<Role> GetRoleAsync(int id)
     {
         var roles = await ReadAsync();
 
         return roles.SingleOrDefault(c => c.IdRole == id)!;
     }
-
 }
     
     
