@@ -25,4 +25,10 @@ public class RoleApiController : Controller
     public async Task<IEnumerable<CMP.Role>> GetAll() {
         return await _roleService.GetAllRolesAsync();
     }
+
+    [HttpGet("{id}", Name = "GetRole")]
+    public async Task<CMP.Role> Get(int id)
+    {
+        return await _roleService.GetRoleAsync(id);
+    }
 }

@@ -70,6 +70,20 @@ namespace ProyectoPAWG1.Controllers
                 return View(user);
             }
 
+            if (user.Password.Length < 8 || user.Password.Length > 16)
+            {
+                ModelState.AddModelError("Password", "The password must be between 8 and 16 characters.");
+                var dataRoles = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/RoleApi/all", null);
+
+                var roles = JsonProvider.DeserializeSimple<IEnumerable<CMP.Role>>(dataRoles);
+
+                ViewBag.Roles = roles;
+
+                return View(user);
+            }
+
+
+
             // Encriptar la contraseña
             user.Password = HashPassword(user.Password);
 
@@ -169,6 +183,19 @@ namespace ProyectoPAWG1.Controllers
                 user.Password = getuser.Password;
                 ModelState.Remove("Password");
             }
+
+            if (user.Password.Length < 8 || user.Password.Length > 16)
+            {
+                ModelState.AddModelError("Password", "The password must be between 8 and 16 characters.");
+                var dataRoles = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/RoleApi/all", null);
+
+                var roles = JsonProvider.DeserializeSimple<IEnumerable<CMP.Role>>(dataRoles);
+
+                ViewBag.Roles = roles;
+
+                return View(user);
+            }
+
             user.Password = HashPassword(user.Password);
             User? updated = default;
             if (ModelState.IsValid)
@@ -197,7 +224,39 @@ namespace ProyectoPAWG1.Controllers
             }
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+                return NotFound();
 
+            var userS = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/UserApi/{id}", $"{id}");
+            if (userS == null)
+                return NotFound();
+
+            var user = JsonProvider.DeserializeSimple<User>(userS);
+
+            var data = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/RoleApi/{user.IdRole}", $"{user.IdRole}");
+            if (data == null)
+                return NotFound();
+          
+            var roles = JsonProvider.DeserializeSimple<CMP.Role>(data);
+
+            ViewBag.Roles = roles;
+
+
+            return View(user);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var user = await _restProvider.DeleteAsync($"{_appSettings.Value.RestApi}/UserApi/{id}", $"{id}");
+            return (user == null)
+                ? NotFound()
+                : RedirectToAction(nameof(Index));
+        }
 
 
 
