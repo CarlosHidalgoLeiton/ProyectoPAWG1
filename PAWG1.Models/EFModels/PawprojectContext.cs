@@ -79,7 +79,7 @@ public partial class PawprojectContext : DbContext
 
             entity.HasOne(d => d.IdRoleNavigation).WithMany(p => p.Users)
                 .HasForeignKey(d => d.IdRole)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK__User__ID_Role__3C69FB99");
 
             entity.HasMany(d => d.Components).WithMany(p => p.Users)
@@ -87,11 +87,11 @@ public partial class PawprojectContext : DbContext
                     "Favorite",
                     r => r.HasOne<Component>().WithMany()
                         .HasForeignKey("ComponentId")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .HasConstraintName("FK__Favorite__Compon__5629CD9C"),
                     l => l.HasOne<User>().WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .HasConstraintName("FK__Favorite__UserId__5535A963"),
                     j =>
                     {

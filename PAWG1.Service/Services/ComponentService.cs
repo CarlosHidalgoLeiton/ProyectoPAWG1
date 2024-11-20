@@ -12,6 +12,7 @@ public interface IComponentService
     Task<Component> GetComponentAsync(int id);
     Task<Component> SaveComponentAsync(Component component);
     Task<Component> SaveFavoriteAsync(User user, int id);
+    Task<bool> DeleteTestAsync(Component component);
 }
 
 public class ComponentService : IComponentService
@@ -79,6 +80,10 @@ public class ComponentService : IComponentService
         var result = await _componentRepository.SaveComponentAsync(component);
 
         return result;
+    }
+
+    public async Task<bool> DeleteTestAsync(Component component) {
+        return await _componentRepository.DeleteAsyncFavorite(component);
     }
 }
 

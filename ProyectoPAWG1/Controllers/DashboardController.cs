@@ -16,6 +16,7 @@ namespace ProyectoPAWG1.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+            ViewBag.Page = "Dashboard Page";
             return View();
         }
 
@@ -48,7 +49,6 @@ namespace ProyectoPAWG1.Controllers
         [HttpPost]
         public async Task<IActionResult> SaveFavorite(int id)
         {   
-
             var component = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/ComponentApi/{id}", $"{id}");
 
             var componenT = JsonProvider.DeserializeSimple<CMP.Component>(component);
@@ -56,6 +56,22 @@ namespace ProyectoPAWG1.Controllers
             var favorite = await _restProvider.PostAsync($"{_appSettings.Value.RestApi}/ComponentApi/favorite", JsonProvider.Serialize(componenT));
 
             var result = JsonProvider.DeserializeSimple<CMP.Component>(favorite);
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteFavorite(int id)
+        {
+            var component = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/ComponentApi/{id}", $"{id}");
+
+            var componenT = JsonProvider.DeserializeSimple<CMP.Component>(component);
+
+            componenT.Users.Remove(componenT.Users.First(u => u.IdUser == 1));
+
+            var deleted = await _restProvider.PostAsync($"{_appSettings.Value.RestApi}/ComponentApi/deleteFavorite", JsonProvider.Serialize(componenT));
+
+            //var result = JsonProvider.DeserializeSimple<bool>(deleted);
 
             return RedirectToAction(nameof(Index));
         }

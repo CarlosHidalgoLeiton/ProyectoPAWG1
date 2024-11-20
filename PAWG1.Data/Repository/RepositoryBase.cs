@@ -7,9 +7,9 @@ public interface IRepositoryBase<T>
 {
     Task<bool> CreateAsync(T entity);
     Task<bool> DeleteAsync(T entity);
-    Task<bool> ExistsAsync(T entity);
     Task<IEnumerable<T>> ReadAsync();
     Task<bool> UpdateAsync(T entity);
+    //Task<bool> DeleteFavoriteAsync(int id);
 }
 
 public class RepositoryBase<T> : IRepositoryBase<T> where T : class
@@ -22,6 +22,7 @@ public class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
         _dataDbContext = new PawprojectContext();
     }
+
 
     public async Task<bool> CreateAsync(T entity)
     {
@@ -86,6 +87,8 @@ public class RepositoryBase<T> : IRepositoryBase<T> where T : class
             {
                 // Agrega el 'Include' solo si el tipo es 'Component'
                 query = query.Include("Users"); // Asumiendo que 'Users' es la relación que quieres cargar
+            } else if (typeof(T) == typeof(User)) {
+                query = query.Include("Components");
             }
 
             return await query.ToListAsync();
@@ -93,19 +96,6 @@ public class RepositoryBase<T> : IRepositoryBase<T> where T : class
         catch (Exception ex)
         {
             throw new Exception("There is an error in ReadAsync", ex);
-        }
-    }
-
-    public async Task<bool> ExistsAsync(T entity)
-    {
-        try
-        {
-            var items = await ReadAsync();
-            return items.Any(x => x.Equals(entity));
-        }
-        catch (Exception ex)
-        {
-            throw new Exception("There is a error in ExistsAsync");
         }
     }
 

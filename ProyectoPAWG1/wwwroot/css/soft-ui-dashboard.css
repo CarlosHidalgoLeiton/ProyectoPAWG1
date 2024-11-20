@@ -3578,6 +3578,23 @@ fieldset:disabled .btn {
         color: var(--bs-lightGray);
     }
 
+.btn-noFavorite {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+}
+
+    .btn-noFavorite i {
+        color: var(--bs-lightGray);
+    }
+
+    .btn-noFavorite:hover {
+        background-color: var(--bs-lightGray);
+    }
+
+        .btn-noFavorite:hover i {
+            color: red;
+        }
 
 
 .btn-primary {
