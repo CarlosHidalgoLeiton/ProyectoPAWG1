@@ -8,9 +8,12 @@ using Microsoft.Extensions.Options;
 using PAWG1.Mvc.Models;
 using Microsoft.EntityFrameworkCore;
 using PAWG1.Architecture.Exceptions;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace ProyectoPAWG1.Controllers
 {
+    [Authorize]
     public class ComponentController(IRestProvider restProvider, IOptions<AppSettings> appSettings) : Controller
     {
 
@@ -27,13 +30,14 @@ namespace ProyectoPAWG1.Controllers
             return View(components);
         }
 
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("TimeRefresh,TypeComponent,Size,ApiUrl,ApiKey,ApiKeyId,Descrip,Title,Color,State")] CMP.Component component, IFormFile Simbol)

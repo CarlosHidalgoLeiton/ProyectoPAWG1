@@ -9,6 +9,9 @@ using CMP = PAWG1.Models.EFModels;
 using System.Text.Json;
 using System.Security.Cryptography;
 using System.Text;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using System.Security.Claims;
 
 namespace ProyectoPAWG1.Controllers
 {
@@ -81,12 +84,35 @@ namespace ProyectoPAWG1.Controllers
 
             if (matchedUser != null)
             {
-                return RedirectToAction("Index", "Dashboard");
+                // Crear los claims para el usuario
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, matchedUser.Username),
+                    new Claim(ClaimTypes.Email, matchedUser.Email),
+                    new Claim(ClaimTypes.Role, matchedUser.IdRole.ToString()) // O cualquier otro claim
+                };
+
+
+                // Crear un ClaimsIdentity y ClaimsPrincipal
+                var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
+
+                // Iniciar sesión con el ClaimsPrincipal y almacenar la información en la cookie
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimsPrincipal);
+
+                return RedirectToAction("Index", "Dashboard"); // Redirige al Dashboard si las credenciales son correctas
             }
 
             ViewBag.ErrorMessage = "Incorrect credentials. Please try again.";
             return View("Index");
         }
+
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme); 
+            return RedirectToAction(nameof(Index)); 
+        }
+
 
         private static string HashPassword(string password)
         {
