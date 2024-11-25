@@ -16,10 +16,6 @@ builder.Services.AddScoped<IComponentService, ComponentService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 6c6a3c50de66aff3fddf42f6788d94fa95c54195
 builder.Services.AddControllers()
        .AddJsonOptions(options =>
        {
@@ -28,13 +24,6 @@ builder.Services.AddControllers()
 
 builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 builder.Services.AddScoped<IRoleService, RoleService>();
-<<<<<<< HEAD
-=======
-
-//builder.Services.AddScoped<IRoleRepository, RoleRepository>();
-//builder.Services.AddScoped<IRoleService, RoleService>();
->>>>>>> 6c6a3c50de66aff3fddf42f6788d94fa95c54195
-
 
 var app = builder.Build();
 

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text.Json.Serialization;
 
 namespace PAWG1.Models.EFModels;
 
@@ -18,7 +17,9 @@ public partial class User
 
     public int IdRole { get; set; }
 
-    public virtual Role? IdRoleNavigation { get; set; } = null!;
-
     public virtual ICollection<Component> Components { get; set; } = new List<Component>();
+
+    public virtual Role IdRoleNavigation { get; set; } = null!;
+
+    public virtual ICollection<Component> ComponentsNavigation { get; set; } = new List<Component>();
 }

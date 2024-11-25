@@ -29,11 +29,14 @@ public partial class PawprojectContext : DbContext
     {
         modelBuilder.Entity<Component>(entity =>
         {
-            entity.HasKey(e => e.IdComponent).HasName("PK__Componen__F186FE8679F57C58");
+            entity.HasKey(e => e.IdComponent).HasName("PK__Componen__F186FE8676319583");
 
             entity.ToTable("Component");
 
             entity.Property(e => e.IdComponent).HasColumnName("ID_Component");
+            entity.Property(e => e.AllowedRole)
+                .HasMaxLength(50)
+                .IsUnicode(false);
             entity.Property(e => e.ApiKey).IsUnicode(false);
             entity.Property(e => e.ApiKeyId)
                 .HasMaxLength(50)
@@ -43,12 +46,18 @@ public partial class PawprojectContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.Descrip).IsUnicode(false);
+            entity.Property(e => e.IdOwner).HasColumnName("ID_Owner");
             entity.Property(e => e.Title)
                 .HasMaxLength(70)
                 .IsUnicode(false);
             entity.Property(e => e.TypeComponent)
                 .HasMaxLength(70)
                 .IsUnicode(false);
+
+            entity.HasOne(d => d.IdOwnerNavigation).WithMany(p => p.Components)
+                .HasForeignKey(d => d.IdOwner)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Component__ID_Ow__5CD6CB2B");
         });
 
         modelBuilder.Entity<Role>(entity =>
@@ -79,23 +88,23 @@ public partial class PawprojectContext : DbContext
 
             entity.HasOne(d => d.IdRoleNavigation).WithMany(p => p.Users)
                 .HasForeignKey(d => d.IdRole)
-                .OnDelete(DeleteBehavior.Cascade)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__User__ID_Role__3C69FB99");
 
-            entity.HasMany(d => d.Components).WithMany(p => p.Users)
+            entity.HasMany(d => d.ComponentsNavigation).WithMany(p => p.Users)
                 .UsingEntity<Dictionary<string, object>>(
                     "Favorite",
                     r => r.HasOne<Component>().WithMany()
                         .HasForeignKey("ComponentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .HasConstraintName("FK__Favorite__Compon__5629CD9C"),
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("FK__Favorite__Compon__60A75C0F"),
                     l => l.HasOne<User>().WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .HasConstraintName("FK__Favorite__UserId__5535A963"),
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("FK__Favorite__UserId__5FB337D6"),
                     j =>
                     {
-                        j.HasKey("UserId", "ComponentId").HasName("PK__Favorite__EAF103486FD93902");
+                        j.HasKey("UserId", "ComponentId").HasName("PK__Favorite__EAF103480005DC95");
                         j.ToTable("Favorite");
                     });
         });

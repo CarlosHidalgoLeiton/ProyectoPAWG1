@@ -37,6 +37,6 @@ app.UseAuthorization();  // Usar la autorización
 // Configuración de rutas
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Login}/{action=Index}/{id?}");
 
 app.Run();

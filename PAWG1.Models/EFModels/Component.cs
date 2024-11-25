@@ -35,5 +35,11 @@ public partial class Component
 
     public bool State { get; set; }
 
+    public int IdOwner { get; set; }
+
+    public string AllowedRole { get; set; } = null!;
+
+    public virtual User IdOwnerNavigation { get; set; } = null!;
+
     public virtual ICollection<User> Users { get; set; } = new List<User>();
 }
