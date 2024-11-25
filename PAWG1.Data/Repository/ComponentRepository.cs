@@ -14,7 +14,7 @@ public interface IComponentRepository
     Task<Component> GetComponentAsync(int id);
     Task<Component> SaveComponentAsync(Component component);
 
-    Task<bool> DeleteAsyncFavorite(Component component);
+    Task<bool> DeleteAsyncFavorite(int id);
 }
 
 public class ComponentRepository : RepositoryBase<Component>, IComponentRepository
@@ -53,10 +53,10 @@ public class ComponentRepository : RepositoryBase<Component>, IComponentReposito
         return await DeleteComponentAsync(component);
     }
 
-    public async Task<bool> DeleteAsyncFavorite(Component c)
+    public async Task<bool> DeleteAsyncFavorite(int id)
     {
         var components = await ReadAsync();
-        var component = components.FirstOrDefault(x => x.IdComponent == c.IdComponent);
+        var component = components.FirstOrDefault(x => x.IdComponent == id);
 
         if (component != null) {
             component.Users.Remove(component.Users.FirstOrDefault(x => x.IdUser == 1));

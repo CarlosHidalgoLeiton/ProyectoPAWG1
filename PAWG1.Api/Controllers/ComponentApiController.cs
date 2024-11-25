@@ -28,7 +28,7 @@ public class ComponentApiController : Controller
         return await _componentService.SaveComponentAsync(component);
     }
 
-    [HttpPost("favorite", Name = "FavoriteComponent")]
+    [HttpPut("favorite", Name = "FavoriteComponent")]
     public async Task<CMP.Component> Favorite([FromBody] CMP.Component component)
     {
         CMP.User user = new CMP.User()
@@ -48,10 +48,10 @@ public class ComponentApiController : Controller
         return result;
     }
 
-    [HttpPost("deleteFavorite", Name = "DeleteFavoriteComponent")]
-    public async Task<bool> DeleteFavorite([FromBody] CMP.Component component)
+    [HttpPut("deleteFavorite/${id}", Name = "DeleteFavoriteComponent")]
+    public async Task<bool> DeleteFavorite(int id)
     {
-        var result = await _componentService.DeleteTestAsync(component);
+        var result = await _componentService.DeleteFavoriteAsync(id);
 
         return result;
     }

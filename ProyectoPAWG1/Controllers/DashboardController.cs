@@ -53,7 +53,7 @@ namespace ProyectoPAWG1.Controllers
 
             var componenT = JsonProvider.DeserializeSimple<CMP.Component>(component);
 
-            var favorite = await _restProvider.PostAsync($"{_appSettings.Value.RestApi}/ComponentApi/favorite", JsonProvider.Serialize(componenT));
+            var favorite = await _restProvider.PutAsync($"{_appSettings.Value.RestApi}/ComponentApi/favorite", $"{id}", JsonProvider.Serialize(componenT));
 
             var result = JsonProvider.DeserializeSimple<CMP.Component>(favorite);
 
@@ -63,13 +63,13 @@ namespace ProyectoPAWG1.Controllers
         [HttpPost]
         public async Task<IActionResult> DeleteFavorite(int id)
         {
-            var component = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/ComponentApi/{id}", $"{id}");
+            //var component = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/ComponentApi/{id}", $"{id}");
 
-            var componenT = JsonProvider.DeserializeSimple<CMP.Component>(component);
+            //var componenT = JsonProvider.DeserializeSimple<CMP.Component>(component);
 
-            componenT.Users.Remove(componenT.Users.First(u => u.IdUser == 1));
+            //componenT.Users.Remove(componenT.Users.First(u => u.IdUser == 1));
 
-            var deleted = await _restProvider.PostAsync($"{_appSettings.Value.RestApi}/ComponentApi/deleteFavorite", JsonProvider.Serialize(componenT));
+            var deleted = await _restProvider.PutAsync($"{_appSettings.Value.RestApi}/ComponentApi/deleteFavorite", null,JsonProvider.Serialize(id));
 
             //var result = JsonProvider.DeserializeSimple<bool>(deleted);
 

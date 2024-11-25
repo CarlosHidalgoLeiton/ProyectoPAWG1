@@ -13,7 +13,7 @@ using System.Security.Claims;
 
 namespace ProyectoPAWG1.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class ComponentController(IRestProvider restProvider, IOptions<AppSettings> appSettings) : Controller
     {
 
@@ -30,19 +30,21 @@ namespace ProyectoPAWG1.Controllers
             return View(components);
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TimeRefresh,TypeComponent,Size,ApiUrl,ApiKey,ApiKeyId,Descrip,Title,Color,State")] CMP.Component component, IFormFile Simbol)
+        public async Task<IActionResult> Create([Bind("TimeRefresh,TypeComponent,Size,ApiUrl,ApiKey,ApiKeyId,Descrip,Title,Color,State,AllowedRole")] CMP.Component component, IFormFile Simbol)
         {
             ModelState.Remove("Simbol");
+
+            component.IdOwner = 1;
 
             if (ModelState.IsValid)
             {
@@ -92,7 +94,7 @@ namespace ProyectoPAWG1.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, [Bind("IdComponent,TimeRefresh,TypeComponent,Size,ApiUrl,ApiKey,ApiKeyId,Descrip,Title,Color,State")] CMP.Component component, IFormFile Simbol)
+        public async Task<IActionResult> Edit(int id, [Bind("IdComponent,IdOwner,TimeRefresh,TypeComponent,Size,ApiUrl,ApiKey,ApiKeyId,Descrip,Title,Color,State,AllowedRole")] CMP.Component component, IFormFile Simbol)
         {
             if (id == null)
                 return NotFound();

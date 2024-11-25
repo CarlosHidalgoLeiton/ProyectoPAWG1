@@ -101,6 +101,16 @@
                 </select>
                 <span asp-validation-for="State" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label asp-for="AllowedRole" class="control-label"></label>
+                <select asp-for="AllowedRole" class="form-select">
+                    <option disabled selected>Select the role allowed</option>
+                    <option value="All">All</option>
+                    <option value="Admin">Admin</option>
+                    <option value="User">User</option>
+                </select>
+                <span asp-validation-for="AllowedRole" class="text-danger"></span>
+            </div>
         </div>
 
         <div class="col-md-12 text-center">
@@ -113,5 +123,5 @@
 </form>
 
 <div>
-    <a href="../Views/Home/Index.cshtml">Back to List</a>
+    <a asp-action="Index" class="btn btn-secondary">Go Back</a>
 </div>

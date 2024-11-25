@@ -47,6 +47,10 @@
                 <input value="@(Model.State ? "Active" : "Disable")"  class="form-control" readonly />
             </div>
             <div class="form-group">
+                <label asp-for="AllowedRole" class="control-label"></label>
+                <input asp-for="AllowedRole" class="form-control" readonly />
+            </div>
+            <div class="form-group">
                 <label asp-for="Simbol" class="control-label col-md-12"></label>
                 <img src="data:image/png;base64,@Convert.ToBase64String(Model.Simbol)" alt="Component Icon" class="img-fluid" />
             </div>
