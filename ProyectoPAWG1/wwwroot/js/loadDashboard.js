@@ -1,15 +1,25 @@
 ﻿$(document).ready(() => {
     $.ajax({
         url: '/Dashboard/LoadData',
-        method: 'GET', // Método HTTP: GET, POST, PUT, DELETE, etc.
-        contentType: 'application/json', // Tipo de contenido (opcional)
-        dataType: 'json', // Tipo esperado de respuesta (opcional)
+        method: 'GET',
+        contentType: 'application/json', 
+        dataType: 'json', 
         success: function (response) {
+
+            const favorites = response.filter(x =>
+                x.users.some(c => c.idUser == 1)
+            );
+
+            const data = response.filter(x =>
+                !x.users.some(c => c.idUser == 1)
+            );
+
+
             let weathers = [];
             let exchanges = [];
             let news = [];
 
-            response.forEach(
+            data.forEach(
                 component => {
                     if (component.typeComponent == "Weather") {
                         weathers.push(component);
@@ -20,10 +30,49 @@
                     }
                 }
             );
+            if (favorites.length > 0) {
+                let divFavorite = document.getElementById("title_favorite");
+                let h3 = document.createElement("h3");
+                const title = "My Favorites";
 
-            loadWeather(weathers);
-            loadExchange(exchanges);
-            loadNotice(news);
+                h3.innerHTML = title;
+                divFavorite.appendChild(h3);
+
+                loadFavorite(favorites)
+            }
+
+            if (weathers.length > 0) {
+                let divWeather = document.getElementById("title_weather");
+                let h3 = document.createElement("h3");
+                const title = "Weather";
+
+                h3.innerHTML = title;
+                divWeather.appendChild(h3);
+
+                loadWeather(weathers, "weather");
+            }
+
+            if (exchanges.length > 0) {
+                let divExchange = document.getElementById("title_exchange");
+                let h3 = document.createElement("h3");
+                const title = "Exchange Rate";
+
+                h3.innerHTML = title;
+                divExchange.appendChild(h3);
+
+                loadExchange(exchanges, "exchange");
+            }
+
+            if (news.length > 0) {
+                let divNews = document.getElementById("title_news");
+                let h3 = document.createElement("h3");
+                const title = "News";
+
+                h3.innerHTML = title;
+                divNews.appendChild(h3);
+
+                loadNotice(news, "news");
+            }
         },
         error: function (jqXHR, textStatus, errorThrown) {
             console.error('Error en la solicitud:', textStatus, errorThrown);
@@ -31,12 +80,49 @@
     });
 });
 
-const loadWeather = data => {
+const loadFavorite = data => {
+    let weathers = [];
+    let exchanges = [];
+    let news = [];
+
+    data.forEach(
+        component => {
+            if (component.typeComponent == "Weather") {
+                weathers.push(component);
+            } else if (component.typeComponent == "Exchange Rate") {
+                exchanges.push(component);
+            } else if (component.typeComponent == "News") {
+                news.push(component);
+            }
+        }
+    );
+
+    loadWeather(weathers, "favorites", true);
+    loadExchange(exchanges, "favorites", true);
+    loadNotice(news, "favorites", true);
+
+}
+
+const loadWeather = (data, id, favorite = false) => {
     data.forEach(widget => {
         let html = document.createElement("div");
         html.className = `col-md-${widget.size} mb-4`;
 
         const data = JSON.parse(widget.data)
+
+        const isFavorite = `<form action="/Dashboard/DeleteFavorite" method="post" style="width:100%; height:100%">
+                                <input type="hidden" name="id" value="${widget.idComponent}" />
+                                <button type="submit" class="btn btn-noFavorite">
+                                    <i class="fa-regular fa-heart heart"></i>
+                                </button>
+                            </form>`;
+
+        const noFavorite = `<form action="/Dashboard/SaveFavorite" method="post" style="width:100%; height:100%">
+                                <input type="hidden" name="id" value="${widget.idComponent}" />
+                                <button type="submit" class="btn btn-favorite">
+                                    <i class="fa-regular fa-heart heart"></i>
+                                </button>
+                            </form>`;
 
         html.innerHTML = `
                 <div class="card" style="background-color: ${widget.color};">
@@ -59,30 +145,39 @@ const loadWeather = data => {
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <form action="/Dashboard/SaveFavorite" method="post" style="width:100%; height:100%">
-                                    <input type="hidden" name="id" value="${widget.idComponent}" />
-                                    <button type="submit" class="btn btn-favorite">
-                                        <i class="fa-regular fa-heart heart"></i>
-                                    </button>
-                                </form>
+                                ${ favorite ? isFavorite : noFavorite }
                             </div>
                         </div>
                     </div>
                 </div>
         `;
 
-        let weatherElement = document.getElementById("weather");
+        let weatherElement = document.getElementById(id);
 
         weatherElement.appendChild(html);
     });
 };
 
-const loadExchange = data => {
+const loadExchange = (data, id, favorite = false) => {
     data.forEach(table => {
         let html = document.createElement("div");
         html.className = `col-md-${table.size} mb-4`;
 
         const data = JSON.parse(table.data)
+
+        const isFavorite = `<form action="/Dashboard/DeleteFavorite" method="post" style="width:100%; height:100%">
+                                <input type="hidden" name="id" value="${table.idComponent}" />
+                                <button type="submit" class="btn btn-noFavorite">
+                                    <i class="fa-regular fa-heart heart"></i>
+                                </button>
+                            </form>`;
+
+        const noFavorite = `<form action="/Dashboard/SaveFavorite" method="post" style="width:100%; height:100%">
+                                <input type="hidden" name="id" value="${table.idComponent}" />
+                                <button type="submit" class="btn btn-favorite">
+                                    <i class="fa-regular fa-heart heart"></i>
+                                </button>
+                            </form>`;
 
         html.innerHTML = `
                 <div class="card" style="background-color: ${table.color}">
@@ -100,12 +195,7 @@ const loadExchange = data => {
                                 </div>
                             </div>
                             <div class="col-lg-2">
-                                <form action="/Dashboard/SaveFavorite" method="post" style="width:100%; height:100%">
-                                    <input type="hidden" name="id" value="${table.idComponent}" />
-                                    <button type="submit" class="btn btn-favorite">
-                                        <i class="fa-regular fa-heart heart"></i>
-                                    </button>
-                                </form>
+                                ${ favorite ? isFavorite : noFavorite }
                             </div>
                         </div>
                     </div>
@@ -125,19 +215,33 @@ const loadExchange = data => {
                 </div>
         `;
 
-        let weatherElement = document.getElementById("exchange");
+        let weatherElement = document.getElementById(id);
 
         weatherElement.appendChild(html);
     });
 };
 
-const loadNotice = data => {
+const loadNotice = (data, id, favorite = false) => {
     data.forEach(card => {
         let html = document.createElement("div");
         html.className = `col-md-${card.size} mb-4`;
 
         const data = JSON.parse(card.data)
-            
+
+        const isFavorite = `<form action="/Dashboard/DeleteFavorite" method="post" style="width:100%; height:100%">
+                                <input type="hidden" name="id" value="${card.idComponent}" />
+                                <button type="submit" class="btn btn-noFavorite">
+                                    <i class="fa-regular fa-heart heart"></i>
+                                </button>
+                            </form>`;
+
+        const noFavorite = `<form action="/Dashboard/SaveFavorite" method="post" style="width:100%; height:100%">
+                                <input type="hidden" name="id" value="${card.idComponent}" />
+                                <button type="submit" class="btn btn-favorite">
+                                    <i class="fa-regular fa-heart heart"></i>
+                                </button>
+                            </form>`;
+
         html.innerHTML = `
             <div class="card" style="background-color: ${card.color}">
                 <div class="card-body p-3">
@@ -161,19 +265,15 @@ const loadNotice = data => {
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <form action="/Dashboard/SaveFavorite" method="post" style="width:100%; height:100%">
-                                    <input type="hidden" name="id" value="${card.idComponent}" />
-                                    <button type="submit" class="btn btn-favorite">
-                                        <i class="fa-regular fa-heart heart"></i>
-                                    </button>
-                                </form>
+                            ${ favorite ? isFavorite : noFavorite }
                         </div>
                     </div>
                 </div>
             </div>
         `;
 
-        let weatherElement = document.getElementById("news");
+
+        let weatherElement = document.getElementById(id);
 
         weatherElement.appendChild(html);
     });

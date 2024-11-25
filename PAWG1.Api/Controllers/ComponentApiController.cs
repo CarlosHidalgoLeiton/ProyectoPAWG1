@@ -48,6 +48,14 @@ public class ComponentApiController : Controller
         return result;
     }
 
+    [HttpPost("deleteFavorite", Name = "DeleteFavoriteComponent")]
+    public async Task<bool> DeleteFavorite([FromBody] CMP.Component component)
+    {
+        var result = await _componentService.DeleteTestAsync(component);
+
+        return result;
+    }
+
     [HttpPut("{id}", Name = "UpdateComponent")]
     public async Task<CMP.Component> Update([FromBody] CMP.Component component)
     {
