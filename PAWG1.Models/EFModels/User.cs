@@ -19,7 +19,7 @@ public partial class User
 
     public virtual ICollection<Component> Components { get; set; } = new List<Component>();
 
-    public virtual Role IdRoleNavigation { get; set; } = null!;
+    public virtual Role? IdRoleNavigation { get; set; } = null!;
 
     public virtual ICollection<Component> ComponentsNavigation { get; set; } = new List<Component>();
 }
