@@ -89,7 +89,9 @@ namespace ProyectoPAWG1.Controllers
                 {
                     new Claim(ClaimTypes.Name, matchedUser.Username),
                     new Claim(ClaimTypes.Email, matchedUser.Email),
-                    new Claim(ClaimTypes.Role, matchedUser.IdRole.ToString()) // O cualquier otro claim
+                    new Claim(ClaimTypes.Role, matchedUser.IdRole.ToString()),
+                    new Claim(ClaimTypes.NameIdentifier, matchedUser.IdUser.ToString()) 
+
                 };
 
 
