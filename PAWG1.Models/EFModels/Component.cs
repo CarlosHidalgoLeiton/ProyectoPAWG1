@@ -39,7 +39,9 @@ public partial class Component
 
     public string AllowedRole { get; set; } = null!;
 
-    public virtual User? IdOwnerNavigation { get; set; } = null! ;
+    public virtual User? IdOwnerNavigation { get; set; } = null!;
 
     public virtual ICollection<User> Users { get; set; } = new List<User>();
+
+    public virtual ICollection<User> UsersNavigation { get; set; } = new List<User>();
 }

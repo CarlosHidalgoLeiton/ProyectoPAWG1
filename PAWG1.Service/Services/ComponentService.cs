@@ -9,9 +9,9 @@ public interface IComponentService
 {
     Task<bool> DeleteComponentAsync(int id);
     Task<IEnumerable<Component>> GetAllComponentsAsync();
+    Task<IEnumerable<CMP.Component>> GetAllDashboardAsync();
     Task<Component> GetComponentAsync(int id);
     Task<Component> SaveComponentAsync(Component component);
-    Task<Component> SaveFavoriteAsync(User user, int id);
     Task<bool> DeleteFavoriteAsync(int id);
 }
 
@@ -47,6 +47,11 @@ public class ComponentService : IComponentService
         return await _componentRepository.GetAllComponentsAsync();
     }
 
+    public async Task<IEnumerable<CMP.Component>> GetAllDashboardAsync() 
+    {
+        return await _componentRepository.GetAllDashboardAsync();
+    }
+
     /// <summary>
     /// Asynchronously saves a new Category into the database.
     /// </summary>
@@ -67,19 +72,6 @@ public class ComponentService : IComponentService
         var components = await _componentRepository.GetAllComponentsAsync();
         var deletion = components.SingleOrDefault(x => x.IdComponent == id);
         return await _componentRepository.DeleteComponentAsync(deletion);
-    }
-
-    public async Task<CMP.Component> SaveFavoriteAsync(User user, int id)
-    {
-        var components = await _componentRepository.GetAllComponentsAsync();
-
-        var component = components.SingleOrDefault(c => c.IdComponent == id);
-
-        component.Users.Add(user);
-
-        var result = await _componentRepository.SaveComponentAsync(component);
-
-        return result;
     }
 
     public async Task<bool> DeleteFavoriteAsync(int id) {

@@ -6,12 +6,16 @@
         dataType: 'json', 
         success: function (response) {
 
+            const hidden = response.filter(
+                x => x.usersNavigation.some( c => c.idUser == 1)
+            )
+
             const favorites = response.filter(x =>
-                x.users.some(c => c.idUser == 1)
+                x.users.some(c => c.idUser == 1) && !x.usersNavigation.some(c => c.idUser == 1)
             );
 
             const data = response.filter(x =>
-                !x.users.some(c => c.idUser == 1)
+                !x.users.some(c => c.idUser == 1) && !x.usersNavigation.some(c => c.idUser == 1)
             );
 
 
@@ -30,6 +34,17 @@
                     }
                 }
             );
+            if (hidden.length > 0) {
+                let divFavorite = document.getElementById("title_hidden");
+                let h3 = document.createElement("h3");
+                const title = "Hidden";
+
+                h3.innerHTML = title;
+                divFavorite.appendChild(h3);
+
+                loadHidden(hidden)
+            }
+
             if (favorites.length > 0) {
                 let divFavorite = document.getElementById("title_favorite");
                 let h3 = document.createElement("h3");
@@ -80,6 +95,29 @@
     });
 });
 
+const loadHidden = data => {
+    let weathers = [];
+    let exchanges = [];
+    let news = [];
+
+    data.forEach(
+        component => {
+            if (component.typeComponent == "Weather") {
+                weathers.push(component);
+            } else if (component.typeComponent == "Exchange Rate") {
+                exchanges.push(component);
+            } else if (component.typeComponent == "News") {
+                news.push(component);
+            }
+        }
+    );
+
+    loadWeather(weathers, "hidden", false, true);
+    loadExchange(exchanges, "hidden", false, true);
+    loadNotice(news, "hidden", false, true);
+
+}
+
 const loadFavorite = data => {
     let weathers = [];
     let exchanges = [];
@@ -103,24 +141,38 @@ const loadFavorite = data => {
 
 }
 
-const loadWeather = (data, id, favorite = false) => {
+const loadWeather = (data, id, favorite = false, hidden = false) => {
     data.forEach(widget => {
         let html = document.createElement("div");
         html.className = `col-md-${widget.size} mb-4`;
 
         const data = JSON.parse(widget.data)
 
-        const isFavorite = `<form action="/Dashboard/DeleteFavorite" method="post" style="width:100%; height:100%">
+        const isFavorite = `<form action="/Dashboard/DeleteFavorite" method="post">
                                 <input type="hidden" name="id" value="${widget.idComponent}" />
                                 <button type="submit" class="btn btn-noFavorite">
+                                    <i class="fa-solid fa-heart heart"></i>
+                                </button>
+                            </form>`;
+
+        const noFavorite = `<form action="/Dashboard/SaveFavorite" method="post">
+                                <input type="hidden" name="id" value="${widget.idComponent}" />
+                                <button type="submit" class="btn btn-favorite">
                                     <i class="fa-regular fa-heart heart"></i>
                                 </button>
                             </form>`;
 
-        const noFavorite = `<form action="/Dashboard/SaveFavorite" method="post" style="width:100%; height:100%">
+        const isHiden = `<form action="/Dashboard/Show" method="post" >
                                 <input type="hidden" name="id" value="${widget.idComponent}" />
-                                <button type="submit" class="btn btn-favorite">
-                                    <i class="fa-regular fa-heart heart"></i>
+                                <button type="submit" class="btn btn-noFavorite">
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+                            </form>`;
+
+        const isShow = `<form action="/Dashboard/Hide" method="post">
+                                <input type="hidden" name="id" value="${widget.idComponent}" />
+                                <button type="submit" class="btn btn-hideShow">
+                                    <i class="fa-solid fa-eye-slash"></i>
                                 </button>
                             </form>`;
 
@@ -128,7 +180,7 @@ const loadWeather = (data, id, favorite = false) => {
                 <div class="card" style="background-color: ${widget.color};">
                     <div class="card-body p-3">
                         <div class="row mb-4">
-                            <div class="col-8">
+                            <div class="col-7">
                                 <div class="numbers">
                                     <p class="text-sm mb-0 text-capitalize font-weight-bold text-dark">${data.city.name}</p>
                                     <h5 class="font-weight-bolder mb-0 text-dark">
@@ -137,15 +189,18 @@ const loadWeather = (data, id, favorite = false) => {
                                     </h5>
                                 </div>
                             </div>
-                            <div class="col-4 text-end d-flex justify-content-end">
-                                <div class="icon-shape shadow bg-gradient-white text-center border-radius-md">
-                                        <img src="data:image/png;base64,${widget.simbol}" alt="Component Icon" class="img-fluid"/>
+                            <div class="col-5 text-end d-flex justify-content-end">
+                                <div class="col-md-6 icon-shape shadow bg-gradient-white text-center border-radius-md">
+                                    <img src="data:image/png;base64,${widget.simbol}" alt="Component Icon" class="img-fluid img-simbol"/>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-12">
+                            <div class="col-6">
                                 ${ favorite ? isFavorite : noFavorite }
+                            </div>
+                            <div class="col-6">
+                                ${ hidden ? isShow : isHiden }
                             </div>
                         </div>
                     </div>
@@ -165,17 +220,31 @@ const loadExchange = (data, id, favorite = false) => {
 
         const data = JSON.parse(table.data)
 
-        const isFavorite = `<form action="/Dashboard/DeleteFavorite" method="post" style="width:100%; height:100%">
+        const isFavorite = `<form action="/Dashboard/DeleteFavorite" method="post">
                                 <input type="hidden" name="id" value="${table.idComponent}" />
                                 <button type="submit" class="btn btn-noFavorite">
+                                    <i class="fa-solid fa-heart heart"></i>
+                                </button>
+                            </form>`;
+
+        const noFavorite = `<form action="/Dashboard/SaveFavorite" method="post" >
+                                <input type="hidden" name="id" value="${table.idComponent}" />
+                                <button type="submit" class="btn btn-favorite">
                                     <i class="fa-regular fa-heart heart"></i>
                                 </button>
                             </form>`;
 
-        const noFavorite = `<form action="/Dashboard/SaveFavorite" method="post" style="width:100%; height:100%">
+        const isHiden = `<form action="/Dashboard/Hidden" method="post" >
                                 <input type="hidden" name="id" value="${table.idComponent}" />
-                                <button type="submit" class="btn btn-favorite">
-                                    <i class="fa-regular fa-heart heart"></i>
+                                <button type="submit" class="btn btn-noHideShow">
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+                            </form>`;
+
+        const isShow = `<form action="/Dashboard/Show" method="post">
+                                <input type="hidden" name="id" value="${table.idComponent}" />
+                                <button type="submit" class="btn btn-hideShow">
+                                    <i class="fa-solid fa-eye-slash"></i>
                                 </button>
                             </form>`;
 
@@ -183,19 +252,22 @@ const loadExchange = (data, id, favorite = false) => {
                 <div class="card" style="background-color: ${table.color}">
                     <div class="card-header pb-0" style="background-color: ${table.color}">
                         <div class="row">
-                            <div class="col-lg-8">
+                            <div class="col-lg-6 mb-3">
                                 <h6 class="text-dark">${table.typeComponent}</h6>
                                 <p class="text-sm mb-0 text-dark">
                                     <span class="font-weight-bold ms-1">Type:</span> ${data.base_code}
                                 </p>
                             </div>
-                            <div class="col-lg-2">
+                            <div class="col-lg-2 mb-3">
                                  <div class="icon-shape shadow bg-gradient-white text-center border-radius-md">
                                         <img src="data:image/png;base64,${table.simbol}" alt="Component Icon" class="img-fluid"/>
                                 </div>
                             </div>
-                            <div class="col-lg-2">
+                            <div class="col-lg-2 mb-3">
                                 ${ favorite ? isFavorite : noFavorite }
+                            </div>
+                            <div class="col-lg-2 mb-3">
+                                ${ hidden ? isShow : isHiden }
                             </div>
                         </div>
                     </div>
@@ -231,7 +303,7 @@ const loadNotice = (data, id, favorite = false) => {
         const isFavorite = `<form action="/Dashboard/DeleteFavorite" method="post" style="width:100%; height:100%">
                                 <input type="hidden" name="id" value="${card.idComponent}" />
                                 <button type="submit" class="btn btn-noFavorite">
-                                    <i class="fa-regular fa-heart heart"></i>
+                                    <i class="fa-solid fa-heart heart"></i>
                                 </button>
                             </form>`;
 

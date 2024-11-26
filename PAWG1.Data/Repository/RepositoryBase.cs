@@ -82,13 +82,14 @@ public class RepositoryBase<T> : IRepositoryBase<T> where T : class
         {
             var query = _dataDbContext.Set<T>().AsQueryable();
 
-            // Verifica si el tipo T es 'Component'
             if (typeof(T) == typeof(Component))
             {
-                // Agrega el 'Include' solo si el tipo es 'Component'
-                query = query.Include("Users"); // Asumiendo que 'Users' es la relación que quieres cargar
+                query = query.Include("Users"); 
+                query = query.Include("UsersNavigation");
             } else if (typeof(T) == typeof(User)) {
                 query = query.Include("Components");
+                query = query.Include("ComponentsNavigation");
+                query = query.Include("Components1");
             }
 
             return await query.ToListAsync();

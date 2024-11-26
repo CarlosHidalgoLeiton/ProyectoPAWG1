@@ -307,6 +307,11 @@ svg {
   vertical-align: middle;
 }
 
+.img-simbol {
+    width: 100%;
+    height: 100% !important;
+}
+
 table {
   caption-side: bottom;
   border-collapse: collapse;
@@ -3559,6 +3564,43 @@ fieldset:disabled .btn {
   pointer-events: none;
   opacity: 0.65;
 }
+
+.btn-hideShow {
+    width: 100%;
+    height: 100%;
+    background-color: var(--bs-lightGray);
+}
+
+    .btn-hideShow i {
+        color: #67748e;
+    }
+
+    .btn-hideShow:hover {
+        background-color: #67748e;
+    }
+
+        .btn-hideShow:hover i {
+            color: var(--bs-lightGray);
+        }
+
+.btn-noHideShow {
+    width: 100%;
+    height: 100%;
+    background-color: #67748e;
+}
+
+    .btn-noHideShow i {
+        color: var(--bs-lightGray);
+    }
+
+    .btn-noHideShow:hover {
+        background-color: var(--bs-lightGray);
+    }
+
+        .btn-noHideShow:hover i {
+            color: #67748e;
+        }
+
 
 .btn-favorite {
     width: 100%;
@@ -20221,8 +20263,8 @@ label,
 }
 
 .icon-shape {
-  width: 48px;
-  height: 48px;
+  width: 80px;
+  height: 50px;
   background-position: center;
   border-radius: 0.75rem;
 }

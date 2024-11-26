@@ -29,7 +29,7 @@ public partial class PawprojectContext : DbContext
     {
         modelBuilder.Entity<Component>(entity =>
         {
-            entity.HasKey(e => e.IdComponent).HasName("PK__Componen__F186FE8676319583");
+            entity.HasKey(e => e.IdComponent).HasName("PK__Componen__F186FE86F398602B");
 
             entity.ToTable("Component");
 
@@ -57,12 +57,12 @@ public partial class PawprojectContext : DbContext
             entity.HasOne(d => d.IdOwnerNavigation).WithMany(p => p.Components)
                 .HasForeignKey(d => d.IdOwner)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Component__ID_Ow__5CD6CB2B");
+                .HasConstraintName("FK__Component__ID_Ow__68487DD7");
         });
 
         modelBuilder.Entity<Role>(entity =>
         {
-            entity.HasKey(e => e.IdRole).HasName("PK__Role__43DCD32DC9147024");
+            entity.HasKey(e => e.IdRole).HasName("PK__Role__43DCD32D73990B0A");
 
             entity.ToTable("Role");
 
@@ -74,7 +74,7 @@ public partial class PawprojectContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.IdUser).HasName("PK__User__ED4DE442C5A118F6");
+            entity.HasKey(e => e.IdUser).HasName("PK__User__ED4DE442B85BC211");
 
             entity.ToTable("User");
 
@@ -89,7 +89,24 @@ public partial class PawprojectContext : DbContext
             entity.HasOne(d => d.IdRoleNavigation).WithMany(p => p.Users)
                 .HasForeignKey(d => d.IdRole)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__User__ID_Role__3C69FB99");
+                .HasConstraintName("FK__User__ID_Role__656C112C");
+
+            entity.HasMany(d => d.Components1).WithMany(p => p.UsersNavigation)
+                .UsingEntity<Dictionary<string, object>>(
+                    "Hide",
+                    r => r.HasOne<Component>().WithMany()
+                        .HasForeignKey("ComponentId")
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("FK__Hide__ComponentI__75A278F5"),
+                    l => l.HasOne<User>().WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("FK__Hide__UserId__74AE54BC"),
+                    j =>
+                    {
+                        j.HasKey("UserId", "ComponentId").HasName("PK__Hide__EAF103489A948196");
+                        j.ToTable("Hide");
+                    });
 
             entity.HasMany(d => d.ComponentsNavigation).WithMany(p => p.Users)
                 .UsingEntity<Dictionary<string, object>>(
@@ -97,14 +114,14 @@ public partial class PawprojectContext : DbContext
                     r => r.HasOne<Component>().WithMany()
                         .HasForeignKey("ComponentId")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__Favorite__Compon__60A75C0F"),
+                        .HasConstraintName("FK__Favorite__Compon__6C190EBB"),
                     l => l.HasOne<User>().WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__Favorite__UserId__5FB337D6"),
+                        .HasConstraintName("FK__Favorite__UserId__6B24EA82"),
                     j =>
                     {
-                        j.HasKey("UserId", "ComponentId").HasName("PK__Favorite__EAF103480005DC95");
+                        j.HasKey("UserId", "ComponentId").HasName("PK__Favorite__EAF10348C94645E9");
                         j.ToTable("Favorite");
                     });
         });

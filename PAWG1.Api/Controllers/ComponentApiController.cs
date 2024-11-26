@@ -48,7 +48,27 @@ public class ComponentApiController : Controller
         return result;
     }
 
-    [HttpPut("deleteFavorite/${id}", Name = "DeleteFavoriteComponent")]
+    [HttpPut("hide", Name = "HideComponent")]
+    public async Task<CMP.Component> Hide([FromBody] CMP.Component component)
+    {
+        CMP.User user = new CMP.User()
+        {
+            IdUser = 1,
+            Email = "carloshl349@gmail.com",
+            State = true,
+            Username = "Carlos",
+            Password = "hola1234",
+            IdRole = 1
+        };
+
+        component.UsersNavigation.Add(user);
+
+        var result = await _componentService.SaveComponentAsync(component);
+
+        return result;
+    }
+
+    [HttpPost("deleteFavorite", Name = "DeleteFavoriteComponent")]
     public async Task<bool> DeleteFavorite(int id)
     {
         var result = await _componentService.DeleteFavoriteAsync(id);
@@ -70,6 +90,13 @@ public class ComponentApiController : Controller
     [HttpGet("all", Name = "GetAllComponents")]
     public async Task<IEnumerable<CMP.Component>> GetAll() {
         var components = await _componentService.GetAllComponentsAsync();
+        return components;
+    }
+
+    [HttpGet("dashboard", Name = "GetAllDashboard")]
+    public async Task<IEnumerable<CMP.Component>> GetAllDashboard()
+    {
+        var components = await _componentService.GetAllDashboardAsync();
         return components;
     }
 

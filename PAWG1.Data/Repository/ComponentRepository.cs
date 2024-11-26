@@ -11,6 +11,7 @@ public interface IComponentRepository
 {
     Task<bool> DeleteComponentAsync(Component component);
     Task<IEnumerable<Component>> GetAllComponentsAsync();
+    Task<IEnumerable<Component>> GetAllDashboardAsync();
     Task<Component> GetComponentAsync(int id);
     Task<Component> SaveComponentAsync(Component component);
 
@@ -36,7 +37,19 @@ public class ComponentRepository : RepositoryBase<Component>, IComponentReposito
 
     public async Task<IEnumerable<Component>> GetAllComponentsAsync()
     {
-        var components = await ReadAsync();
+        var data = await ReadAsync();
+
+        //Hay que cambiar aquí por el id del usuario logueado
+        var components = data.Where(x => x.IdOwner == 1);
+
+        return components;
+    }
+
+    public async Task<IEnumerable<Component>> GetAllDashboardAsync()
+    {
+        var data = await ReadAsync();
+
+        var components = data.Where(x => x.State == true);
 
         return components;
     }
