@@ -43,11 +43,24 @@ namespace ProyectoPAWG1.Controllers
         public async Task<IActionResult> Create([Bind("TimeRefresh,TypeComponent,Size,ApiUrl,ApiKey,ApiKeyId,Descrip,Title,Color,State,AllowedRole")] CMP.Component component, IFormFile Simbol)
         {
             ModelState.Remove("Simbol");
-
-            component.IdOwner = 1;
+            
 
             if (ModelState.IsValid)
             {
+                // Obtener el ID del usuario autenticado desde las cookies
+                var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+                if (userIdClaim != null && int.TryParse(userIdClaim.Value, out int userId))
+                {
+                    component.IdOwner = userId; 
+                }
+                else
+                {
+                    
+                    ModelState.AddModelError("", "User authentication failed. Please log in again.");
+                    return View(component);
+                }
+
+                
                 if (Simbol != null && Simbol.Length > 0)
                 {
                     using (var memoryStream = new MemoryStream())
@@ -57,6 +70,7 @@ namespace ProyectoPAWG1.Controllers
                     }
                 }
 
+                
                 var found = await _restProvider.PostAsync($"{_appSettings.Value.RestApi}/ComponentApi/save", JsonProvider.Serialize(component));
                 return (found != null)
                     ? RedirectToAction(nameof(Index))
@@ -65,6 +79,7 @@ namespace ProyectoPAWG1.Controllers
 
             return View(component);
         }
+
 
         [HttpGet]
         public async Task<IActionResult> Details(int id) 
