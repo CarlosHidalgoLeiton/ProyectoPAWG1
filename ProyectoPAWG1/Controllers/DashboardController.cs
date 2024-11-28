@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using PAWG1.Architecture.Providers;
+using PAWG1.Models.EFModels;
 using PAWG1.Mvc.Models;
 using CMP = PAWG1.Models.EFModels;
 
@@ -42,32 +43,20 @@ namespace ProyectoPAWG1.Controllers
                 }
 
             }
-
             return Json(components);
         }
 
         [HttpPost]
-        public async Task<IActionResult> SaveFavorite(int id)
+        public async Task<IActionResult> SaveStatus(int id, string type)
         {   
-            var component = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/ComponentApi/{id}", $"{id}");
+            Status status = new Status() 
+            { 
+                ComponentId = id,
+                UserId = 1,
+                Type = type
+            };
 
-            var componenT = JsonProvider.DeserializeSimple<CMP.Component>(component);
-
-            var favorite = await _restProvider.PutAsync($"{_appSettings.Value.RestApi}/ComponentApi/favorite", null, JsonProvider.Serialize(componenT));
-
-            var result = JsonProvider.DeserializeSimple<CMP.Component>(favorite);
-
-            return RedirectToAction(nameof(Index));
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Hide(int id)
-        {
-            var component = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/ComponentApi/{id}", $"{id}");
-
-            var componenT = JsonProvider.DeserializeSimple<CMP.Component>(component);
-
-            var favorite = await _restProvider.PutAsync($"{_appSettings.Value.RestApi}/ComponentApi/hide", null, JsonProvider.Serialize(componenT));
+            var favorite = await _restProvider.PostAsync($"{_appSettings.Value.RestApi}/StatusApi/save", JsonProvider.Serialize(status));
 
             var result = JsonProvider.DeserializeSimple<CMP.Component>(favorite);
 
@@ -75,9 +64,16 @@ namespace ProyectoPAWG1.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> DeleteFavorite(int id)
+        public async Task<IActionResult> DeleteStatus(int id)
         {
-            var deleted = await _restProvider.PostAsync($"{_appSettings.Value.RestApi}/ComponentApi/deleteFavorite?id={id}", $"{id}");
+            var data = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/StatusApi/all", null);
+
+            var statuses = JsonProvider.DeserializeSimple<IEnumerable<Status>>(data);
+
+            //Cambiar el usuario que esta quemado
+            var status = statuses.FirstOrDefault(x => (x.ComponentId == id) && (x.UserId == 1));
+
+            var deleted = await _restProvider.PostAsync($"{_appSettings.Value.RestApi}/StatusApi/deleteStatus", JsonProvider.Serialize(status));
 
             return RedirectToAction(nameof(Index));
         }

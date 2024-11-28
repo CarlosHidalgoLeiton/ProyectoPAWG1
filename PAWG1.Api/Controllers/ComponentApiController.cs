@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CMP = PAWG1.Models.EFModels;
 using PAWG1.Service.Services;
+using PAWG1.Models.EFModels;
 
 namespace PAW.Api.Controllers;
 
@@ -26,54 +27,6 @@ public class ComponentApiController : Controller
     public async Task<CMP.Component> Save([FromBody] CMP.Component component)
     {
         return await _componentService.SaveComponentAsync(component);
-    }
-
-    [HttpPut("favorite", Name = "FavoriteComponent")]
-    public async Task<CMP.Component> Favorite([FromBody] CMP.Component component)
-    {
-        CMP.User user = new CMP.User()
-        {
-            IdUser = 1,
-            Email = "carloshl349@gmail.com",
-            State = true,
-            Username = "Carlos",
-            Password = "hola1234",
-            IdRole = 1
-        };
-
-        component.Users.Add(user);
-
-        var result = await _componentService.SaveComponentAsync(component);
-
-        return result;
-    }
-
-    [HttpPut("hide", Name = "HideComponent")]
-    public async Task<CMP.Component> Hide([FromBody] CMP.Component component)
-    {
-        CMP.User user = new CMP.User()
-        {
-            IdUser = 1,
-            Email = "carloshl349@gmail.com",
-            State = true,
-            Username = "Carlos",
-            Password = "hola1234",
-            IdRole = 1
-        };
-
-        component.UsersNavigation.Add(user);
-
-        var result = await _componentService.SaveComponentAsync(component);
-
-        return result;
-    }
-
-    [HttpPost("deleteFavorite", Name = "DeleteFavoriteComponent")]
-    public async Task<bool> DeleteFavorite(int id)
-    {
-        var result = await _componentService.DeleteFavoriteAsync(id);
-
-        return result;
     }
 
     [HttpPut("{id}", Name = "UpdateComponent")]

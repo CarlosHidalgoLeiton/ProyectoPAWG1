@@ -17,11 +17,9 @@ public partial class User
 
     public int IdRole { get; set; }
 
-    public virtual ICollection<Component>? Components { get; set; } = new List<Component>();
+    public virtual ICollection<Component> Components { get; set; } = new List<Component>();
 
     public virtual Role? IdRoleNavigation { get; set; } = null!;
 
-    public virtual ICollection<Component>? Components1 { get; set; } = new List<Component>();
-
-    public virtual ICollection<Component>? ComponentsNavigation { get; set; } = new List<Component>();
+    public virtual ICollection<Status> Statuses { get; set; } = new List<Status>();
 }

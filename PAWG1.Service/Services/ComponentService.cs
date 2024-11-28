@@ -12,7 +12,6 @@ public interface IComponentService
     Task<IEnumerable<CMP.Component>> GetAllDashboardAsync();
     Task<Component> GetComponentAsync(int id);
     Task<Component> SaveComponentAsync(Component component);
-    Task<bool> DeleteFavoriteAsync(int id);
 }
 
 public class ComponentService : IComponentService
@@ -72,10 +71,6 @@ public class ComponentService : IComponentService
         var components = await _componentRepository.GetAllComponentsAsync();
         var deletion = components.SingleOrDefault(x => x.IdComponent == id);
         return await _componentRepository.DeleteComponentAsync(deletion);
-    }
-
-    public async Task<bool> DeleteFavoriteAsync(int id) {
-        return await _componentRepository.DeleteAsyncFavorite(id);
     }
 }
 

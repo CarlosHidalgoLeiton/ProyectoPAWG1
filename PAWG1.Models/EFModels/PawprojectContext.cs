@@ -19,6 +19,8 @@ public partial class PawprojectContext : DbContext
 
     public virtual DbSet<Role> Roles { get; set; }
 
+    public virtual DbSet<Status> Statuses { get; set; }
+
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -72,6 +74,27 @@ public partial class PawprojectContext : DbContext
                 .IsUnicode(false);
         });
 
+        modelBuilder.Entity<Status>(entity =>
+        {
+            entity.HasKey(e => new { e.UserId, e.ComponentId }).HasName("PK__Status__EAF1034818C9D78D");
+
+            entity.ToTable("Status");
+
+            entity.Property(e => e.Type)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+
+            entity.HasOne(d => d.Component).WithMany(p => p.Statuses)
+                .HasForeignKey(d => d.ComponentId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Status__Componen__797309D9");
+
+            entity.HasOne(d => d.User).WithMany(p => p.Statuses)
+                .HasForeignKey(d => d.UserId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Status__UserId__787EE5A0");
+        });
+
         modelBuilder.Entity<User>(entity =>
         {
             entity.HasKey(e => e.IdUser).HasName("PK__User__ED4DE442B85BC211");
@@ -90,40 +113,6 @@ public partial class PawprojectContext : DbContext
                 .HasForeignKey(d => d.IdRole)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__User__ID_Role__656C112C");
-
-            entity.HasMany(d => d.Components1).WithMany(p => p.UsersNavigation)
-                .UsingEntity<Dictionary<string, object>>(
-                    "Hide",
-                    r => r.HasOne<Component>().WithMany()
-                        .HasForeignKey("ComponentId")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__Hide__ComponentI__75A278F5"),
-                    l => l.HasOne<User>().WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__Hide__UserId__74AE54BC"),
-                    j =>
-                    {
-                        j.HasKey("UserId", "ComponentId").HasName("PK__Hide__EAF103489A948196");
-                        j.ToTable("Hide");
-                    });
-
-            entity.HasMany(d => d.ComponentsNavigation).WithMany(p => p.Users)
-                .UsingEntity<Dictionary<string, object>>(
-                    "Favorite",
-                    r => r.HasOne<Component>().WithMany()
-                        .HasForeignKey("ComponentId")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__Favorite__Compon__6C190EBB"),
-                    l => l.HasOne<User>().WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__Favorite__UserId__6B24EA82"),
-                    j =>
-                    {
-                        j.HasKey("UserId", "ComponentId").HasName("PK__Favorite__EAF10348C94645E9");
-                        j.ToTable("Favorite");
-                    });
         });
 
         OnModelCreatingPartial(modelBuilder);

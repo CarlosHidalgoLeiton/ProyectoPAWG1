@@ -49,18 +49,18 @@ namespace ProyectoPAWG1.Controllers
             {
                 // Obtener el ID del usuario autenticado desde las cookies
                 var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
-                if (userIdClaim != null && int.TryParse(userIdClaim.Value, out int userId))
-                {
-                    component.IdOwner = userId; 
-                }
-                else
-                {
-                    
-                    ModelState.AddModelError("", "User authentication failed. Please log in again.");
-                    return View(component);
-                }
+                //if (userIdClaim != null && int.TryParse(userIdClaim.Value, out int userId))
+                //{
+                //    component.IdOwner = userId; 
+                //}
+                //else
+                //{
 
-                
+                //    ModelState.AddModelError("", "User authentication failed. Please log in again.");
+                //    return View(component);
+                //}
+
+                component.IdOwner = 1;
                 if (Simbol != null && Simbol.Length > 0)
                 {
                     using (var memoryStream = new MemoryStream())

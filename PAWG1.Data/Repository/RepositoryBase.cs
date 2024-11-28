@@ -84,13 +84,8 @@ public class RepositoryBase<T> : IRepositoryBase<T> where T : class
 
             if (typeof(T) == typeof(Component))
             {
-                query = query.Include("Users"); 
-                query = query.Include("UsersNavigation");
-            } else if (typeof(T) == typeof(User)) {
-                query = query.Include("Components");
-                query = query.Include("ComponentsNavigation");
-                query = query.Include("Components1");
-            }
+                query = query.Include("Statuses"); 
+            } 
 
             return await query.ToListAsync();
         }
