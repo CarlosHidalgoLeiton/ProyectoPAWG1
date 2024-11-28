@@ -37,13 +37,11 @@
             if (hidden.length > 0) {
                 let divFavorite = document.getElementById("title_hidden");
                 let a = document.createElement("a");
-                let h4 = document.createElement("h4");
                 const title = "Show Hidden";
-                h4.innerHTML = title + ` <i class="fa-solid fa-arrow-down"></i>`;
-                a.appendChild(h4);
+                a.innerHTML = title + ` <i class="fa-solid fa-arrow-down"></i>`;
 
                 a.classList.add("btn");
-                a.classList.add("btn-primary");
+                a.classList.add("btn-secondary");
                 a.setAttribute("data-bs-toggle", "collapse");
                 a.setAttribute("href", "#collapseExample");
                 a.setAttribute("role", "button");
