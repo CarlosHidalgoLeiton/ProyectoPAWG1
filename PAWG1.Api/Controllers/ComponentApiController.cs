@@ -2,6 +2,7 @@
 using CMP = PAWG1.Models.EFModels;
 using PAWG1.Service.Services;
 using PAWG1.Models.EFModels;
+using PAWG1.Architecture.Helpers;
 
 namespace PAW.Api.Controllers;
 
@@ -42,6 +43,7 @@ public class ComponentApiController : Controller
 
     [HttpGet("all", Name = "GetAllComponents")]
     public async Task<IEnumerable<CMP.Component>> GetAll() {
+        
         var components = await _componentService.GetAllComponentsAsync();
         return components;
     }

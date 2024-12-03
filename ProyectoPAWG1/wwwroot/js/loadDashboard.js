@@ -5,17 +5,19 @@
         contentType: 'application/json', 
         dataType: 'json', 
         success: function (response) {
+            const userId = response.userId;
+            const components = response.components;
 
-            const hidden = response.filter(
-                x => x.statuses.some(c => (c.userId == 1) && (c.type == "Hide"))
+            const hidden = components.filter(
+                x => x.statuses.some(c => (c.userId == userId) && (c.type == "Hide"))
             );
 
-            const favorites = response.filter(
-                x => x.statuses.some(c => (c.userId == 1) && (c.type == "Favorite"))
+            const favorites = components.filter(
+                x => x.statuses.some(c => (c.userId == userId) && (c.type == "Favorite"))
             );
 
-            const data = response.filter(x =>
-                !x.statuses.some(c => c.userId == 1)
+            const data = components.filter(x =>
+                !x.statuses.some(c => c.userId == userId)
             );
 
 

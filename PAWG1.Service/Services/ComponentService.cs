@@ -2,6 +2,7 @@
 using PAWG1.Data.Repository;
 using CMP = PAWG1.Models.EFModels;
 using PAWG1.Models.EFModels;
+using PAWG1.Architecture.Helpers;
 
 namespace PAWG1.Service.Services;
 
@@ -43,6 +44,7 @@ public class ComponentService : IComponentService
     /// <returns>A task that represents the asynchronous operation, containing all <see cref="Category"/>.</returns>
     public async Task<IEnumerable<CMP.Component>> GetAllComponentsAsync()
     {
+        
         return await _componentRepository.GetAllComponentsAsync();
     }
 

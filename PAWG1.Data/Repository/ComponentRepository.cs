@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PAWG1.Architecture.Helpers;
 using PAWG1.Models.EFModels;
 namespace PAWG1.Data.Repository;
 
@@ -34,10 +35,7 @@ public class ComponentRepository : RepositoryBase<Component>, IComponentReposito
 
     public async Task<IEnumerable<Component>> GetAllComponentsAsync()
     {
-        var data = await ReadAsync();
-
-        //Hay que cambiar aquí por el id del usuario logueado
-        var components = data.Where(x => x.IdOwner == 1);
+        var components = await ReadAsync();
 
         return components;
     }

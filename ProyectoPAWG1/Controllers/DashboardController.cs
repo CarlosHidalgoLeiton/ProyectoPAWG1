@@ -1,6 +1,8 @@
 ﻿using APWG1.Architecture;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json.Linq;
+using PAWG1.Architecture.Helpers;
 using PAWG1.Architecture.Providers;
 using PAWG1.Models.EFModels;
 using PAWG1.Mvc.Models;
@@ -22,11 +24,18 @@ namespace ProyectoPAWG1.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> LoadData() 
+        public async Task<IActionResult> LoadData()
         {
+            
             var data = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/ComponentApi/dashboard", null);
-
             var components = JsonProvider.DeserializeSimple<IEnumerable<CMP.Component>>(data);
+            var userRole = UserHelper.GetUserRole(User);
+            var userId = UserHelper.GetAuthenticatedUserId(User);
+            components = components.Where(c =>
+                c.AllowedRole == "All" || 
+                (c.AllowedRole == "Admin" && userRole == "1") || 
+                (c.AllowedRole == "User" && userRole == "2")  
+            ).ToList();
 
             foreach (var component in components ?? Enumerable.Empty<CMP.Component>())
             {
@@ -35,24 +44,28 @@ namespace ProyectoPAWG1.Controllers
                 try
                 {
                     var getInfo = await _restProvider.GetAsync(url, null);
-                    component.Data = getInfo;
+                    component.Data = getInfo; 
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine($"It had happened an error trying to get the api information. {e}");
+                    Console.WriteLine($"Ocurrió un error al intentar obtener la información de la API: {e}");
                 }
-
             }
-            return Json(components);
+
+
+            return Json(new { userId, components });
         }
+
+
 
         [HttpPost]
         public async Task<IActionResult> SaveStatus(int id, string type)
-        {   
+        {
+            var userIdClaim = UserHelper.GetAuthenticatedUserId(User);
             Status status = new Status() 
             { 
                 ComponentId = id,
-                UserId = 1,
+                UserId = userIdClaim.Value,
                 Type = type
             };
 
@@ -69,9 +82,9 @@ namespace ProyectoPAWG1.Controllers
             var data = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/StatusApi/all", null);
 
             var statuses = JsonProvider.DeserializeSimple<IEnumerable<Status>>(data);
-
+            var userIdClaim = UserHelper.GetAuthenticatedUserId(User);
             //Cambiar el usuario que esta quemado
-            var status = statuses.FirstOrDefault(x => (x.ComponentId == id) && (x.UserId == 1));
+            var status = statuses.FirstOrDefault(x => (x.ComponentId == id) && (x.UserId == userIdClaim.Value));
 
             var deleted = await _restProvider.PostAsync($"{_appSettings.Value.RestApi}/StatusApi/deleteStatus", JsonProvider.Serialize(status));
 
