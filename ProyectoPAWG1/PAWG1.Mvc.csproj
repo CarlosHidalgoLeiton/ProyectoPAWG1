@@ -27,6 +27,7 @@
   <ItemGroup>
     <ProjectReference Include="..\PAWG1.Architecture\PAWG1.Architecture.csproj" />
     <ProjectReference Include="..\PAWG1.Models\PAWG1.Models.csproj" />
+    <ProjectReference Include="..\PAWG1.Validator\PAWG1.Validator.csproj" />
   </ItemGroup>
 
 </Project>
