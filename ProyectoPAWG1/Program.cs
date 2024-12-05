@@ -1,6 +1,9 @@
 using APWG1.Architecture;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using PAWG1.Data.Repository;
 using PAWG1.Mvc.Models;
+using PAWG1.Service.Services;
+using PAWG1.Validator.Validators;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +18,9 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<IRestProvider, RestProvider>();
 builder.Services.Configure<AppSettings>(builder.Configuration);
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IValidatorUser, ValidatorUser>();
 
 var app = builder.Build();
 

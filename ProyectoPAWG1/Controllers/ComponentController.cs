@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using PAWG1.Architecture.Exceptions;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
+using PAWG1.Architecture.Helpers;
 
 namespace ProyectoPAWG1.Controllers
 {
@@ -21,11 +22,16 @@ namespace ProyectoPAWG1.Controllers
         private readonly IOptions<AppSettings> _appSettings = appSettings;
 
         [HttpGet]
-        public async Task<IActionResult> Index() {
-
+        public async Task<IActionResult> Index()
+        {
+            var userIdClaim = UserHelper.GetAuthenticatedUserId(User);
+            if (userIdClaim == null)
+            {
+                return Unauthorized();
+            }
             var data = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/ComponentApi/all", null);
-
             var components = JsonProvider.DeserializeSimple<IEnumerable<CMP.Component>>(data);
+            components = components?.Where(c => c.IdOwner == userIdClaim).ToList();
 
             var dataTime = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/TimeRefreshApi/1", null);
 
@@ -37,6 +43,7 @@ namespace ProyectoPAWG1.Controllers
 
 
         }
+
 
         //[Authorize(Roles = "Admin")]
         [HttpGet]
@@ -55,20 +62,14 @@ namespace ProyectoPAWG1.Controllers
 
             if (ModelState.IsValid)
             {
-                // Obtener el ID del usuario autenticado desde las cookies
-                var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
-                //if (userIdClaim != null && int.TryParse(userIdClaim.Value, out int userId))
-                //{
-                //    component.IdOwner = userId; 
-                //}
-                //else
-                //{
+                var userIdClaim = UserHelper.GetAuthenticatedUserId(User);
+                if (!userIdClaim.HasValue)
+                {
+                    ModelState.AddModelError("", "User authentication failed. Please log in again.");
+                    return View(component);
+                }
+                component.IdOwner = userIdClaim.Value;
 
-                //    ModelState.AddModelError("", "User authentication failed. Please log in again.");
-                //    return View(component);
-                //}
-
-                component.IdOwner = 1;
                 if (Simbol != null && Simbol.Length > 0)
                 {
                     using (var memoryStream = new MemoryStream())

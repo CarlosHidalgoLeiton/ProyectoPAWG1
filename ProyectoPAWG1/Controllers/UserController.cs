@@ -12,22 +12,30 @@ using System.Text.Json;
 using System.Security.Cryptography;
 using System.Text;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using PAWG1.Validator.Validators;
+using PAWG1.Service.Services;
 
 namespace ProyectoPAWG1.Controllers
 {
-    public class UserController(IRestProvider restProvider, IOptions<AppSettings> appSettings) : Controller
+    public class UserController : Controller
     {
+        private readonly IRestProvider _restProvider;
+        private readonly IOptions<AppSettings> _appSettings;
+        private readonly IValidatorUser _validatorUser;
 
-       private readonly IRestProvider _restProvider = restProvider;
-        private readonly IOptions<AppSettings> _appSettings = appSettings;
-
-
+        // Constructor que recibe los parámetros correctos y pasa al constructor base.
+        public UserController(IRestProvider restProvider, IOptions<AppSettings> appSettings, IValidatorUser validatorUser)
+            : base()  // Inicialización de la clase base (Controller)
+        {
+            _restProvider = restProvider;
+            _appSettings = appSettings;
+            _validatorUser = validatorUser;
+        }
         [HttpGet]
-        public async Task<IActionResult> Index() {
+        public async Task<IActionResult> Index()
+        {
 
             var data = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/UserApi/all", null);
-
-
 
             var users = JsonProvider.DeserializeSimple<IEnumerable<CMP.User>>(data);
 
@@ -39,11 +47,12 @@ namespace ProyectoPAWG1.Controllers
         public async Task<IActionResult> Create()
         {
             var data = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/RoleApi/all", null);
-
             var roles = JsonProvider.DeserializeSimple<IEnumerable<CMP.Role>>(data);
-
             ViewBag.Roles = roles;
-
+            if (TempData["ErrorUsername"] != null) { ModelState.AddModelError("Username", TempData["ErrorUsername"].ToString()); }
+            if (TempData["ErrorEmail"] != null) { ModelState.AddModelError("Email", TempData["ErrorEmail"].ToString()); }
+            if (TempData["ErrorPassword"] != null) { ModelState.AddModelError("Password", TempData["ErrorPassword"].ToString()); }
+            if (TempData["ErrorRole"] != null) { ModelState.AddModelError("IdRole", TempData["ErrorRole"].ToString()); }
             return View();
         }
 
@@ -52,51 +61,17 @@ namespace ProyectoPAWG1.Controllers
         public async Task<IActionResult> Create([Bind("Username,Email,Password,State,IdRole")] CMP.User user)
         {
             ModelState.Remove("IdRoleNavigation");
-            var data = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/UserApi/all", null);
+            bool? validationMessage = await _validatorUser.ValidatorCreate(user, TempData);
 
-            var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-            var existingUsers = JsonSerializer.Deserialize<List<CMP.User>>(data, options);
+            if (validationMessage == false || validationMessage == null) { return RedirectToAction(nameof(Create)); }
 
-            // Validación del Username
-            if (existingUsers != null && existingUsers.Any(existingUser => existingUser.Username == user.Username))
-            {
-                ModelState.AddModelError("Username", "The username already exists. Please choose another one.");
-
-                var dataRoles = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/RoleApi/all", null);
-
-                var roles = JsonProvider.DeserializeSimple<IEnumerable<CMP.Role>>(dataRoles);
-
-                ViewBag.Roles = roles;
-                return View(user);
-            }
-
-            if (user.Password.Length < 8 || user.Password.Length > 16)
-            {
-                ModelState.AddModelError("Password", "The password must be between 8 and 16 characters.");
-                var dataRoles = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/RoleApi/all", null);
-
-                var roles = JsonProvider.DeserializeSimple<IEnumerable<CMP.Role>>(dataRoles);
-
-                ViewBag.Roles = roles;
-
-                return View(user);
-            }
-
-
-
-            // Encriptar la contraseña
-            user.Password = HashPassword(user.Password);
-
-            //ModelState.IdRolenNavigation = ModelState.IdRole;
             if (ModelState.IsValid)
             {
-
                 var found = await _restProvider.PostAsync($"{_appSettings.Value.RestApi}/UserApi/save", JsonProvider.Serialize(user));
                 return (found != null)
                     ? RedirectToAction(nameof(Index))
-                    : View(user); 
+                    : View(user);
             }
-
             return View(Index);
         }
 
@@ -105,6 +80,7 @@ namespace ProyectoPAWG1.Controllers
         {
             if (id == null)
                 return NotFound();
+
 
             var user = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/UserApi/{id}", $"{id}");
 
@@ -124,8 +100,13 @@ namespace ProyectoPAWG1.Controllers
         // GET: User/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
-                return NotFound();
+            if (id == null) { return View(Index); }
+
+            if (TempData["ErrorUsername"] != null) { ModelState.AddModelError("Username", TempData["ErrorUsername"].ToString()); }
+            if (TempData["ErrorEmail"] != null) { ModelState.AddModelError("Email", TempData["ErrorEmail"].ToString()); }
+            if (TempData["ErrorPassword"] != null) { ModelState.AddModelError("Password", TempData["ErrorPassword"].ToString()); }
+            if (TempData["ErrorRole"] != null) { ModelState.AddModelError("IdRole", TempData["ErrorRole"].ToString()); }
+            if (TempData["Password"] != null) { ModelState.Remove("Password"); }
 
             var user = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/UserApi/{id}", $"{id}");
 
@@ -147,55 +128,13 @@ namespace ProyectoPAWG1.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("IdUser,Username,Email,Password,State,IdRole")] CMP.User user)
         {
-            if (user == null || id != user.IdUser)
-                return NotFound();
+            if (user == null || id != user.IdUser) { return View(Index); }
 
-            var dataUserId = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/UserApi/{id}", $"{id}");
-            var userId = JsonProvider.DeserializeSimple<User>(dataUserId);
+            bool? ValidatorEdit = await _validatorUser.ValidatorEdit(id, user, TempData);
 
-            if(userId.Username != user.Username)
-            {
-                var dataUsers = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/UserApi/all", null);
+            if (ValidatorEdit == false || ValidatorEdit == null) { return RedirectToAction(nameof(Edit)); }
+            ModelState.Remove("Password");
 
-                var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-                var existingUsers = JsonSerializer.Deserialize<List<CMP.User>>(dataUsers, options);
-
-                // Validación del Username
-                if (existingUsers != null && existingUsers.Any(existingUser => existingUser.Username == user.Username))
-                {
-                    ModelState.AddModelError("Username", "The username already exists. Please choose another one.");
-
-                    var dataRoles = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/RoleApi/all", null);
-
-                    var roles = JsonProvider.DeserializeSimple<IEnumerable<CMP.Role>>(dataRoles);
-
-                    ViewBag.Roles = roles;
-                    return View(user);
-                }
-            }
-
-            if (user.Password == null)
-            {
-                var userg = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/UserApi/{id}", $"{id}");
-                var getuser = JsonProvider.DeserializeSimple<User>(userg);
-
-                user.Password = getuser.Password;
-                ModelState.Remove("Password");
-            }
-
-            if (user.Password.Length < 8 || user.Password.Length > 16)
-            {
-                ModelState.AddModelError("Password", "The password must be between 8 and 16 characters.");
-                var dataRoles = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/RoleApi/all", null);
-
-                var roles = JsonProvider.DeserializeSimple<IEnumerable<CMP.Role>>(dataRoles);
-
-                ViewBag.Roles = roles;
-
-                return View(user);
-            }
-
-            user.Password = HashPassword(user.Password);
             User? updated = default;
             if (ModelState.IsValid)
             {
@@ -231,14 +170,14 @@ namespace ProyectoPAWG1.Controllers
 
             var userS = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/UserApi/{id}", $"{id}");
             if (userS == null)
-                return NotFound();
+                return RedirectToAction(nameof(Index));
 
             var user = JsonProvider.DeserializeSimple<User>(userS);
 
             var data = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/RoleApi/{user.IdRole}", $"{user.IdRole}");
             if (data == null)
-                return NotFound();
-          
+                return RedirectToAction(nameof(Index));
+
             var roles = JsonProvider.DeserializeSimple<CMP.Role>(data);
 
             ViewBag.Roles = roles;
@@ -256,8 +195,6 @@ namespace ProyectoPAWG1.Controllers
                 ? NotFound()
                 : RedirectToAction(nameof(Index));
         }
-
-
 
     }
 }

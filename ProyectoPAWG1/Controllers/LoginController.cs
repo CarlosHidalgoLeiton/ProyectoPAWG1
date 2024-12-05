@@ -12,13 +12,24 @@ using System.Text;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
+using PAWG1.Validator.Validators;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
 
 namespace ProyectoPAWG1.Controllers
 {
-    public class LoginController(IRestProvider restProvider, IOptions<AppSettings> appSettings) : Controller
+    public class LoginController : Controller
     {
-        private readonly IRestProvider _restProvider = restProvider;
-        private readonly IOptions<AppSettings> _appSettings = appSettings;
+        private readonly IRestProvider _restProvider;
+        private readonly IOptions<AppSettings> _appSettings;
+        private readonly IValidatorUser _validatorUser;
+
+        public LoginController(IRestProvider restProvider, IOptions<AppSettings> appSettings, IValidatorUser validatorUser)
+        {
+            _restProvider = restProvider ?? throw new ArgumentNullException(nameof(restProvider));
+            _appSettings = appSettings ?? throw new ArgumentNullException(nameof(appSettings));
+            _validatorUser = validatorUser ?? throw new ArgumentNullException(nameof(validatorUser));
+        }
+
         // GET: LoginController
         public IActionResult Index()
         {
@@ -35,29 +46,26 @@ namespace ProyectoPAWG1.Controllers
         public async Task<IActionResult> SignUp([Bind("Username,Email,Password,State,IdRole")] CMP.User user)
         {
             ModelState.Remove("IdRoleNavigation");
-            var data = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/UserApi/all", null);
 
-            var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-            var existingUsers = JsonSerializer.Deserialize<List<CMP.User>>(data, options);
-
-            
-            if (existingUsers != null && existingUsers.Any(existingUser => existingUser.Username == user.Username))
+            bool? validationMessage = await _validatorUser.ValidatorCreate(user, TempData);
+            if (validationMessage == false || validationMessage == null)
             {
-                ModelState.AddModelError("Username", "The username already exists. Please choose another one.");
+                ViewBag.ErrorMessage = "Validation failed. Please check the input.";
                 return View(user);
             }
 
-            
-            user.Password = HashPassword(user.Password);
-
             if (ModelState.IsValid)
             {
-                var jsonUser = JsonSerializer.Serialize(user);
-                var found = await _restProvider.PostAsync($"{_appSettings.Value.RestApi}/UserApi/save", jsonUser);
 
-                return (found != null)
-                    ? RedirectToAction(nameof(Index))
-                    : View(user);
+                var jsonUser = JsonSerializer.Serialize(user);
+                var result = await _restProvider.PostAsync($"{_appSettings.Value.RestApi}/UserApi/save", jsonUser);
+
+                if (result != null)
+                {
+                    return RedirectToAction(nameof(Index));
+                }
+
+                ModelState.AddModelError(string.Empty, "An error occurred while saving the user.");
             }
 
             return View(user);
@@ -76,6 +84,12 @@ namespace ProyectoPAWG1.Controllers
             string hashedPassword = HashPassword(user.Password);
 
             var data = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/UserApi/all", null);
+            if (string.IsNullOrEmpty(data))
+            {
+                ViewBag.ErrorMessage = "No user data available.";
+                return View("Index");
+            }
+
             var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
             var existingUsers = JsonSerializer.Deserialize<List<CMP.User>>(data, options);
 
@@ -84,25 +98,20 @@ namespace ProyectoPAWG1.Controllers
 
             if (matchedUser != null)
             {
-                // Crear los claims para el usuario
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, matchedUser.Username),
                     new Claim(ClaimTypes.Email, matchedUser.Email),
                     new Claim(ClaimTypes.Role, matchedUser.IdRole.ToString()),
-                    new Claim(ClaimTypes.NameIdentifier, matchedUser.IdUser.ToString()) 
-
+                    new Claim(ClaimTypes.NameIdentifier, matchedUser.IdUser.ToString())
                 };
 
-
-                // Crear un ClaimsIdentity y ClaimsPrincipal
                 var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
 
-                // Iniciar sesión con el ClaimsPrincipal y almacenar la información en la cookie
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimsPrincipal);
 
-                return RedirectToAction("Index", "Dashboard"); // Redirige al Dashboard si las credenciales son correctas
+                return RedirectToAction("Index", "Dashboard");
             }
 
             ViewBag.ErrorMessage = "Incorrect credentials. Please try again.";
@@ -111,25 +120,20 @@ namespace ProyectoPAWG1.Controllers
 
         public async Task<IActionResult> Logout()
         {
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme); 
-            return RedirectToAction(nameof(Index)); 
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction(nameof(Index));
         }
-
 
         private static string HashPassword(string password)
         {
-            using (var sha256 = SHA256.Create())
+            using var sha256 = SHA256.Create();
+            byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+            var builder = new StringBuilder();
+            foreach (var b in bytes)
             {
-                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
-                StringBuilder builder = new StringBuilder();
-                foreach (var b in bytes)
-                {
-                    builder.Append(b.ToString("x2"));
-                }
-                return builder.ToString();
+                builder.Append(b.ToString("x2"));
             }
+            return builder.ToString();
         }
-
-
     }
 }
