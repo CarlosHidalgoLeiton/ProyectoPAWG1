@@ -7,8 +7,6 @@ public partial class Component
 {
     public int IdComponent { get; set; }
 
-    public int TimeRefresh { get; set; }
-
     public string TypeComponent { get; set; } = null!;
 
     public int Size { get; set; }

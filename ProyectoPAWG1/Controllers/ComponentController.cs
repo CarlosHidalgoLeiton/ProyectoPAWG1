@@ -27,7 +27,15 @@ namespace ProyectoPAWG1.Controllers
 
             var components = JsonProvider.DeserializeSimple<IEnumerable<CMP.Component>>(data);
 
+            var dataTime = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/TimeRefreshApi/1", null);
+
+            var timeRefreshs = JsonProvider.DeserializeSimple<CMP.TimeRefresh>(dataTime);
+
+            ViewBag.timeRefresh = timeRefreshs;
+
             return View(components);
+
+
         }
 
         //[Authorize(Roles = "Admin")]

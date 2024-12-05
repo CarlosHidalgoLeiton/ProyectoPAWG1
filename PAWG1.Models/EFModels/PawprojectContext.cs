@@ -21,6 +21,8 @@ public partial class PawprojectContext : DbContext
 
     public virtual DbSet<Status> Statuses { get; set; }
 
+    public virtual DbSet<TimeRefresh> TimeRefreshes { get; set; }
+
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -31,7 +33,7 @@ public partial class PawprojectContext : DbContext
     {
         modelBuilder.Entity<Component>(entity =>
         {
-            entity.HasKey(e => e.IdComponent).HasName("PK__Componen__F186FE86F398602B");
+            entity.HasKey(e => e.IdComponent).HasName("PK__Componen__F186FE861A21D598");
 
             entity.ToTable("Component");
 
@@ -59,12 +61,12 @@ public partial class PawprojectContext : DbContext
             entity.HasOne(d => d.IdOwnerNavigation).WithMany(p => p.Components)
                 .HasForeignKey(d => d.IdOwner)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Component__ID_Ow__68487DD7");
+                .HasConstraintName("FK__Component__ID_Ow__46E78A0C");
         });
 
         modelBuilder.Entity<Role>(entity =>
         {
-            entity.HasKey(e => e.IdRole).HasName("PK__Role__43DCD32D73990B0A");
+            entity.HasKey(e => e.IdRole).HasName("PK__Role__43DCD32D8FF215D5");
 
             entity.ToTable("Role");
 
@@ -76,7 +78,7 @@ public partial class PawprojectContext : DbContext
 
         modelBuilder.Entity<Status>(entity =>
         {
-            entity.HasKey(e => new { e.UserId, e.ComponentId }).HasName("PK__Status__EAF1034818C9D78D");
+            entity.HasKey(e => new { e.UserId, e.ComponentId }).HasName("PK__Status__EAF1034826590ED7");
 
             entity.ToTable("Status");
 
@@ -87,17 +89,26 @@ public partial class PawprojectContext : DbContext
             entity.HasOne(d => d.Component).WithMany(p => p.Statuses)
                 .HasForeignKey(d => d.ComponentId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Status__Componen__797309D9");
+                .HasConstraintName("FK__Status__Componen__4AB81AF0");
 
             entity.HasOne(d => d.User).WithMany(p => p.Statuses)
                 .HasForeignKey(d => d.UserId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Status__UserId__787EE5A0");
+                .HasConstraintName("FK__Status__UserId__49C3F6B7");
+        });
+
+        modelBuilder.Entity<TimeRefresh>(entity =>
+        {
+            entity.HasKey(e => e.TimeRefreshId).HasName("PK__TimeRefr__D812775BE2292EA8");
+
+            entity.ToTable("TimeRefresh");
+
+            entity.Property(e => e.TimeRefresh1).HasColumnName("Time_Refresh");
         });
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.IdUser).HasName("PK__User__ED4DE442B85BC211");
+            entity.HasKey(e => e.IdUser).HasName("PK__User__ED4DE442444D9A01");
 
             entity.ToTable("User");
 
@@ -112,7 +123,7 @@ public partial class PawprojectContext : DbContext
             entity.HasOne(d => d.IdRoleNavigation).WithMany(p => p.Users)
                 .HasForeignKey(d => d.IdRole)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__User__ID_Role__656C112C");
+                .HasConstraintName("FK__User__ID_Role__398D8EEE");
         });
 
         OnModelCreatingPartial(modelBuilder);

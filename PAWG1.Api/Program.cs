@@ -22,6 +22,9 @@ builder.Services.AddScoped<IRoleService, RoleService>();
 builder.Services.AddScoped<IStatusRepository, StatusRepository>();
 builder.Services.AddScoped<IStatusService, StatusService>();
 
+builder.Services.AddScoped<ITimeRefreshRepository, TimeRefreshRepository>();
+builder.Services.AddScoped<ITimeRefreshService, TimeRefreshService>();
+
 builder.Services.AddControllers()
        .AddJsonOptions(options =>
        {

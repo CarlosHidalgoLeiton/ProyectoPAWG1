@@ -15,9 +15,15 @@ namespace ProyectoPAWG1.Controllers
         private readonly IOptions<AppSettings> _appSettings = appSettings;
 
         [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            ViewBag.Page = "Dashboard Page";
+
+            var dataTime = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/TimeRefreshApi/1", null);
+
+            var timeRefreshs = JsonProvider.DeserializeSimple<CMP.TimeRefresh>(dataTime);
+
+            ViewBag.timeRefresh = timeRefreshs;
+
             return View();
         }
 
