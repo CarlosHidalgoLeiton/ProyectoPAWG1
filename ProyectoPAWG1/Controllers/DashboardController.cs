@@ -1,7 +1,7 @@
 ﻿using APWG1.Architecture;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-using Newtonsoft.Json.Linq;
 using PAWG1.Architecture.Helpers;
 using PAWG1.Architecture.Providers;
 using PAWG1.Models.EFModels;
@@ -16,6 +16,7 @@ namespace ProyectoPAWG1.Controllers
         private readonly IRestProvider _restProvider = restProvider;
         private readonly IOptions<AppSettings> _appSettings = appSettings;
 
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> Index()
         {
@@ -29,6 +30,7 @@ namespace ProyectoPAWG1.Controllers
             return View();
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> LoadData()
         {
@@ -63,7 +65,7 @@ namespace ProyectoPAWG1.Controllers
         }
 
 
-
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> SaveStatus(int id, string type)
         {
@@ -82,6 +84,7 @@ namespace ProyectoPAWG1.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> DeleteStatus(int id)
         {

@@ -50,7 +50,7 @@ public class ComponentService : IComponentService
 
     public async Task<IEnumerable<CMP.Component>> GetAllDashboardAsync() 
     {
-        return await _componentRepository.GetAllDashboardAsync();
+        return await _componentRepository.GetAllComponentsDashboardAsync();
     }
 
     /// <summary>

@@ -1,19 +1,14 @@
 using Microsoft.AspNetCore.Mvc;
 using PAWG1.Architecture.Providers;
-using PAWG1.Models;
-using System.Diagnostics;
 using CMP = PAWG1.Models.EFModels;
 using APWG1.Architecture;
 using Microsoft.Extensions.Options;
 using PAWG1.Mvc.Models;
-using PAWG1.Architecture.Exceptions;
 using PAWG1.Models.EFModels;
-using System.Text.Json;
 using System.Security.Cryptography;
 using System.Text;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 using PAWG1.Validator.Validators;
-using PAWG1.Service.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ProyectoPAWG1.Controllers
 {
@@ -23,14 +18,15 @@ namespace ProyectoPAWG1.Controllers
         private readonly IOptions<AppSettings> _appSettings;
         private readonly IValidatorUser _validatorUser;
 
-        // Constructor que recibe los parámetros correctos y pasa al constructor base.
         public UserController(IRestProvider restProvider, IOptions<AppSettings> appSettings, IValidatorUser validatorUser)
-            : base()  // Inicialización de la clase base (Controller)
+            : base() 
         {
             _restProvider = restProvider;
             _appSettings = appSettings;
             _validatorUser = validatorUser;
         }
+
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> Index()
         {
@@ -42,7 +38,7 @@ namespace ProyectoPAWG1.Controllers
             return View(users);
         }
 
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> Create()
         {
@@ -56,6 +52,7 @@ namespace ProyectoPAWG1.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Username,Email,Password,State,IdRole")] CMP.User user)
@@ -75,7 +72,8 @@ namespace ProyectoPAWG1.Controllers
             return View(Index);
         }
 
-
+        [Authorize(Roles = "Admin")]
+        [HttpGet]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -95,9 +93,8 @@ namespace ProyectoPAWG1.Controllers
             return View(JsonProvider.DeserializeSimple<User>(user));
         }
 
-
-
-        // GET: User/Edit/5
+        [Authorize(Roles = "Admin")]
+        [HttpGet]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null) { return View(Index); }
@@ -121,9 +118,7 @@ namespace ProyectoPAWG1.Controllers
             return View(JsonProvider.DeserializeSimple<User>(user));
         }
 
-        // POST: User/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("IdUser,Username,Email,Password,State,IdRole")] CMP.User user)
@@ -148,31 +143,18 @@ namespace ProyectoPAWG1.Controllers
             return View(updated);
         }
 
-        private static string HashPassword(string password)
-        {
-            using (var sha256 = SHA256.Create())
-            {
-                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
-                StringBuilder builder = new StringBuilder();
-                foreach (var b in bytes)
-                {
-                    builder.Append(b.ToString("x2"));
-                }
-                return builder.ToString();
-            }
-        }
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
                 return NotFound();
 
-            var userS = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/UserApi/{id}", $"{id}");
-            if (userS == null)
+            var users = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/UserApi/{id}", $"{id}");
+            if (users == null)
                 return RedirectToAction(nameof(Index));
 
-            var user = JsonProvider.DeserializeSimple<User>(userS);
+            var user = JsonProvider.DeserializeSimple<User>(users);
 
             var data = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/RoleApi/{user.IdRole}", $"{user.IdRole}");
             if (data == null)
@@ -182,10 +164,10 @@ namespace ProyectoPAWG1.Controllers
 
             ViewBag.Roles = roles;
 
-
             return View(user);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)

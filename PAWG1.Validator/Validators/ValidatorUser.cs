@@ -1,33 +1,58 @@
 ﻿using PAWG1.Service.Services;
 using PAWG1.Models.EFModels;
-using System.Text.Json;
-using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using Microsoft.AspNetCore.Http;
-using Microsoft.CodeAnalysis.Elfie.Diagnostics;
-using PAWG1.Architecture.Providers;
 using System.Text;
 using System.Security.Cryptography;
-
+using PAWG1.Architecture.Helpers;
 
 namespace PAWG1.Validator.Validators;
 
+/// <summary>
+/// Interface for validating user data during creation and editing operations.
+/// </summary>
 public interface IValidatorUser
 {
+    /// <summary>
+    /// Validates the user data for creating a new user.
+    /// </summary>
+    /// <param name="user">The user data to be validated.</param>
+    /// <param name="tempData">The TempData dictionary for storing validation error messages.</param>
+    /// <returns>A task that represents the result of the validation.</returns>
     Task<bool?> ValidatorCreate(User user, ITempDataDictionary tempData);
+
+    /// <summary>
+    /// Validates the user data for editing an existing user.
+    /// </summary>
+    /// <param name="id">The ID of the user being edited.</param>
+    /// <param name="user">The user data to be validated.</param>
+    /// <param name="tempData">The TempData dictionary for storing validation error messages.</param>
+    /// <returns>A task that represents the result of the validation.</returns>
     Task<bool?> ValidatorEdit(int id, User user, ITempDataDictionary tempData);
 }
 
+/// <summary>
+/// A class that implements user validation logic for creating and editing user data.
+/// </summary>
 public class ValidatorUser : IValidatorUser
 {
     private readonly IUserService _userService;
     private readonly IRoleService _roleService;
 
+    /// <summary>
+    /// Initializes a new instance of the ValidatorUser class.
+    /// </summary>
+    /// <param name="userService">The service for user-related operations.</param>
     public ValidatorUser(IUserService userService)
     {
         _userService = userService;
     }
 
+    /// <summary>
+    /// Validates user data for creating a new user.
+    /// </summary>
+    /// <param name="user">The user data to be validated.</param>
+    /// <param name="tempData">The TempData dictionary for storing validation error messages.</param>
+    /// <returns>A task representing the result of the validation, true if valid, false if invalid.</returns>
     public async Task<bool?> ValidatorCreate(User user, ITempDataDictionary tempData)
     {
         tempData.Remove("ErrorUsername");
@@ -69,7 +94,7 @@ public class ValidatorUser : IValidatorUser
         }
         else
         {
-            user.Password = HashPassword(user.Password);
+            user.Password = UserHelper.HashPassword(user.Password);
 
         }
         if (user.IdRole == 0)
@@ -81,8 +106,13 @@ public class ValidatorUser : IValidatorUser
         return true;
     }
 
-
-
+    /// <summary>
+    /// Validates user data for editing an existing user.
+    /// </summary>
+    /// <param name="id">The ID of the user being edited.</param>
+    /// <param name="user">The user data to be validated.</param>
+    /// <param name="tempData">The TempData dictionary for storing validation error messages.</param>
+    /// <returns>A task representing the result of the validation, true if valid, false if invalid.</returns>
     public async Task<bool?> ValidatorEdit(int id, User user, ITempDataDictionary tempData)
     {
 
@@ -119,7 +149,7 @@ public class ValidatorUser : IValidatorUser
                 tempData["ErrorPassword"] = $"The password must be between 8 and 16 characters.";
                 return false;
             }
-            user.Password = HashPassword(user.Password);
+            user.Password = UserHelper.HashPassword(user.Password);
         }
         if (user.Email == null)
         {
@@ -134,23 +164,6 @@ public class ValidatorUser : IValidatorUser
 
         return true;
 
-    }
-
-
-
-
-    private static string HashPassword(string password)
-    {
-        using (var sha256 = SHA256.Create())
-        {
-            byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
-            StringBuilder builder = new StringBuilder();
-            foreach (var b in bytes)
-            {
-                builder.Append(b.ToString("x2"));
-            }
-            return builder.ToString();
-        }
     }
 }
 
