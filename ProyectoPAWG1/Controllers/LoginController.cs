@@ -1,19 +1,14 @@
 ﻿using APWG1.Architecture;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.CodeAnalysis.Elfie.Diagnostics;
 using Microsoft.Extensions.Options;
-using PAWG1.Architecture.Providers;
 using PAWG1.Mvc.Models;
 using CMP = PAWG1.Models.EFModels;
 using System.Text.Json;
-using System.Security.Cryptography;
-using System.Text;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
 using PAWG1.Validator.Validators;
-using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
+using PAWG1.Architecture.Helpers;
 
 namespace ProyectoPAWG1.Controllers
 {
@@ -30,12 +25,13 @@ namespace ProyectoPAWG1.Controllers
             _validatorUser = validatorUser ?? throw new ArgumentNullException(nameof(validatorUser));
         }
 
-        // GET: LoginController
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
 
+        [HttpGet]
         public IActionResult SignUp()
         {
             return View();
@@ -56,7 +52,6 @@ namespace ProyectoPAWG1.Controllers
 
             if (ModelState.IsValid)
             {
-
                 var jsonUser = JsonSerializer.Serialize(user);
                 var result = await _restProvider.PostAsync($"{_appSettings.Value.RestApi}/UserApi/save", jsonUser);
 
@@ -81,7 +76,7 @@ namespace ProyectoPAWG1.Controllers
                 return View("Index");
             }
 
-            string hashedPassword = HashPassword(user.Password);
+            string hashedPassword = UserHelper.HashPassword(user.Password);
 
             var data = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/UserApi/all", null);
             if (string.IsNullOrEmpty(data))
@@ -102,7 +97,7 @@ namespace ProyectoPAWG1.Controllers
                 {
                     new Claim(ClaimTypes.Name, matchedUser.Username),
                     new Claim(ClaimTypes.Email, matchedUser.Email),
-                    new Claim(ClaimTypes.Role, matchedUser.IdRole.ToString()),
+                    new Claim(ClaimTypes.Role, matchedUser.IdRoleNavigation.Name),
                     new Claim(ClaimTypes.NameIdentifier, matchedUser.IdUser.ToString())
                 };
 
@@ -118,22 +113,13 @@ namespace ProyectoPAWG1.Controllers
             return View("Index");
         }
 
+        [HttpGet]
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction(nameof(Index));
         }
 
-        private static string HashPassword(string password)
-        {
-            using var sha256 = SHA256.Create();
-            byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
-            var builder = new StringBuilder();
-            foreach (var b in bytes)
-            {
-                builder.Append(b.ToString("x2"));
-            }
-            return builder.ToString();
-        }
+     
     }
 }

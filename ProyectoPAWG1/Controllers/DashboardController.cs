@@ -1,7 +1,7 @@
 ﻿using APWG1.Architecture;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-using Newtonsoft.Json.Linq;
 using PAWG1.Architecture.Helpers;
 using PAWG1.Architecture.Providers;
 using PAWG1.Models.EFModels;
@@ -16,13 +16,21 @@ namespace ProyectoPAWG1.Controllers
         private readonly IRestProvider _restProvider = restProvider;
         private readonly IOptions<AppSettings> _appSettings = appSettings;
 
+        [Authorize]
         [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            ViewBag.Page = "Dashboard Page";
+
+            var dataTime = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/TimeRefreshApi/1", null);
+
+            var timeRefreshs = JsonProvider.DeserializeSimple<CMP.TimeRefresh>(dataTime);
+
+            ViewBag.timeRefresh = timeRefreshs;
+
             return View();
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> LoadData()
         {
@@ -57,7 +65,7 @@ namespace ProyectoPAWG1.Controllers
         }
 
 
-
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> SaveStatus(int id, string type)
         {
@@ -76,6 +84,7 @@ namespace ProyectoPAWG1.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> DeleteStatus(int id)
         {

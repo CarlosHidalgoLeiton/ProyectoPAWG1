@@ -1,26 +1,22 @@
 using Microsoft.AspNetCore.Mvc;
 using PAWG1.Architecture.Providers;
-using PAWG1.Models;
-using System.Diagnostics;
 using CMP = PAWG1.Models.EFModels;
 using APWG1.Architecture;
 using Microsoft.Extensions.Options;
 using PAWG1.Mvc.Models;
 using Microsoft.EntityFrameworkCore;
-using PAWG1.Architecture.Exceptions;
 using Microsoft.AspNetCore.Authorization;
-using System.Security.Claims;
 using PAWG1.Architecture.Helpers;
 
 namespace ProyectoPAWG1.Controllers
 {
-    //[Authorize]
     public class ComponentController(IRestProvider restProvider, IOptions<AppSettings> appSettings) : Controller
     {
 
         private readonly IRestProvider _restProvider = restProvider;
         private readonly IOptions<AppSettings> _appSettings = appSettings;
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> Index()
         {
@@ -33,18 +29,25 @@ namespace ProyectoPAWG1.Controllers
             var components = JsonProvider.DeserializeSimple<IEnumerable<CMP.Component>>(data);
             components = components?.Where(c => c.IdOwner == userIdClaim).ToList();
 
+            var dataTime = await _restProvider.GetAsync($"{_appSettings.Value.RestApi}/TimeRefreshApi/1", null);
+
+            var timeRefreshs = JsonProvider.DeserializeSimple<CMP.TimeRefresh>(dataTime);
+
+            ViewBag.timeRefresh = timeRefreshs;
+
             return View(components);
+
+
         }
 
-
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("TimeRefresh,TypeComponent,Size,ApiUrl,ApiKey,ApiKeyId,Descrip,Title,Color,State,AllowedRole")] CMP.Component component, IFormFile Simbol)
@@ -81,7 +84,7 @@ namespace ProyectoPAWG1.Controllers
             return View(component);
         }
 
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> Details(int id) 
         {
@@ -96,6 +99,7 @@ namespace ProyectoPAWG1.Controllers
             return View(JsonProvider.DeserializeSimple<CMP.Component>(component));
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> Edit(int id) {
             if (id == null)
@@ -109,7 +113,9 @@ namespace ProyectoPAWG1.Controllers
             return View(JsonProvider.DeserializeSimple<CMP.Component>(component));
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("IdComponent,IdOwner,TimeRefresh,TypeComponent,Size,ApiUrl,ApiKey,ApiKeyId,Descrip,Title,Color,State,AllowedRole")] CMP.Component component, IFormFile Simbol)
         {
             if (id == null)
@@ -157,6 +163,7 @@ namespace ProyectoPAWG1.Controllers
             return View(updated);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> Delete(int id) 
         { 
@@ -171,6 +178,7 @@ namespace ProyectoPAWG1.Controllers
             return View(JsonProvider.DeserializeSimple<CMP.Component>(component));
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {

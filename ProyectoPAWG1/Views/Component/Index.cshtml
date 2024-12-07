@@ -1,6 +1,22 @@
 ﻿@model IEnumerable<PAWG1.Models.EFModels.Component>
 
 
+<form asp-controller="TimeRefresh" asp-action="Create" class="d-flex justify-content-center">
+    <div class="col-md-2">
+        <div class="card shadow-sm p-3">
+            <div class="form-group">
+                <label for="TimeRefresh1" class="control-label">Time Refresh (Minutes)</label>
+                <input class="form-control" placeholder="Time in minutes" name="TimeRefresh1" Value="@ViewBag.timeRefresh.TimeRefresh1" />
+            </div>
+
+            <div class="form-group text-center mt-1 mb-0">
+                <input type="submit" value="Accept" class="btn btn-primary btn-sm" />
+            </div>
+        </div>
+    </div>
+</form>
+
+
 <div class="mb-4">
     <a asp-action="Create" class="btn btn-primary">Create</a>
 </div>

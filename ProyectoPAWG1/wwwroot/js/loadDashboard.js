@@ -97,6 +97,7 @@
 
                 loadNotice(news, "news");
             }
+            timeRefresh();
         },
         error: function (jqXHR, textStatus, errorThrown) {
             console.error('Error en la solicitud:', textStatus, errorThrown);
@@ -411,3 +412,10 @@ const buttonShow = id => {
             </form>`;
 }
 
+const timeRefresh = () => {
+    let time = document.getElementById("timeRefresh").innerHTML;
+    time = time * 60 * 1000;
+    setTimeout(() => {
+        location.reload();
+    }, time);
+}

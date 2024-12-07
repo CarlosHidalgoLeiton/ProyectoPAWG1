@@ -86,7 +86,7 @@ public class ComponentService : IComponentService
     /// <returns>A task that represents the asynchronous operation, containing all <see cref="Component"/>.</returns>
     public async Task<IEnumerable<CMP.Component>> GetAllDashboardAsync() 
     {
-        return await _componentRepository.GetAllDashboardAsync();
+        return await _componentRepository.GetAllComponentsDashboardAsync();
     }
 
     /// <summary>
