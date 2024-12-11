@@ -30,6 +30,11 @@ namespace ProyectoPAWG1.Controllers
             return View();
         }
 
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
+
         [Authorize]
         [HttpGet]
         public async Task<IActionResult> LoadData()

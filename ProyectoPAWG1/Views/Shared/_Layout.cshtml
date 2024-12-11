@@ -19,8 +19,8 @@
     @* <link href="../assets/css/nucleo-svg.css" rel="stylesheet" /> *@
     <!-- CSS Files -->
     <script src="https://code.jquery.com/jquery-3.7.1.js"
-            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-            crossorigin="anonymous"></script>
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
     <script src="https://kit.fontawesome.com/2425b0cf01.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -37,22 +37,25 @@
         <hr class="horizontal dark mt-0">
         <div class="collapse navbar-collapse  w-auto  max-height-vh-100 h-100" id="sidenav-collapse-main">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a asp-action="Index" asp-controller="Dashboard" class="nav-link">
-                        <div class="icon icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="fa-solid fa-house"></i>
-                        </div>
-                        <span class="nav-link-text ms-1">Home</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a asp-action="Index" asp-controller="Component" class="nav-link">
-                        <div class="icon icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="fa-regular fa-window-restore" style="z-index: 1;"></i>
-                        </div>
-                        <span class="nav-link-text ms-1">My components</span>
-                    </a>
-                </li>
+                    <li class="nav-item">
+                        <a asp-action="Index" asp-controller="Dashboard" class="nav-link">
+                            <div class="icon icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                                <i class="fa-solid fa-house"></i>
+                            </div>
+                            <span class="nav-link-text ms-1">Home</span>
+                        </a>
+                    </li>
+                @if (User.IsInRole("Admin"))
+                {
+                    <li class="nav-item">
+                        <a asp-action="Index" asp-controller="Component" class="nav-link">
+                            <div class="icon icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                                <i class="fa-regular fa-window-restore" style="z-index: 1;"></i>
+                            </div>
+                            <span class="nav-link-text ms-1">My components</span>
+                        </a>
+                    </li>
+                
                 <li class="nav-item">
                     <a asp-action="Index" asp-controller="User" class="nav-link">
                         <div class="icon icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -61,6 +64,7 @@
                         <span class="nav-link-text ms-1">Users</span>
                     </a>
                 </li>
+                }
             </ul>
         </div>
     </aside>

@@ -30,4 +30,11 @@
     <ProjectReference Include="..\PAWG1.Validator\PAWG1.Validator.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Views\Dashboard\AccessDenied.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>
