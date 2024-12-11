@@ -12,7 +12,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     .AddCookie(options =>
     {
         options.LoginPath = "/Login/Index";  // Ruta al formulario de login
-        options.AccessDeniedPath = "/Home/AccessDenied"; // Ruta de acceso denegado
+        options.AccessDeniedPath = "/Dashboard/AccessDenied"; // Ruta de acceso denegado
     });
 
 builder.Services.AddControllersWithViews();
