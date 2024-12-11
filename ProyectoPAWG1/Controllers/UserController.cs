@@ -5,8 +5,6 @@ using APWG1.Architecture;
 using Microsoft.Extensions.Options;
 using PAWG1.Mvc.Models;
 using PAWG1.Models.EFModels;
-using System.Security.Cryptography;
-using System.Text;
 using PAWG1.Validator.Validators;
 using Microsoft.AspNetCore.Authorization;
 
@@ -69,7 +67,7 @@ namespace ProyectoPAWG1.Controllers
                     ? RedirectToAction(nameof(Index))
                     : View(user);
             }
-            return View(Index);
+            return RedirectToAction(nameof(Index));
         }
 
         [Authorize(Roles = "Admin")]
@@ -97,7 +95,7 @@ namespace ProyectoPAWG1.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null) { return View(Index); }
+            if (id == null) { return RedirectToAction(nameof(Index)); }
 
             if (TempData["ErrorUsername"] != null) { ModelState.AddModelError("Username", TempData["ErrorUsername"].ToString()); }
             if (TempData["ErrorEmail"] != null) { ModelState.AddModelError("Email", TempData["ErrorEmail"].ToString()); }
