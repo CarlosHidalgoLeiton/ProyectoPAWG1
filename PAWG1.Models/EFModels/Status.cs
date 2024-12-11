@@ -11,7 +11,7 @@ public partial class Status
 
     public string Type { get; set; } = null!;
 
-    public virtual Component Component { get; set; } = null!;
+    public virtual Component? Component { get; set; } = null!;
 
-    public virtual User User { get; set; } = null!;
+    public virtual User? User { get; set; } = null!;
 }

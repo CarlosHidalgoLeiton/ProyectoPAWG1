@@ -412,10 +412,10 @@ const buttonShow = id => {
             </form>`;
 }
 
-const timeRefresh = () => {
-    let time = document.getElementById("timeRefresh").innerHTML;
-    time = time * 60 * 1000;
-    setTimeout(() => {
-        location.reload();
-    }, time);
-}
+//const timeRefresh = () => {
+//    let time = document.getElementById("timeRefresh").innerHTML;
+//    time = time * 60 * 1000;
+//    setTimeout(() => {
+//        location.reload();
+//    }, time);
+//}

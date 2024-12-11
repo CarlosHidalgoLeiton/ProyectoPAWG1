@@ -35,7 +35,7 @@
             <tr>
                 <td>@c.Title</td>
                 <td>@c.CreateDate</td>
-                <td>@c.State</td>
+                <td>@((c.State == true) ? "Active" : "Disable")</td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@c.IdComponent" class="btn btn-success">
                         <i class="fa-solid fa-pen"></i>

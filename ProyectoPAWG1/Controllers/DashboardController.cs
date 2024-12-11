@@ -41,8 +41,8 @@ namespace ProyectoPAWG1.Controllers
             var userId = UserHelper.GetAuthenticatedUserId(User);
             components = components.Where(c =>
                 c.AllowedRole == "All" || 
-                (c.AllowedRole == "Admin" && userRole == "1") || 
-                (c.AllowedRole == "User" && userRole == "2")  
+                (c.AllowedRole == "Admin" && userRole == "Admin") || 
+                (c.AllowedRole == "User" && userRole == "User")  
             ).ToList();
 
             foreach (var component in components ?? Enumerable.Empty<CMP.Component>())

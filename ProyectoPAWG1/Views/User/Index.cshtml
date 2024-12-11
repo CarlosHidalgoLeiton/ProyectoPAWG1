@@ -17,7 +17,7 @@
             <th> User Name</th>
             <th> Email</th>
             <th> State </th>
-            <th></th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -33,11 +33,18 @@
                 <td>
                     @(item.State ? "Activated" : "Disabled")
                 </td>
+             
 
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.IdUser">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.IdUser">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.IdUser">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.IdUser" class="btn btn-success">
+                        <i class="fa-solid fa-pen"></i>
+                    </a> 
+                    <a asp-action="Details" asp-route-id="@item.IdUser" class="btn btn-info">
+                        <i class="fa-solid fa-eye"></i>
+                    </a> 
+                    <a asp-action="Delete" asp-route-id="@item.IdUser" class="btn btn-danger">
+                        <i class="fa-solid fa-trash"></i>
+                    </a>
                 </td>
             </tr>
         }
