@@ -166,9 +166,9 @@ namespace ProyectoPAWG1.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        [HttpPost, ActionName("Delete")]
+        [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var user = await _restProvider.DeleteAsync($"{_appSettings.Value.RestApi}/UserApi/{id}", $"{id}");
             return (user == null)
