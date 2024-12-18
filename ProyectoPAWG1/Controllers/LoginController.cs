@@ -93,13 +93,19 @@ namespace ProyectoPAWG1.Controllers
 
             if (matchedUser != null)
             {
-                var claims = new List<Claim>
+                if (!matchedUser.State)
                 {
-                    new Claim(ClaimTypes.Name, matchedUser.Username),
-                    new Claim(ClaimTypes.Email, matchedUser.Email),
-                    new Claim(ClaimTypes.Role, matchedUser.IdRoleNavigation.Name),
-                    new Claim(ClaimTypes.NameIdentifier, matchedUser.IdUser.ToString())
-                };
+                    ViewBag.ErrorMessage = "Your account is inactive. Please contact support.";
+                    return View("Index");
+                }
+
+                var claims = new List<Claim>
+        {
+            new Claim(ClaimTypes.Name, matchedUser.Username),
+            new Claim(ClaimTypes.Email, matchedUser.Email),
+            new Claim(ClaimTypes.Role, matchedUser.IdRoleNavigation.Name),
+            new Claim(ClaimTypes.NameIdentifier, matchedUser.IdUser.ToString())
+        };
 
                 var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
@@ -112,6 +118,7 @@ namespace ProyectoPAWG1.Controllers
             ViewBag.ErrorMessage = "Incorrect credentials. Please try again.";
             return View("Index");
         }
+
 
         [HttpGet]
         public async Task<IActionResult> Logout()
